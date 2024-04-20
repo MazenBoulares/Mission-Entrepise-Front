@@ -16,6 +16,8 @@ import { PropertyGeneralDetailsComponent } from './widgets/property-general-deta
 import { PropertyAddressDetailsComponent } from './widgets/property-address-details/property-address-details.component';
 import { PropertyGalleryComponent } from './widgets/property-gallery/property-gallery.component';
 import { PropertyConfirmationComponent } from './widgets/property-confirmation/property-confirmation.component';
+import { PropertyListingComponent } from './widgets/property-listing/property-listing.component';
+import { PropertyListingConfirmationComponent } from './widgets/property-listing-confirmation/property-listing-confirmation.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { PropertyConfirmationComponent } from './widgets/property-confirmation/p
     PropertyGeneralDetailsComponent,
     PropertyAddressDetailsComponent,
     PropertyGalleryComponent,
-    PropertyConfirmationComponent
+    PropertyConfirmationComponent,
+    PropertyListingComponent,
+    PropertyListingConfirmationComponent
   ],
   imports: [
     CommonModule,

@@ -35,4 +35,19 @@ export const addPropertyStepsData: propertySteps[] = [
     stepNumber: 4,
     disabled: false,
   },
+  {
+    id: 5,
+    title: 'Listing',
+    subTitle: 'List Your Property',
+    stepNumber: 5,
+    disabled: false,
+  },
+  {
+    id: 6,
+    title: 'Listing Confirmation ',
+    subTitle: 'Complete details',
+    stepNumber: 6,
+    disabled: false,
+  },
+  
 ];

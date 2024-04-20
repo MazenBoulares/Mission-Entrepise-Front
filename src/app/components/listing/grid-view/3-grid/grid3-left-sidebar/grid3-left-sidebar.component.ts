@@ -8,7 +8,7 @@ import { PropertyBoxGridService } from '../../../../../shared/services/property-
 })
 export class Grid3LeftSidebarComponent {
 
-  public themeLogo = 'assets/images/logo/2.png';
+  public themeLogo = 'assets/images/logo/logo.png';
   public footerLogo = 'assets/images/logo/footer-logo.png';
   public bgImage = 'assets/images/inner-background.jpg';
   public title = 'Left sidebar';
@@ -17,8 +17,8 @@ export class Grid3LeftSidebarComponent {
 
   public listView: boolean = false;
 
-  public theme_default3 = '#ff5c41';
-  public theme_default4 = '#ff8c41';
+  public theme_default3 = '#63ad24';
+  public theme_default4 = '#6bc115';
 
   constructor(private propertyBoxGridService: PropertyBoxGridService) {}
 

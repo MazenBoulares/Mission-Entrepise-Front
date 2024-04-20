@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
   location,city
 } from '../../../../shared/data/advance-filter';
+import { FormDataService } from 'src/app/services/form-data.service';
 
 
 @Component({
@@ -17,18 +18,20 @@ export class PropertyAddressDetailsComponent {
   public validate: boolean = false;
   public location = location;
   public cities = city;
-
+  constructor(
+    private formDataService: FormDataService
+  ) { }
   public myForm = new FormGroup({
-    address: new FormControl('', Validators.required),
-    pin_code: new FormControl('', [
+    addressStreet: new FormControl('', Validators.required),
+    addressZipCode: new FormControl('', [
       Validators.required,
       Validators.pattern('^((\\+91-?)|0)?[0-9]{6}$'),
       Validators.minLength(6),
       Validators.maxLength(6),
     ]),
-    country: new FormControl('', Validators.required),
-    city: new FormControl('', Validators.required),
-    landmark: new FormControl('', Validators.required),
+    addressCountry: new FormControl('', Validators.required),
+    addressCity: new FormControl('', Validators.required),
+    addressState: new FormControl('', Validators.required),
   });
 
   previous() {
@@ -40,27 +43,32 @@ export class PropertyAddressDetailsComponent {
      this.validate = true;
    } else {
      const number = this.activeStep + 1;
+     this.formDataService.registerFormGroup('addressDetails', this.myForm);
      this.activeSteps.emit(number);
    }
   }
 
-  get address() {
-    return this.myForm.get('address');
+  get addressStreet() {
+    return this.myForm.get('addressStreet');
   }
 
-  get pin_code() {
-    return this.myForm.get('pin_code');
+  get addressZipCode() {
+    return this.myForm.get('addressZipCode');
   }
 
-  get country() {
-    return this.myForm.get('country');
+  get addressCountry() {
+    return this.myForm.get('addressCountry');
   }
 
-  get city() {
-    return this.myForm.get('city');
+  get addressCity() {
+    return this.myForm.get('addressCity');
   }
 
-  get landmark() {
-    return this.myForm.get('landmark');
+  get addressState() {
+    return this.myForm.get('addressState');
   }
+
+logForm() {
+  console.log(this.myForm.value);
+}
 }

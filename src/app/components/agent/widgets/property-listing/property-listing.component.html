@@ -1,0 +1,81 @@
+<h2>Listing</h2>
+<p class="font-roboto">Basic information about Listing</p>
+<form class="row gx-3" novalidate [formGroup]="myForm">
+  <div class="form-group col-sm-12">
+    <label>Title</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="listingTitle"
+      formControlName="listingTitle"
+      [ngClass]="{
+        'is-invalid':
+          (listingTitle?.touched || validate) && listingTitle?.errors,
+        'is-valid': !listingTitle?.errors
+      }"
+    />
+  </div>
+  <div class="form-group col-sm-12">
+    <label>Additional Information</label>
+    <textarea
+      class="form-control"
+      rows="4"
+      formControlName="listingDescription"
+      [ngClass]="{
+        'is-invalid':
+          (listingDescription?.touched || validate) &&
+          listingDescription?.errors,
+        'is-valid': !listingDescription?.errors
+      }"
+    ></textarea>
+  </div>
+
+  <div class="form-group col-sm-6">
+    <label>Listing Type</label>
+    <select
+      class="form-control"
+      formControlName="listingType"
+      [ngClass]="{
+        'is-invalid':
+          (listingType?.touched || validate) && listingType?.errors,
+        'is-valid': !listingType?.errors
+      }"
+    >
+      @for(type of listing_type; track type){
+      <option value="{{ type.value }}">{{ type.title }}</option>
+      }
+    </select>
+  </div>
+  <div class="form-group col-sm-6">
+    <label>Price</label>
+    <input
+      type="number"
+      class="form-control"
+      placeholder="528 $"
+      formControlName="price"
+      [ngClass]="{
+        'is-invalid':
+          (price?.touched || validate) && price?.errors,
+        'is-valid': !price?.errors
+      }"
+    />
+  </div>
+</form>
+<div class="next-btn    text-end">
+  <button
+    type="button"
+    class="btn btn-gradient color-2 next1 btn-pill"
+    (click)="next(myForm)"
+  >
+    List Property <i class="fas fa-arrow-right ms-2"></i>
+  </button>
+</div>
+<!-- <div class="next-btn text-end">
+  <button
+    type="button"
+    class="btn btn-gradient color-2 next1 btn-pill"
+    (click)="logForm()"
+  >
+    Log Form
+  </button>
+</div> -->

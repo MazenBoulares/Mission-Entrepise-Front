@@ -10,7 +10,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class AgencyProfileComponent {
 
-  public themeLogo = 'assets/images/logo/2.png';
+  public themeLogo = 'assets/images/logo/logo.png';
   public footerLogo = 'assets/images/logo/footer-logo.png';
   public bgImage = 'assets/images/inner-background.jpg';
   public title = 'Profile';
@@ -24,8 +24,8 @@ export class AgencyProfileComponent {
   public totalProperty: number;
   public filterValue: string;
 
-  public theme_default3 = '#ff5c41';
-  public theme_default4 = '#ff8c41';
+  public theme_default3 = '#63ad24';
+  public theme_default4 = '#6bc115';
 
   constructor(private propertyService: PropertyService, private router: Router, private route: ActivatedRoute) {}
 

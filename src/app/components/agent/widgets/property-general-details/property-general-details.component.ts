@@ -10,6 +10,7 @@ import {
   rooms,
   location,
 } from '../../../../shared/data/advance-filter';
+import { FormDataService } from 'src/app/services/form-data.service';
 
 @Component({
   selector: 'app-property-general-details',
@@ -24,7 +25,7 @@ export class PropertyGeneralDetailsComponent {
   public validate: boolean = false;
 
   public propertyStatus = propertyStatus;
-  public propertyType = propertyType;
+  public property_type = propertyType;
   public location = location;
   public rooms = rooms;
   public beds = beds;
@@ -32,66 +33,61 @@ export class PropertyGeneralDetailsComponent {
   public agencys = agency;
   public category = category;
 
+  constructor(
+    private formDataService: FormDataService
+  ) { }
+
 
   public myForm = new FormGroup({
-    property_type: new FormControl('', Validators.required),
-    property_status: new FormControl('', Validators.required),
-    property_price: new FormControl('', Validators.required),
-    room: new FormControl('', Validators.required),
-    bed: new FormControl('', Validators.required),
-    bath: new FormControl('', Validators.required),
-    area: new FormControl('', Validators.required),
-    price: new FormControl('', Validators.required),
-    agency: new FormControl('', Validators.required),
-    description: new FormControl('', Validators.required),
+    propertyType: new FormControl('', Validators.required),
+    yearOfConstruction: new FormControl('', Validators.required),
+    propertyGarage: new FormControl('', Validators.required),
+    propertyBedrooms: new FormControl('', Validators.required),
+    propertyBathrooms: new FormControl('', Validators.required),
+    propertySurface: new FormControl('', Validators.required),
+    propertyBalcony: new FormControl('', Validators.required),
+    propertyDescription: new FormControl('', Validators.required),
   });
-
+  
   next(myForm: FormGroup) {
     if (this.myForm.invalid) {
       this.validate = true;
     } else {
       const number = this.activeStep + 1;
+      this.formDataService.registerFormGroup('generalDetails', this.myForm);
       this.activeSteps.emit(number);
     }
   }
 
-  get property_type() {
-    return this.myForm.get('property_type');
+  get propertyType() {
+    return this.myForm.get('propertyType');
   }
 
-  get property_status() {
-    return this.myForm.get('property_status');
+  get propertyBalcony() {
+    return this.myForm.get('propertyBalcony');
   }
 
-  get property_price() {
-    return this.myForm.get('property_price');
+  get propertyGarage() {
+    return this.myForm.get('propertyGarage');
   }
 
-  get room() {
-    return this.myForm.get('room');
+  get propertyBedrooms() {
+    return this.myForm.get('propertyBedrooms');
   }
 
-  get bed() {
-    return this.myForm.get('bed');
+  get propertyBathrooms() {
+    return this.myForm.get('propertyBathrooms');
   }
 
-  get bath() {
-    return this.myForm.get('bath');
+  get propertySurface() {
+    return this.myForm.get('propertySurface');
   }
 
-  get area() {
-    return this.myForm.get('area');
+  get yearOfConstruction() {
+    return this.myForm.get('yearOfConstruction');
   }
 
-  get price() {
-    return this.myForm.get('price');
-  }
-
-  get agency() {
-    return this.myForm.get('agency');
-  }
-
-  get description() {
-    return this.myForm.get('description');
+  get propertyDescription() {
+    return this.myForm.get('propertyDescription');
   }
 }

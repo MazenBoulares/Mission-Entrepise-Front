@@ -8,7 +8,7 @@ import { blogData } from '../../../shared/data/footer';
 })
 export class ModulesFooterComponent {
 
-  public themeLogo = 'assets/images/logo/2.png';
+  public themeLogo = 'assets/images/logo/logo.png';
   public footerLogo = 'assets/images/logo/footer-logo.png';
   public bgImage = 'assets/images/inner-background.jpg';
   public title = 'Footer';
@@ -27,11 +27,11 @@ export class ModulesFooterComponent {
   public footerDarkLogo4 = 'assets/images/logo/9.png';
 
 
-  public theme_default3 = '#ff5c41';
-  public theme_default4 = '#ff8c41';
+  public theme_default3 = '#63ad24';
+  public theme_default4 = '#6bc115';
 
   ngOnInit() {
-    document.documentElement.style.setProperty('--theme-default', '#ff5c41');
+    document.documentElement.style.setProperty('--theme-default', '#63ad24');
   }
 
   ngOnDestroy(): void {

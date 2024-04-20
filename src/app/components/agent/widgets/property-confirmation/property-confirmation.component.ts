@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,9 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./property-confirmation.component.scss']
 })
 export class PropertyConfirmationComponent {
-
+  @Output() activeSteps = new EventEmitter<number>();
+  public activeStep: number = 4;
 
   submit(){
     window.location.reload();
+  }
+  next() {  
+      const number = this.activeStep + 1;
+      this.activeSteps.emit(number);
   }
 }

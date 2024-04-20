@@ -8,7 +8,7 @@ import { totalAgents, totalProperty, totalSales } from '../../../../shared/data/
 })
 export class UserDashboardComponent {
 
-  public themeLogo = 'assets/images/logo/2.png';
+  public themeLogo = 'assets/images/logo/logo.png';
   public footerLogo = 'assets/images/logo/footer-logo.png';
   public bgImage = 'assets/images/inner-background.jpg';
   public title = 'Dashboard';
@@ -19,8 +19,8 @@ export class UserDashboardComponent {
   public totalSales = totalSales;
   public totalProperty = totalProperty;
 
-  public theme_default3 = '#ff5c41';
-  public theme_default4 = '#ff8c41';
+  public theme_default3 = '#63ad24';
+  public theme_default4 = '#6bc115';
 
   ngOnInit() {
     document.documentElement.style.setProperty('--theme-default', this.theme_default3);

@@ -9,7 +9,7 @@ import { accountInformation, addressInformation } from '../../../../shared/inter
 })
 export class SignUpWizardComponent {
 
-  public themeLogo = 'assets/images/logo/2.png';
+  public themeLogo = 'assets/images/logo/logo.png';
   public footerLogo = 'assets/images/logo/footer-logo.png';
   public bgImage = 'assets/images/inner-background.jpg';
   public title = 'Sign up wizard';
@@ -22,8 +22,8 @@ export class SignUpWizardComponent {
   public accountData: accountInformation;
   public addressData: addressInformation;
 
-  public theme_default3 = '#ff5c41';
-  public theme_default4 = '#ff8c41';
+  public theme_default3 = '#63ad24';
+  public theme_default4 = '#6bc115';
 
   ngOnInit() {
     document.documentElement.style.setProperty('--theme-default', this.theme_default3);

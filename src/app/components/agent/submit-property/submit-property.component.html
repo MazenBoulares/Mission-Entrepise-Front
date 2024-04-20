@@ -11,7 +11,7 @@
           <div class="wizard-form-details col-xxl-9 col-lg-8">
             <div class="theme-card my-3">
               <div class="wizard-step-1" [ngClass]="activeSteps == 1 ? 'd-block' : 'd-none'">
-                <app-property-general-details (activeSteps)="receiveChildData($event)"></app-property-general-details>
+                <app-property-general-details (activeSteps)="receiveChildData($event)" ></app-property-general-details>
               </div>
               <div class="wizard-step-2" [ngClass]="activeSteps == 2 ? 'd-block' : 'd-none'">
                 <app-property-address-details (activeSteps)="receiveChildData($event)"></app-property-address-details>
@@ -20,7 +20,13 @@
                 <app-property-gallery (activeSteps)="receiveChildData($event)"></app-property-gallery>
               </div>
               <div class="wizard-step-4" [ngClass]="activeSteps == 4 ? 'd-block' : 'd-none'">
-                <app-property-confirmation></app-property-confirmation>
+                <app-property-confirmation (activeSteps)="receiveChildData($event)"></app-property-confirmation>
+              </div>
+              <div class="wizard-step-4" [ngClass]="activeSteps == 5 ? 'd-block' : 'd-none'">
+                <app-property-listing (activeSteps)="receiveChildData($event)"></app-property-listing>
+              </div>
+              <div class="wizard-step-4" [ngClass]="activeSteps == 6 ? 'd-block' : 'd-none'">
+                <app-property-listing-confirmation ></app-property-listing-confirmation>
               </div>
             </div>
           </div>

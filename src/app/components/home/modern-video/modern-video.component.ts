@@ -15,8 +15,8 @@ export class ModernVideoComponent {
   public heading = 'Latest Property Listing';
   public desc = 'Discover New York’s best things to do, restaurants, theatre, nightlife and more';
 
-  public theme_default3 = '#ff5c41';
-  public theme_default4 = '#ff8c41';
+  public theme_default3 = '#63ad24';
+  public theme_default4 = '#6bc115';
 
   public latestForRentData: latestForRent[];
 

@@ -9,7 +9,7 @@ import { PropertyService } from '../../../shared/services/property.service';
 })
 export class ModulesFullBannerComponent {
 
-  public themeLogo = 'assets/images/logo/2.png';
+  public themeLogo = 'assets/images/logo/logo.png';
   public footerLogo = 'assets/images/logo/footer-logo.png';
 
   public bannerTitle1 = 'enterprise';
@@ -22,8 +22,8 @@ export class ModulesFullBannerComponent {
   public bannerData2: banner[] = [];
   public bannerData3: banner[] = [];
 
-  public theme_default3 = '#ff5c41';
-  public theme_default4 = '#ff8c41';
+  public theme_default3 = '#63ad24';
+  public theme_default4 = '#6bc115';
 
   constructor(private propertyService: PropertyService) {}
 

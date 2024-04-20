@@ -9,7 +9,7 @@ import { PropertyService } from '../../../shared/services/property.service';
 })
 export class ModulesOthersComponent {
 
-  public themeLogo = 'assets/images/logo/2.png';
+  public themeLogo = 'assets/images/logo/logo.png';
   public footerLogo = 'assets/images/logo/footer-logo.png';
   public bgImage = 'assets/images/inner-background.jpg';
   public title = 'Others';
@@ -24,8 +24,8 @@ export class ModulesOthersComponent {
   public propertyInCity: propertyInCity[] = [];
   public propertyOfDay: propertyOfDay[] = [];
 
-  public theme_default3 = '#ff5c41';
-  public theme_default4 = '#ff8c41';
+  public theme_default3 = '#63ad24';
+  public theme_default4 = '#6bc115';
 
   constructor(private propertyService: PropertyService) {}
 

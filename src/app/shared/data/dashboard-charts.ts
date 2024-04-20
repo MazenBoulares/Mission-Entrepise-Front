@@ -179,7 +179,7 @@ export const salesOverviewChart: ChartOptions | any = {
   legend: {
     show: false,
   },
-  colors: ['#ff5c41'],
+  colors: ['#63ad24'],
   fill: {
     type: 'gradient',
     gradient: {
@@ -276,7 +276,7 @@ export const salesOverviewChart: ChartOptions | any = {
       show: true,
       position: 'back',
       stroke: {
-        color: '#ff5c41',
+        color: '#63ad24',
         width: 1,
         dashArray: 0,
       },
@@ -328,7 +328,7 @@ export const salesByAgent: ChartOptions | any = {
       },
     },
   ],
-  colors: ['#ff8c41'],
+  colors: ['#6bc115'],
   fill: {
     type: 'gradient',
     gradient: {
@@ -407,7 +407,7 @@ export const availablePropertyData: ChartOptions | any = {
   },
   series: [80],
   labels: ['property'],
-  colors: ['#ff5c41'],
+  colors: ['#63ad24'],
   stroke: {
     lineCap: 'round',
   },

@@ -41,15 +41,15 @@ export const layoutThree: layout = {
   path: "/theme/enterprise",
   style: 'simple',
   footerStyle: 'basic',
-  headerLogo: 'assets/images/logo/2.png',
-  darkHeaderLogo: 'assets/images/logo/2.png',
+  headerLogo: 'assets/images/logo/logo.png',
+  darkHeaderLogo: 'assets/images/logo/logo.png',
   footerLogo: 'assets/images/logo/footer-logo.png',
   darkFooterLogo: 'assets/images/logo/footer-logo.png',
   headerClass: 'header-2',
   loaderType: 'classic',
   divClass: 'color-2',
-  themeColor1: '#ff5c41',
-  themeColor2: '#ff8c41',
+  themeColor1: '#63ad24',
+  themeColor2: '#6bc115',
   localStorageColor1: "--theme-default3",
   localStorageColor2: "--theme-default4"
 }
@@ -94,15 +94,15 @@ export const layoutSix: layout = {
   path: "/theme/modern",
   style: 'simple',
   footerStyle: 'basic',
-  headerLogo: 'assets/images/logo/2.png',
-  darkHeaderLogo: 'assets/images/logo/2.png',
+  headerLogo: 'assets/images/logo/logo.png',
+  darkHeaderLogo: 'assets/images/logo/logo.png',
   footerLogo: 'assets/images/logo/footer-logo.png',
   darkFooterLogo: 'assets/images/logo/footer-logo.png',
   headerClass: 'header-2',
   loaderType: 'classic',
   divClass: 'color-2',
-  themeColor1: '#ff5c41',
-  themeColor2: '#ff8c41',
+  themeColor1: '#63ad24',
+  themeColor2: '#6bc115',
   localStorageColor1: "--theme-default3",
   localStorageColor2: "--theme-default4"
 }
@@ -173,8 +173,8 @@ export const layoutTen: layout = {
   headerClass: 'fixed-header',
   loaderType: 'classic',
   divClass: 'color-2',
-  themeColor1: '#ff5c41',
-  themeColor2: '#ff8c41',
+  themeColor1: '#63ad24',
+  themeColor2: '#6bc115',
   localStorageColor1: "--theme-default3",
   localStorageColor2: "--theme-default4"
 }
@@ -223,8 +223,8 @@ export const lightHeaderLayout: layout = {
   headerClass: 'inner-page light-header shadow-cls',
   loaderType: 'classic',
   divClass: 'color-2',
-  themeColor1: '#ff5c41',
-  themeColor2: '#ff8c41',
+  themeColor1: '#63ad24',
+  themeColor2: '#6bc115',
   localStorageColor1: "--theme-default3",
   localStorageColor2: "--theme-default4"
 }
@@ -239,8 +239,8 @@ export const shadowClsLayout: layout = {
   headerClass: 'inner-page light-header shadow-cls',
   loaderType: 'classic',
   divClass: 'color-2',
-  themeColor1: '#ff5c41',
-  themeColor2: '#ff8c41',
+  themeColor1: '#63ad24',
+  themeColor2: '#6bc115',
   localStorageColor1: "--theme-default3",
   localStorageColor2: "--theme-default4"
 }
@@ -248,15 +248,15 @@ export const shadowClsLayout: layout = {
 export const innerPageLayout: layout = {
   style: 'simple',
   footerStyle: 'basic',
-  headerLogo: 'assets/images/logo/2.png',
-  darkHeaderLogo: 'assets/images/logo/2.png',
+  headerLogo: 'assets/images/logo/logo.png',
+  darkHeaderLogo: 'assets/images/logo/logo.png',
   footerLogo: 'assets/images/logo/footer-logo.png',
   darkFooterLogo: 'assets/images/logo/footer-logo.png',
   headerClass: 'inner-page',
   loaderType: 'classic',
   divClass: 'color-2',
-  themeColor1: '#ff5c41',
-  themeColor2: '#ff8c41',
+  themeColor1: '#63ad24',
+  themeColor2: '#6bc115',
   localStorageColor1: "--theme-default3",
   localStorageColor2: "--theme-default4"
 }
@@ -271,8 +271,8 @@ export const layoutStandHeader: layout = {
   headerClass: 'inner-page',
   loaderType: 'classic',
   divClass: 'color-2',
-  themeColor1: '#ff5c41',
-  themeColor2: '#ff8c41',
+  themeColor1: '#63ad24',
+  themeColor2: '#6bc115',
   localStorageColor1: "--theme-default3",
   localStorageColor2: "--theme-default4"
 }
@@ -287,8 +287,8 @@ export const noFooter: layout = {
   headerClass: 'inner-page light-header shadow-cls',
   loaderType: 'classic',
   divClass: 'color-2',
-  themeColor1: '#ff5c41',
-  themeColor2: '#ff8c41',
+  themeColor1: '#63ad24',
+  themeColor2: '#6bc115',
   localStorageColor1: "--theme-default3",
   localStorageColor2: "--theme-default4"
 }
@@ -303,8 +303,8 @@ export const noHeaderFooter: layout = {
   headerClass: 'inner-page light-header shadow-cls',
   loaderType: 'classic',
   divClass: 'color-2',
-  themeColor1: '#ff5c41',
-  themeColor2: '#ff8c41',
+  themeColor1: '#63ad24',
+  themeColor2: '#6bc115',
   localStorageColor1: "--theme-default3",
   localStorageColor2: "--theme-default4"
 }

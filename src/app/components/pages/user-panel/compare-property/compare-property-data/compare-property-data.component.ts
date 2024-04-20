@@ -17,8 +17,8 @@ export class ComparePropertyDataComponent {
 
   public compareData: latestForRent[];
   
-  public theme_default3 = '#ff5c41';
-  public theme_default4 = '#ff8c41';
+  public theme_default3 = '#63ad24';
+  public theme_default4 = '#6bc115';
 
   constructor(private store: Store) {}
 

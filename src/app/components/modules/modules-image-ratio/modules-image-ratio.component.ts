@@ -10,7 +10,7 @@ import { ModuleImageRatioData, modulesImageRatioImagesData } from '../../../shar
 })
 export class ModulesImageRatioComponent {
 
-  public themeLogo = 'assets/images/logo/2.png';
+  public themeLogo = 'assets/images/logo/logo.png';
   public footerLogo = 'assets/images/logo/footer-logo.png';
   public bgImage = 'assets/images/inner-background.jpg';
   public title = 'Image Ratio';
@@ -20,8 +20,8 @@ export class ModulesImageRatioComponent {
   public ModuleImageRatioData = ModuleImageRatioData;
   public modulesImageRatioImagesData = modulesImageRatioImagesData;
 
-  public theme_default3 = '#ff5c41';
-  public theme_default4 = '#ff8c41';
+  public theme_default3 = '#63ad24';
+  public theme_default4 = '#6bc115';
 
   constructor(public gallery: Gallery, public lightbox: Lightbox) {}
 

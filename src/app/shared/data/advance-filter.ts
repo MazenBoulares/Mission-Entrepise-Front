@@ -10,27 +10,43 @@ export const propertyStatus = [
     value: 'for_sale',
   },
 ];
-
-export const propertyType = [
+export const listingType =[
   {
     id: 1,
-    title: 'Apartment',
-    value: 'apartment',
+    title: 'FOR RENT',
+    value: 'RENT',
   },
   {
     id: 2,
-    title: 'Family House',
-    value: 'family_house',
+    title: 'FOR SALE',
+    value: 'SALE',
   },
   {
     id: 3,
-    title: 'Villa',
-    value: 'villa',
+    title: 'NEEDS ROOMMATE',
+    value: 'ROOMMATE',
+  },
+]
+export const propertyType = [
+  {
+    id: 1,
+    title: 'HOUSE',
+    value: 'HOUSE',
+  },
+  {
+    id: 2,
+    title: 'APARTMENT',
+    value: 'APARTMENT',
+  },
+  {
+    id: 3,
+    title: 'COMMERCIAL',
+    value: 'COMMERCIAL',
   },
   {
     id: 4,
-    title: 'Town House',
-    value: 'town_house',
+    title: 'OFFICE',
+    value: 'OFFICE',
   },
   {
     id: 5,
@@ -39,8 +55,18 @@ export const propertyType = [
   },
   {
     id: 6,
-    title: 'Duplex',
-    value: 'duplex',
+    title: 'WAREHOUSE',
+    value: 'WAREHOUSE',
+  },
+  {
+    id: 7,
+    title: 'GARAGE',
+    value: 'GARAGE',
+  },
+  {
+    id: 8,
+    title: 'OTHERS',
+    value: 'OTHER',
   },
 ];
 

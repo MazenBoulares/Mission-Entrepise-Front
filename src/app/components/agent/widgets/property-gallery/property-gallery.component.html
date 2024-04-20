@@ -6,7 +6,8 @@
     <ngx-dropzone-label>
       <div class="dz-message needsclick">
         <i class="fas fa-cloud-upload-alt"></i>
-        <h6>Drop files here or click to upload.</h6><span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
+        <h6>Drop files here or click to upload.</h6>
+        <!-- <span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span> -->
       </div>
     </ngx-dropzone-label>
     @for(f of files; track f){
@@ -18,31 +19,34 @@
 </form>
 <form class="row gx-3">
   <div class="form-group col-sm-12">
-    <label>Video (mp4)</label>
-    <input type="text" class="form-control" placeholder="mp4 video link">
-  </div>
-  <div class="form-group col-sm-12">
     <label>Additional features</label>
     <div class="feature-checkbox">
-      <label for="chk-ani">
-        <input class="checkbox_animated color-2" id="chk-ani" type="checkbox"> Emergency Exit
-      </label>
-      <label for="chk-ani1">
-        <input class="checkbox_animated color-2" id="chk-ani1" type="checkbox"> CCTV
-      </label>
-      <label for="chk-ani2">
-        <input class="checkbox_animated color-2" id="chk-ani2" type="checkbox"> Free Wi-Fi
-      </label>
-      <label for="chk-ani3">
-        <input class="checkbox_animated color-2" id="chk-ani3" type="checkbox"> Free Parking In The Area
-      </label>
-      <label for="chk-ani4">
-        <input class="checkbox_animated color-2" id="chk-ani4" type="checkbox"> Air Conditioning
-      </label>
+      <ng-container *ngFor="let feature of additionalFeatures">
+        <label [for]="'chk-' + feature.featureTitle">
+          <input class="checkbox_animated color-2" [id]="'chk-' + feature.featureTitle" type="checkbox"> {{ feature.featureTitle }}
+        </label>
+      </ng-container>
     </div>
   </div>
 </form>
 <div class="next-btn d-flex">
   <button type="button" class="btn btn-dashed color-2 prev2 btn-pill" (click)="previous()"><i class="fas fa-arrow-left me-2"></i> Previous</button>
-  <button type="button" class="btn btn-gradient color-2 next3 btn-pill" (click)="next()">Next <i class="fas fa-arrow-right ms-2"></i></button>
+  <button type="button" class="btn btn-gradient color-2 next3 btn-pill" (click)="openModalFunction(myModalContent)">Next <i class="fas fa-arrow-right ms-2"></i></button>
+  <ng-template #myModalContent let-modal>
+
+    <div class="modal-header">
+        <button type="button" class="btn btn-dashed"  class="close" (click)="modal.dismiss()">
+            <span>&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+      <h3>Are you sure you want to save this property?</h3>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-gradient color-2 next3 btn-pill" (click)="closeModalFunction()">No <i class="fas fa-arrow-right ms-2"></i></button>
+      <button type="button" class="btn btn-gradient color-2 next3 btn-pill" (click)="next()">Yes <i class="fas fa-arrow-right ms-2"></i></button>
+    </div>
+
+</ng-template>
 </div>

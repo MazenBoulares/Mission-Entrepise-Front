@@ -8,7 +8,7 @@ import { PropertyService } from '../../../shared/services/property.service';
 })
 export class StickyTabComponent {
 
-  public themeLogo = 'assets/images/logo/2.png';
+  public themeLogo = 'assets/images/logo/logo.png';
   public footerLogo = 'assets/images/logo/footer-logo.png';
   public title = 'sticky_tab';
 
@@ -17,8 +17,8 @@ export class StickyTabComponent {
   public latestForRentData: latestForRent[] = [];
   public propertyData: propertyDetailsData;
 
-  public theme_default3 = '#ff5c41';
-  public theme_default4 = '#ff8c41';
+  public theme_default3 = '#63ad24';
+  public theme_default4 = '#6bc115';
 
   constructor(private propertyService: PropertyService) {}
 
