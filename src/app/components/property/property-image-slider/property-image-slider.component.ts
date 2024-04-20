@@ -14,10 +14,10 @@ import { getPropertyDetails } from '../../../shared/store/actions/property-detai
 })
 export class PropertyImageSliderComponent {
 
-  public themeLogo = 'assets/images/logo/4.png';
+  public themeLogo = 'assets/images/logo/logo.png';
   public darkHeaderLogo = 'assets/images/logo/9.png'
   public footerLogo = 'assets/images/logo/footer-logo.png';
-
+  public test = "test";
   public propertyDetailsData: propertyDetailsData;
   public propertyData: propertyDetailsData;
   public propertyId: number;

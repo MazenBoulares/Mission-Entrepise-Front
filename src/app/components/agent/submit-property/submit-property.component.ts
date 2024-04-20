@@ -15,6 +15,7 @@ export class SubmitPropertyComponent {
   public title = 'Add Property';
   public parent = 'Home';
   public child = 'Add Property';
+  public test = 'test';
 
   public addPropertyStepsData = addPropertyStepsData;
   public activeSteps: number;
