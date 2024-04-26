@@ -68,7 +68,5 @@ export class PropertyAddressDetailsComponent {
     return this.myForm.get('addressState');
   }
 
-logForm() {
-  console.log(this.myForm.value);
-}
+
 }

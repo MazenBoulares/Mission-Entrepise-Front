@@ -46,33 +46,30 @@ export class PropertyGalleryComponent {
   isLoading: boolean = false;
 
   // add New Property 
-  addNewProperty() {
-    this.isLoading = true; // Start loading
-    this.generalDetails = this.formDataService.getFormGroup('generalDetails');
-    this.addressDetails = this.formDataService.getFormGroup('addressDetails');
-    const propertyData = {
-      address:this.addressDetails.value,
-      ...this.generalDetails.value,
-    };
-    this.onUpload().then(() => {
-      // Transform image URLs into the required format
+  async addNewProperty() {
+    try {
+      this.isLoading = true; // Start loading
+      this.generalDetails = this.formDataService.getFormGroup('generalDetails');
+      this.addressDetails = this.formDataService.getFormGroup('addressDetails');
+      const propertyData = {
+        address: this.addressDetails.value,
+        ...this.generalDetails.value,
+      };
+
+      await this.onUpload(); // Wait for file uploads to complete
+
       const propertyImagesUrl = this.imageUrls.map(url => ({ imageUrl: url }));
-      // Add the image URLs to the property data
       propertyData.propertyImagesUrl = propertyImagesUrl;
-      // this.isLoading = false; // Stop loading after upload
-      console.log(propertyData)
-      // Optionally, send the combined data and images URL to the backend
-      this.propertyService.addNewProperty(propertyData).subscribe({
-        next: (data) => { console.log("property added succufuly") ; console.log(data) },
-        error: (err) => { console.log(err) },
-    });
-    }).catch(error => {
-      // this.isLoading = false; // Stop loading on error
-      console.error('Error during file upload:', error);
-    });
 
+      const data = await this.propertyService.addNewProperty(propertyData).toPromise();
+      console.log('Property added successfully:', data);
+    } catch (error) {
+      console.error('Error adding property:', error);
+      throw error; // Propagate the error to the caller (next() method)
+    } finally {
+      this.isLoading = false; // Stop loading
+    }
   }
-
   onUpload(): Promise<void> {
     return new Promise((resolve, reject) => {
       if (this.files.length > 0) {
@@ -113,16 +110,20 @@ export class PropertyGalleryComponent {
     this.activeSteps.emit(number);
   }
 
-  next() {
+  async  next() {
     if (this.files.length >= 1 && this.files.length < 4) {
-      const number = this.activeStep + 1;
-      this.closeModalFunction()
-      this.addNewProperty()
-      this.activeSteps.emit(number);
+      try {
+        await this.addNewProperty(); // Wait for addNewProperty() to complete
+        this.closeModalFunction(); // Close modal after property is added
+        const number = this.activeStep + 1;
+        this.activeSteps.emit(number); // Proceed to the next step
+      } catch (error) {
+        console.error('Error adding property:', error);
+        alert('Error adding property. Please try again.');
+      }
     } else {
       this.validation = true;
     }
-
   }
 
   onSelect(event: NgxDropzoneChangeEvent) {
@@ -136,7 +137,9 @@ export class PropertyGalleryComponent {
   // Modal functionaliy
   //function to open modal
   openModalFunction(content: any) {
-    this.modalService.open(content);
+    if (this.files.length >= 1 && this.files.length < 4){
+      this.modalService.open(content);
+    }
   }
   //function to close modal
   closeModalFunction() {

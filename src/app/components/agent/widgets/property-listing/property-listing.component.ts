@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { listingType, propertyStatus, propertyType } from 'src/app/shared/data/advance-filter';
+import {FormDataService} from "../../../../services/form-data.service";
+import {ListingService} from "../../../../services/listing.service";
 
 @Component({
   selector: 'app-property-listing',
@@ -15,7 +17,8 @@ export class PropertyListingComponent {
 
   public listing_type = listingType;
   public location = location;
-
+  constructor(private  formDataService :FormDataService, private listingService:ListingService) {
+  }
 
 
   public myForm = new FormGroup({
@@ -24,12 +27,26 @@ export class PropertyListingComponent {
     listingDescription: new FormControl('', Validators.required),
     price: new FormControl('', Validators.required),
   });
-  logForm() {
-    console.log(this.myForm.value);
+
+  public propertyId : number;
+  public isLoading : boolean;
+  async  addNewListing(){
+    try {
+      this.isLoading = true; // Start loading
+      this.propertyId = this.formDataService.getIdProperty('idProperty');
+      const data = await this.listingService.addNewListing(this.myForm.value,this.propertyId).toPromise();
+      console.log('Listing added successfully:', data);
+    } catch (error) {
+      console.error('Error adding Listing:', error);
+      throw error; // Propagate the error to the caller (next() method)
+    } finally {
+      this.isLoading = false; // Stop loading
+    }
   }
-  next(myForm: FormGroup) {
+  async next(myForm: FormGroup) {
     if (this.myForm.invalid) {
       this.validate = true;
+      await this.addNewListing();
     } else {
       const number = this.activeStep + 1;
       this.activeSteps.emit(number);
