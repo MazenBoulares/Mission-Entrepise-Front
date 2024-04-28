@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { listingType, propertyStatus, propertyType } from 'src/app/shared/data/advance-filter';
 import {FormDataService} from "../../../../services/form-data.service";
 import {ListingService} from "../../../../services/listing.service";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-property-listing',
@@ -17,7 +18,7 @@ export class PropertyListingComponent {
 
   public listing_type = listingType;
   public location = location;
-  constructor(private  formDataService :FormDataService, private listingService:ListingService) {
+  constructor(private  formDataService :FormDataService, private listingService:ListingService, private modalService: NgbModal) {
   }
 
 
@@ -46,8 +47,9 @@ export class PropertyListingComponent {
   async next(myForm: FormGroup) {
     if (this.myForm.invalid) {
       this.validate = true;
-      await this.addNewListing();
     } else {
+      await this.addNewListing();
+      this.closeModalFunction()
       const number = this.activeStep + 1;
       this.activeSteps.emit(number);
     }
@@ -69,5 +71,12 @@ export class PropertyListingComponent {
     return this.myForm.get('price');
   }
 
+  openModalFunction(content: any) {
+      this.modalService.open(content);
 
+  }
+  //function to close modal
+  closeModalFunction() {
+    this.modalService.dismissAll();
+  }
 }

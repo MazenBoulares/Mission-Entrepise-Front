@@ -16,6 +16,6 @@ export class FeatureService {
 
   // Home Slider Data
   getAllFeatures(): Observable<Feature[]> {
-    return this.http.get<Feature[]>('http://localhost:8082/feature/getAll', { headers: this.headers });
+    return this.http.get<Feature[]>('http://localhost:8082/feature/getAll');
   }
 }

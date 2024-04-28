@@ -18,6 +18,7 @@ import { PropertyGalleryComponent } from './widgets/property-gallery/property-ga
 import { PropertyConfirmationComponent } from './widgets/property-confirmation/property-confirmation.component';
 import { PropertyListingComponent } from './widgets/property-listing/property-listing.component';
 import { PropertyListingConfirmationComponent } from './widgets/property-listing-confirmation/property-listing-confirmation.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { PropertyListingConfirmationComponent } from './widgets/property-listing
     AgencyModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    NgbModule
   ]
 })
 export class AgentModule { }

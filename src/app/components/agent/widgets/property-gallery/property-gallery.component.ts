@@ -62,6 +62,7 @@ export class PropertyGalleryComponent {
       propertyData.propertyImagesUrl = propertyImagesUrl;
 
       const data = await this.propertyService.addNewProperty(propertyData).toPromise();
+      this.formDataService.registerIdProperty(data.propertyId)
       console.log('Property added successfully:', data);
     } catch (error) {
       console.error('Error adding property:', error);
