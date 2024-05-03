@@ -106,6 +106,8 @@ export interface latestForRent {
   propertyType: string | number;
   agencies: string;
   labels: string[];
+  rent?: boolean;
+  roommate?: boolean;
   sale?: boolean;
   fees?: boolean;
   openHouse?: boolean;
@@ -464,6 +466,10 @@ export interface areaFilter{
 
 export interface statusParams{
   status : string
+}
+
+export interface listingParams{
+  type : string
 }
 
 export interface categoryParams {

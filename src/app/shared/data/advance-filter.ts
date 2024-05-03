@@ -1,13 +1,18 @@
 export const propertyStatus = [
   {
     id: 1,
-    title: 'For Rent',
-    value: 'for_rent',
+    title: 'FOR RENT',
+    value: 'RENT',
   },
   {
     id: 2,
-    title: 'For Sale',
-    value: 'for_sale',
+    title: 'FOR SALE',
+    value: 'SALE',
+  },
+  {
+    id: 3,
+    title: 'NEEDS ROOMMATE',
+    value: 'ROOMMATE',
   },
 ];
 export const listingType =[

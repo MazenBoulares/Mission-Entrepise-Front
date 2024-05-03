@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
 import { Feature } from '../classes/features';
 import {ACCESS_TOKEN} from "./constante";
-
+// import '@angular/compiler';
 @Injectable({
   providedIn: 'root'
 })

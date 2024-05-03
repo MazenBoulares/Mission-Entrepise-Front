@@ -24,10 +24,10 @@ export class PropertyImageSliderHomeSectionComponent {
   };
 
   constructor(public gallery: Gallery, public lightbox: Lightbox){}
-
+  
   openLightBox(){
     this.items = this.propertyImageSliderHome.map(item => new ImageItem({ src: item.url, thumb: item.url }));
-
+    
     const lightboxRef = this.gallery.ref('lightbox');
 
     lightboxRef.setConfig({

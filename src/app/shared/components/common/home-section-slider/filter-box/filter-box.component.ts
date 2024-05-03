@@ -91,6 +91,7 @@ public options: Options = {
     });
 
     propertyService.latestForRentData().subscribe((data) => {
+      console.log(data)
       data.latestForRent.forEach((price) => {
         this.priceArray.push(price.price);
       });

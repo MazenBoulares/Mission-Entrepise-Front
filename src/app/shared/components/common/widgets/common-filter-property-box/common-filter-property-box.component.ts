@@ -7,6 +7,7 @@ import { PropertyBoxGridService } from '../../../../../shared/services/property-
 import { PropertyService } from '../../../../../shared/services/property.service';
 import { getCategory } from '../../../../../shared/store/actions/category.action';
 import { categoryState } from '../../../../../shared/store/states/category.state';
+import { ListingService } from 'src/app/services/listing.service';
 
 
 @Component({
@@ -72,7 +73,8 @@ export class CommonFilterPropertyBoxComponent {
     private propertyBoxGridService: PropertyBoxGridService,
     private route: ActivatedRoute,
     private router: Router,
-    private store: Store
+    private store: Store,
+    private listingService:ListingService
   ) {
     this.route.queryParams.subscribe((params) => {
       this.category = params['category'] ? params['category'].split(',') : [];
@@ -96,20 +98,11 @@ export class CommonFilterPropertyBoxComponent {
       this.paramsTagData.emit(this.paramsTag);
 
       this.store.dispatch(new getCategory(this.paramsTag, this.price, this.area, this.category, this.sortBy));
-
-      this.category$.subscribe((res) => {
-        this.latestForRentData = res;
-
-        // Pagination
-        this.paginate = this.propertyService.getPager(this.latestForRentData?.length, +this.pageNo );
-        this.paginationData.emit(this.paginate);
-
-        this.latestForRentData = this.latestForRentData?.slice(this.paginate.startIndex,this.paginate.endIndex + 1);
-      });
+      this.fetchListings();
     });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     if (this.type == 'grid-2') {
       this.propertyBoxGridService.col_md_6 = true;
       this.propertyBoxGridService.col_xl_4 = false;
@@ -131,6 +124,19 @@ export class CommonFilterPropertyBoxComponent {
         this.propertyBoxGridService.col_xl_12 = true;
         this.propertyBoxGridService.col_md_6 = false;
       }
+    }
+  }
+
+  private async fetchListings() {
+    try {
+      const response = await this.listingService.getAllListing().toPromise();
+      this.latestForRentData = response.map(this.mapToListing).filter(Boolean);
+      this.paginate = this.propertyService.getPager(this.latestForRentData?.length, +this.pageNo );
+      this.paginationData.emit(this.paginate);
+
+      this.latestForRentData = this.latestForRentData?.slice(this.paginate.startIndex,this.paginate.endIndex + 1);
+    } catch (error) {
+      console.error('Error fetching listings:', error);
     }
   }
 
@@ -231,5 +237,35 @@ export class CommonFilterPropertyBoxComponent {
     this.propertyBoxGridService.col_xl_12 = false;
     this.propertyBoxGridService.col_xl_4 = false;
     this.propertyBoxGridService.col_xl_6 = false;
+  }
+  private mapToListing(item: any): latestForRent {
+    // Perform mapping of backend data to front-end model latestForRent
+    // Example:
+    return {
+      id: item.listingId,
+      type: item.listingType,
+      img: item.property.propertyImagesUrl.map((image: { imageUrl: any; }) => ({ url: image.imageUrl })),
+      thumbnail: item.property.propertyImagesUrl[0].imageUrl, // Assuming first image is thumbnail
+      propertyStatus: item.listingStatus,
+      country: item.property.address.addressCountry,
+      title: item.listingTitle,
+      price: item.price,
+      details: item.listingDescription,
+      home: item.property.propertyType, // You need to specify where this data comes from
+      bed: item.property.propertyBedrooms.toString(),
+      bath: item.property.propertyBathrooms.toString(),
+      sqft: item.property.propertySurface,
+      rooms: item.property.propertyBedrooms,
+      date: item.listingCreationDate ? item.listingCreationDate.join('/') : '', // Assuming date is an array [year, month, day]
+      propertyType: item.property.propertyType,
+      agencies: '', // You need to specify where this data comes from
+      labels:item.listingType === 'SALE'? ['sale']:item.listingType==='RENT'?['rent']:['roommate'], // You need to specify where this data comes from
+      sale: item.listingType === 'SALE',
+      rent: item.listingType === 'RENT',
+      roommate: item.listingType === 'ROOMMATE',
+      fees: false, // You need to specify where this data comes from
+      openHouse: false, // You need to specify where this data comes from
+      sold: item.listingStatus === 'SOLD',
+    };
   }
 }
