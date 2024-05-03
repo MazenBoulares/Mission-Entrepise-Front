@@ -13,9 +13,9 @@ export class Grid2LeftSidebarComponent {
   public themeLogo = 'assets/images/logo/logo.png';
   public footerLogo = 'assets/images/logo/footer-logo.png';
   public bgImage = 'assets/images/inner-background.jpg';
-  public title = 'Left sidebar view';
+  public title = 'Property Listings';
   public parent = 'Listing';
-  public child = 'Left sidebar view';
+  public child = 'Property Listings';
 
   public listView: boolean = false;
   public categoryValue: string;

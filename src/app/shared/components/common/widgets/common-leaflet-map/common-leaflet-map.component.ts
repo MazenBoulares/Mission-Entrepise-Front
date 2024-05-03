@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import * as L from 'leaflet';
 
 
@@ -8,9 +8,12 @@ import * as L from 'leaflet';
   styleUrls: ['./common-leaflet-map.component.scss']
 })
 export class CommonLeafletMapComponent {
+  @Output() markerCoordinates = new EventEmitter<{ latitude : number, longitude: number }>();
 
   public map: L.Map;
   public markers: L.Marker[] = [];
+  public marker: L.Marker;
+
   public options: L.MapOptions = {
     layers: [
       L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -26,50 +29,17 @@ export class CommonLeafletMapComponent {
   initMarkers() {
     // Static Data For Map Markers
     const initialMarkers: any[] = [
-      {
-            name: 'Sea Breezes',
-            position: [25.206426, 55.346465],
-            map_image_url: 'assets/images/property/15.jpg',
-            price: '$1200',
-            label: 'for sale',
-            bed: '4',
-            bath: '4',
-            sqft: '5000',
-            draggable: true
-        },
-        {
-            name: 'Orchard House',
-            position: [25.222578, 55.319011],
-            map_image_url: 'assets/images/6.jpg',
-            price: '$1200',
-            label: 'for rent',
-            bed: '8',
-            bath: '6',
-            sqft: '5800',
-            draggable: true
-        },
-        {
-            name: 'Neverland',
-            position: [25.209843, 55.293616],
-            map_image_url: 'assets/images/property/14.jpg',
-            price: '$1200',
-            label: 'for sale',
-            bed: '4',
-            bath: '4',
-            sqft: '5000',
-            draggable: true
-        },
-        {
-            name: 'Home in Merrick Way',
-            position: [25.229721, 55.328229],
-            map_image_url: 'assets/images/feature/9.jpg',
-            price: '$1200',
-            label: 'for rent',
-            bed: '5',
-            bath: '3',
-            sqft: '6000',
-            draggable: true
-        }
+      // {
+      //       name: 'Sea Breezes',
+      //       position: [25.206426, 55.346465],
+      //       map_image_url: 'assets/images/property/15.jpg',
+      //       price: '$1200',
+      //       label: 'for sale',
+      //       bed: '4',
+      //       bath: '4',
+      //       sqft: '5000',
+      //       draggable: true
+      //   },
     ];
 
     initialMarkers.forEach((data, index) => {
@@ -93,9 +63,41 @@ export class CommonLeafletMapComponent {
 
   onMapReady($event: L.Map) {
     this.map = $event;
+    // Locate user's current location
+    this.map.locate({ setView: true, maxZoom: 15 });
     this.initMarkers();
+    this.map.on('locationfound', (e) => {
+      this.map.setView(e.latlng, 15);
+      console.log('Current Location:', e.latlng);
+    });
+    this.map.on('click', (e) => this.onMapClick(e));
+    // this.initMarkers();
   }
 
+  onMapClick(event: L.LeafletMouseEvent) {
+    if (!this.marker) {
+      this.marker = L.marker(event.latlng, { draggable: true }).addTo(this.map);
+      this.marker.on('click', () => this.deleteMarker());
+      this.logCoordinates(event.latlng);
+
+    } else {
+      this.map.removeLayer(this.marker);
+      this.marker = L.marker(event.latlng, { draggable: true }).addTo(this.map);
+      this.marker.on('click', () => this.deleteMarker());
+      this.logCoordinates(event.latlng);
+    }
+  }
+  deleteMarker() {
+    if (this.marker) {
+      this.map.removeLayer(this.marker);
+    }
+  }
+
+  logCoordinates(latlng: L.LatLng) {
+    console.log('Coordinates:', latlng.lat, latlng.lng);
+    this.markerCoordinates.emit({ latitude : latlng.lat, longitude: latlng.lng });
+
+  }
   mapClicked($event: L.LeafletMouseEvent) {}
 
   markerClicked($event: L.LeafletMouseEvent, index: number) {}

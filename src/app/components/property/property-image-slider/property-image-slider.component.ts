@@ -43,11 +43,11 @@ export class PropertyImageSliderComponent {
 
       })
 
-     this.store.dispatch(new getPropertyDetails(this.propertyId));
+    //  this.store.dispatch(new getPropertyDetails(this.propertyId));
 
-      this.property$.subscribe((res) => {
-        this.propertyDetails = res[0]
-      })
+    //   this.property$.subscribe((res) => {
+    //     this.propertyDetails = res[0]
+    //   })
   }
 
   ngOnInit() {

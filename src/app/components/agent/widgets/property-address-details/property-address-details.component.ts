@@ -18,6 +18,8 @@ export class PropertyAddressDetailsComponent {
   public validate: boolean = false;
   public location = location;
   public cities = city;
+  public markerCoordinates: { latitude: number, longitude: number } = { latitude: 200, longitude: 200 }; // Initialize marker coordinates
+
   constructor(
     private formDataService: FormDataService
   ) { }
@@ -32,6 +34,8 @@ export class PropertyAddressDetailsComponent {
     addressCountry: new FormControl('', Validators.required),
     addressCity: new FormControl('', Validators.required),
     addressState: new FormControl('', Validators.required),
+    latitude: new FormControl(200),
+    longitude: new FormControl(200)
   });
 
   previous() {
@@ -40,11 +44,15 @@ export class PropertyAddressDetailsComponent {
   }
   next(myForm: FormGroup) {
    if (this.myForm.invalid) {
+     console.log(this.markerCoordinates)
      this.validate = true;
-   } else {
-     const number = this.activeStep + 1;
-     this.formDataService.registerFormGroup('addressDetails', this.myForm);
-     this.activeSteps.emit(number);
+   }
+   else {
+      this.myForm.get("latitude")?.setValue(this.markerCoordinates.latitude)
+      this.myForm.get("longitude")?.setValue(this.markerCoordinates.longitude)
+      const number = this.activeStep + 1;
+      this.formDataService.registerFormGroup('addressDetails', this.myForm);
+      this.activeSteps.emit(number);
    }
   }
 
@@ -67,6 +75,8 @@ export class PropertyAddressDetailsComponent {
   get addressState() {
     return this.myForm.get('addressState');
   }
-
+  handleMarkerCoordinates(coordinates: { latitude: number, longitude: number }) {
+    this.markerCoordinates = coordinates;
+  }
 
 }

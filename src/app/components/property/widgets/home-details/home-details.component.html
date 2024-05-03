@@ -4,7 +4,10 @@
       <div class="left-single">
         <div class="d-flex">
           <h2 class="mb-0">{{ propertyDetails ? propertyDetails.title : 'Orchard House' }} </h2>
-          <span><span class="label label-shadow ms-2">For Sale</span></span>
+          @if(propertyDetails.labels.includes("sale")){ <span><span class="label label-shadow ms-2">For Sale</span></span>}
+          @if(propertyDetails.labels.includes("rent")){ <span><span class="label label-dark ms-2">For Rent</span></span>}
+          @if(propertyDetails.labels.includes("roommate")){ <span><span class="label label-success ms-2">Needs Roommate</span></span>}
+
         </div>
         <p class="mt-2">{{ propertyDetails ? propertyDetails.country : 'Mina Road, Bur Dubai, Dubai, United Arab Emirates' }}</p>
         <ul>
