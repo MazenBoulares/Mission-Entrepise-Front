@@ -31,9 +31,10 @@ export class LoginFormComponent {
           tap((response) => {
             console.log('Login successful');
             console.log(response);
-            this.router.navigate(['/home']);
+            this.router.navigate(['/agent/submit-property']);
           }),
           catchError((error) => {
+            console.log("blablabl");
             console.log('Login failed');
             return of(error);
           })

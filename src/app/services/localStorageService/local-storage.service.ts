@@ -17,6 +17,35 @@ export class LocalStorageService {
     }
 
 
+  
+
+
+    storeUserDataToLocalStorage(userData: any): void {
+        const userDataToSave = {
+          userId: userData.userId,
+          username: userData.username,
+          email: userData.email,
+          firstName: userData.firstName,
+          lastName: userData.lastName,
+          phoneNumber: userData.phoneNumber,
+          address: userData.address,
+          dateOfBirth: userData.dateOfBirth
+        };
+      
+        localStorage.setItem('userData', JSON.stringify(userDataToSave));
+      }
+
+
+      getUserDataFromLocalStorage(): string | null {
+        return localStorage.getItem('userData');
+      }
+    
+
+
+
+
+
+
     getTokenClaims(): any {
         const token = this.getToken();
         if (token) {

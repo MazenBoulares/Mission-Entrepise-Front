@@ -7,6 +7,7 @@ import { FormDataService } from 'src/app/services/form-data.service';
 import { ImageUploadService } from 'src/app/services/image-upload.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PropertyService } from 'src/app/services/property.service';
+import { UserService } from 'src/app/services/userService';
 
 @Component({
   selector: 'app-property-gallery',
@@ -14,6 +15,8 @@ import { PropertyService } from 'src/app/services/property.service';
   styleUrls: ['./property-gallery.component.scss'],
 })
 export class PropertyGalleryComponent {
+
+  currentUser: any;
 
   @Output() activeSteps = new EventEmitter<number>();
 
@@ -25,10 +28,19 @@ export class PropertyGalleryComponent {
   public validation: boolean = false;
   public additionalFeatures: Feature[] = [];
 
-  constructor(private propertyService: PropertyService, private featureService: FeatureService, private imageUploadService: ImageUploadService, private formDataService: FormDataService, private modalService: NgbModal) {
+  constructor(private userService: UserService, private propertyService: PropertyService, private featureService: FeatureService, private imageUploadService: ImageUploadService, private formDataService: FormDataService, private modalService: NgbModal) {
   }
 
   ngOnInit() {
+
+      //get current logged in user
+    this.currentUser = this.userService.currentUser;
+
+    console.log("**************** THE ID ****************")
+    console.log(typeof this.currentUser.userId);
+    console.log("**************** THE ID ****************")
+
+
     this.fetchFeatureData()
   }
 
@@ -51,9 +63,16 @@ export class PropertyGalleryComponent {
       this.isLoading = true; // Start loading
       this.generalDetails = this.formDataService.getFormGroup('generalDetails');
       this.addressDetails = this.formDataService.getFormGroup('addressDetails');
+
+      console.log("**************** THE ID 2 ****************")
+      console.log(this.currentUser.userId)
+      console.log("**************** THE ID 2 ****************")
+
       const propertyData = {
         address: this.addressDetails.value,
         ...this.generalDetails.value,
+
+         landlord: {userId: this.currentUser.userId}
       };
 
       await this.onUpload(); // Wait for file uploads to complete
