@@ -2,12 +2,26 @@ import { Component, ViewChild } from '@angular/core';
 import { addPropertyStepsData } from '../../../shared/data/add-property';
 import { PropertyGeneralDetailsComponent } from '../widgets/property-general-details/property-general-details.component';
 
+import { LocalStorageService } from 'src/app/services/localStorageService/local-storage.service';
+import { UserService } from 'src/app/services/userService';
+
+
+
 @Component({
   selector: 'app-submit-property',
   templateUrl: './submit-property.component.html',
   styleUrls: ['./submit-property.component.scss'],
 })
 export class SubmitPropertyComponent {
+
+
+
+  constructor(private userService: UserService, private localStorageService:LocalStorageService) {
+  }
+
+
+
+
 
   public themeLogo = 'assets/images/logo/logo.png';
   public footerLogo = 'assets/images/logo/footer-logo.png';
@@ -28,7 +42,22 @@ export class SubmitPropertyComponent {
   public theme_default3 = '#63ad24';
   public theme_default4 = '#6bc115';
 
+  currentUser: any;
+
   ngOnInit() {
+
+
+  // ***** auth (will be trasnfered to HOME later) *****
+    const userData = this.localStorageService.getUserDataFromLocalStorage();
+    if (userData) {
+      this.userService.currentUser = JSON.parse(userData);
+    } else {
+      console.error('User data not found in local storage');
+    }
+// ***** /auth (will be trasnfered to HOME later) *****
+
+
+
     document.documentElement.style.setProperty('--theme-default', this.theme_default3);
     document.documentElement.style.setProperty('--theme-default3', this.theme_default3);
     document.documentElement.style.setProperty('--theme-default4', this.theme_default4);
