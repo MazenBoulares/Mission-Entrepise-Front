@@ -35,54 +35,54 @@ import { EnterpriseLookingForComponent } from './enterprise/enterprise-looking-f
 import { EnterprisePeopleSayComponent } from './enterprise/enterprise-people-say/enterprise-people-say.component';
 import { EnterprisePropertyOfDayComponent } from './enterprise/enterprise-property-of-day/enterprise-property-of-day.component';
 import { EnterprisePropertyServiceComponent } from './enterprise/enterprise-property-service/enterprise-property-service.component';
-import { EnterpriseComponent } from './enterprise/enterprise.component';
-import { ImageContentHomeSectionComponent } from './image-content/image-content-home-section/image-content-home-section.component';
-import { ImageContentComponent } from './image-content/image-content.component';
-import { SliderFilterAgentsComponent } from './slider-filter-search/slider-filter-agents/slider-filter-agents.component';
-import { SliderFilterBannerComponent } from './slider-filter-search/slider-filter-banner/slider-filter-banner.component';
-import { SliderFilterBrandComponent } from './slider-filter-search/slider-filter-brand/slider-filter-brand.component';
-import { SliderFilterFeaturedPropertyComponent } from './slider-filter-search/slider-filter-featured-property/slider-filter-featured-property.component';
-import { SliderFilterHappyClientComponent } from './slider-filter-search/slider-filter-happy-client/slider-filter-happy-client.component';
-import { SliderFilterHomeSliderComponent } from './slider-filter-search/slider-filter-home-slider/slider-filter-home-slider.component';
-import { SliderFilterLatestRentComponent } from './slider-filter-search/slider-filter-latest-rent/slider-filter-latest-rent.component';
-import { SliderFilterLatestSaleComponent } from './slider-filter-search/slider-filter-latest-sale/slider-filter-latest-sale.component';
-import { SliderFilterNewOfferComponent } from './slider-filter-search/slider-filter-new-offer/slider-filter-new-offer.component';
-import { SliderFilterPropertyInCitiesComponent } from './slider-filter-search/slider-filter-property-in-cities/slider-filter-property-in-cities.component';
-import { SliderFilterSearchComponent } from './slider-filter-search/slider-filter-search.component';
-import { ImageContentBrandComponent } from './image-content/image-content-brand/image-content-brand.component';
+// import { EnterpriseComponent } from './enterprise/enterprise.component';
+// import { ImageContentHomeSectionComponent } from './image-content/image-content-home-section/image-content-home-section.component';
+// import { ImageContentComponent } from './image-content/image-content.component';
+// import { SliderFilterAgentsComponent } from './slider-filter-search/slider-filter-agents/slider-filter-agents.component';
+// import { SliderFilterBannerComponent } from './slider-filter-search/slider-filter-banner/slider-filter-banner.component';
+// import { SliderFilterBrandComponent } from './slider-filter-search/slider-filter-brand/slider-filter-brand.component';
+// import { SliderFilterFeaturedPropertyComponent } from './slider-filter-search/slider-filter-featured-property/slider-filter-featured-property.component';
+// import { SliderFilterHappyClientComponent } from './slider-filter-search/slider-filter-happy-client/slider-filter-happy-client.component';
+// import { SliderFilterHomeSliderComponent } from './slider-filter-search/slider-filter-home-slider/slider-filter-home-slider.component';
+// import { SliderFilterLatestRentComponent } from './slider-filter-search/slider-filter-latest-rent/slider-filter-latest-rent.component';
+// import { SliderFilterLatestSaleComponent } from './slider-filter-search/slider-filter-latest-sale/slider-filter-latest-sale.component';
+// import { SliderFilterNewOfferComponent } from './slider-filter-search/slider-filter-new-offer/slider-filter-new-offer.component';
+// import { SliderFilterPropertyInCitiesComponent } from './slider-filter-search/slider-filter-property-in-cities/slider-filter-property-in-cities.component';
+// import { SliderFilterSearchComponent } from './slider-filter-search/slider-filter-search.component';
+// import { ImageContentBrandComponent } from './image-content/image-content-brand/image-content-brand.component';
 import { ModernComponent } from './modern/modern.component';
 import { ModernHomeSectionComponent } from './modern/modern-home-section/modern-home-section.component';
-import { ParallaxImageComponent } from './parallax-image/parallax-image.component';
-import { ParallaxImageHomeSectionComponent } from './parallax-image/parallax-image-home-section/parallax-image-home-section.component';
-import { SearchTabComponent } from './search-tab/search-tab.component';
-import { SearchTabHomeSectionComponent } from './search-tab/search-tab-home-section/search-tab-home-section.component';
-import { TypedImageComponent } from './typed-image/typed-image.component';
-import { TypedImageHomeSectionComponent } from './typed-image/typed-image-home-section/typed-image-home-section.component';
-import { ModernVideoComponent } from './modern-video/modern-video.component';
-import { ModernVideoHomeSectionComponent } from './modern-video/modern-video-home-section/modern-video-home-section.component';
-import { MapVSearchComponent } from './map-v-search/map-v-search.component';
-import { MapHSearchComponent } from './map-h-search/map-h-search.component';
-import { MapVSearchHomeSectionComponent } from './map-v-search/map-v-search-home-section/map-v-search-home-section.component';
-import { MapHSearchHomeSectionComponent } from './map-h-search/map-h-search-home-section/map-h-search-home-section.component';
-import { HomeSectionPropertyBoxComponent } from './map-h-search/widges/home-section-property-box/home-section-property-box.component';
-import { SearchPropertyComponent } from './map-h-search/widges/search-property/search-property.component';
+// import { ParallaxImageComponent } from './parallax-image/parallax-image.component';
+// import { ParallaxImageHomeSectionComponent } from './parallax-image/parallax-image-home-section/parallax-image-home-section.component';
+// import { SearchTabComponent } from './search-tab/search-tab.component';
+// import { SearchTabHomeSectionComponent } from './search-tab/search-tab-home-section/search-tab-home-section.component';
+// import { TypedImageComponent } from './typed-image/typed-image.component';
+// import { TypedImageHomeSectionComponent } from './typed-image/typed-image-home-section/typed-image-home-section.component';
+// import { ModernVideoComponent } from './modern-video/modern-video.component';
+// import { ModernVideoHomeSectionComponent } from './modern-video/modern-video-home-section/modern-video-home-section.component';
+// import { MapVSearchComponent } from './map-v-search/map-v-search.component';
+// import { MapHSearchComponent } from './map-h-search/map-h-search.component';
+// import { MapVSearchHomeSectionComponent } from './map-v-search/map-v-search-home-section/map-v-search-home-section.component';
+// import { MapHSearchHomeSectionComponent } from './map-h-search/map-h-search-home-section/map-h-search-home-section.component';
+// import { HomeSectionPropertyBoxComponent } from './map-h-search/widges/home-section-property-box/home-section-property-box.component';
+// import { SearchPropertyComponent } from './map-h-search/widges/search-property/search-property.component';
 
 @NgModule({
   declarations: [
-    SliderFilterSearchComponent,
-    CorporateComponent,
-    ClassicComponent,
-    EnterpriseComponent,
-    SliderFilterHomeSliderComponent,
-    SliderFilterLatestSaleComponent,
-    SliderFilterFeaturedPropertyComponent,
-    SliderFilterLatestRentComponent,
-    SliderFilterNewOfferComponent,
-    SliderFilterPropertyInCitiesComponent,
-    SliderFilterBannerComponent,
-    SliderFilterAgentsComponent,
-    SliderFilterHappyClientComponent,
-    SliderFilterBrandComponent,
+    // SliderFilterSearchComponent,
+    // CorporateComponent,
+    // ClassicComponent,
+    // EnterpriseComponent,
+    // SliderFilterHomeSliderComponent,
+    // SliderFilterLatestSaleComponent,
+    // SliderFilterFeaturedPropertyComponent,
+    // SliderFilterLatestRentComponent,
+    // SliderFilterNewOfferComponent,
+    // SliderFilterPropertyInCitiesComponent,
+    // SliderFilterBannerComponent,
+    // SliderFilterAgentsComponent,
+    // SliderFilterHappyClientComponent,
+    // SliderFilterBrandComponent,
     CorporateHomeSliderComponent,
     CorporatePropertyListingComponent,
     CorporateProvidedServicesComponent,
@@ -112,27 +112,28 @@ import { SearchPropertyComponent } from './map-h-search/widges/search-property/s
     ClassicHappyClientComponent,
     ClassicBrandComponent,
     ClassicPropertyListingComponent,
-    ImageContentComponent,
-    ImageContentHomeSectionComponent,
-    ImageContentBrandComponent,
+    // ImageContentComponent,
+    // ImageContentHomeSectionComponent,
+    // ImageContentBrandComponent,
     ModernComponent,
     ModernHomeSectionComponent,
-    ParallaxImageComponent,
-    ParallaxImageHomeSectionComponent,
-    SearchTabComponent,
-    SearchTabHomeSectionComponent,
-    TypedImageComponent,
-    TypedImageHomeSectionComponent,
-    ModernVideoComponent,
-    ModernVideoHomeSectionComponent,
-    MapVSearchComponent,
-    MapHSearchComponent,
-    MapVSearchHomeSectionComponent,
-    MapHSearchHomeSectionComponent,
-    HomeSectionPropertyBoxComponent,
-    SearchPropertyComponent,
+    // ParallaxImageComponent,
+    // ParallaxImageHomeSectionComponent,
+    // SearchTabComponent,
+    // SearchTabHomeSectionComponent,
+    // TypedImageComponent,
+    // TypedImageHomeSectionComponent,
+    // ModernVideoComponent,
+    // ModernVideoHomeSectionComponent,
+    // MapVSearchComponent,
+    // MapHSearchComponent,
+    // MapVSearchHomeSectionComponent,
+    // MapHSearchHomeSectionComponent,
+    // HomeSectionPropertyBoxComponent,
+    // SearchPropertyComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule, CarouselModule],
+  // exports :[]
   exports: [ClassicVideoComponent,ClassicBannerComponent,CorporatePricingPlanComponent]
 })
 export class HomeModule {}

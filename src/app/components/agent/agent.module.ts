@@ -19,6 +19,8 @@ import { PropertyConfirmationComponent } from './widgets/property-confirmation/p
 import { PropertyListingComponent } from './widgets/property-listing/property-listing.component';
 import { PropertyListingConfirmationComponent } from './widgets/property-listing-confirmation/property-listing-confirmation.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ManagePropertiesComponent } from './manage-properties/manage-properties.component';
+import { ManagePropertyComponent } from './manage-properties/manage-property/manage-property.component';
 
 
 @NgModule({
@@ -28,13 +30,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AgentGridComponent,
     AgentListComponent,
     SubmitPropertyComponent,
+    ManagePropertiesComponent,
     AddPropertyStepsComponent,
     PropertyGeneralDetailsComponent,
     PropertyAddressDetailsComponent,
     PropertyGalleryComponent,
     PropertyConfirmationComponent,
     PropertyListingComponent,
-    PropertyListingConfirmationComponent
+    PropertyListingConfirmationComponent,
+    ManagePropertyComponent
   ],
   imports: [
     CommonModule,

@@ -8,15 +8,14 @@ import { PropertyService } from '../../../../../shared/services/property.service
 import { getCategory } from '../../../../../shared/store/actions/category.action';
 import { categoryState } from '../../../../../shared/store/states/category.state';
 import { ListingService } from 'src/app/services/listing.service';
-
+import * as L from 'leaflet';
 
 @Component({
-  selector: 'app-common-filter-property-box',
-  templateUrl: './common-filter-property-box.component.html',
-  styleUrls: ['./common-filter-property-box.component.scss'],
+  selector: 'app-common-filter-property-box-range',
+  templateUrl: './common-filter-property-box-range.component.html',
+  styleUrl: './common-filter-property-box-range.component.scss'
 })
-
-export class CommonFilterPropertyBoxComponent {
+export class CommonFilterPropertyBoxRangeComponent {
 
   @Input() type: string;
   @Input() filter: boolean;
@@ -95,9 +94,10 @@ export class CommonFilterPropertyBoxComponent {
     //   this.area = { minArea: this.minArea, maxArea: this.maxArea };
 
     //   this.paramsTag = [...this.category, ...this.status, ...this.rooms, ...this.beds, ...this.bath, ...this.agency];
-    //   this.paramsTagData.emit(this.paramsTag);
+      // this.paramsTagData.emit(this.paramsTag);
 
-    //   this.store.dispatch(new getCategory(this.paramsTag, this.price, this.area, this.category, this.sortBy));
+      // this.store.dispatch(new getCategory(this.paramsTag, this.price, this.area, this.category, this.sortBy));
+
     // });
   }
 
@@ -124,14 +124,33 @@ export class CommonFilterPropertyBoxComponent {
         this.propertyBoxGridService.col_md_6 = false;
       }
     }
-           this.fetchListings();
+    this.fetchListings(36.85346951354124, 10.207139620236752);}
+  // getCurrentLocation(): void {
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(position => {
+  //       const lat = position.coords.latitude;
+  //       const lng = position.coords.longitude;
 
-  }
+  //       console.log('Latitude:', lat);
+  //       console.log('Longitude:', lng);
 
-  private async fetchListings() {
+  //       // Pass latitude and longitude to fetchListings
+  //       this.fetchListings(lat, lng);
+  //     }, error => {
+  //       console.error('Error getting current location:', error);
+  //     });
+  //   } else {
+  //     console.error('Geolocation is not supported by this browser.');
+  //   }
+  // }
+
+  private async fetchListings(lat: number, lng: number) {
     try {
-      const response = await this.listingService.getAllListing().toPromise();
+      console.log("fetchListings")
+      const response = await this.listingService.getListingWithRange(lat,lng,10).toPromise();
+      console.log(response)
       this.latestForRentData = response.map(this.mapToListing).filter(Boolean);
+      console.log(this.latestForRentData)
       this.paginate = this.propertyService.getPager(this.latestForRentData?.length, +this.pageNo );
       this.paginationData.emit(this.paginate);
 
@@ -245,20 +264,20 @@ export class CommonFilterPropertyBoxComponent {
     return {
       id: item.listingId,
       type: item.listingType,
-      img: item.property.propertyImagesUrl.map((image: { imageUrl: any; }) => ({ url: image.imageUrl })),
-      thumbnail: item.property.propertyImagesUrl[0].imageUrl, // Assuming first image is thumbnail
+      img: item.propertyDto.propertyImagesUrl.map((image: { imageUrl: any; }) => ({ url: image.imageUrl })),
+      thumbnail: item.propertyDto.propertyImagesUrl[0].imageUrl, // Assuming first image is thumbnail
       propertyStatus: item.listingStatus,
-      country: item.property.address.addressCountry,
+      country: item.propertyDto.address.addressCountry,
       title: item.listingTitle,
       price: item.price,
       details: item.listingDescription,
-      home: item.property.propertyType, // You need to specify where this data comes from
-      bed: item.property.propertyBedrooms.toString(),
-      bath: item.property.propertyBathrooms.toString(),
-      sqft: item.property.propertySurface,
-      rooms: item.property.propertyBedrooms,
+      home: item.propertyDto.propertyType, // You need to specify where this data comes from
+      bed: item.propertyDto.propertyBedrooms.toString(),
+      bath: item.propertyDto.propertyBathrooms.toString(),
+      sqft: item.propertyDto.propertySurface,
+      rooms: item.propertyDto.propertyBedrooms,
       date: item.listingCreationDate ? item.listingCreationDate.join('/') : '', // Assuming date is an array [year, month, day]
-      propertyType: item.property.propertyType,
+      propertyType: item.propertyDto.propertyType,
       agencies: '', // You need to specify where this data comes from
       labels:item.listingType === 'SALE'? ['sale']:item.listingType==='RENT'?['rent']:['roommate'], // You need to specify where this data comes from
       sale: item.listingType === 'SALE',

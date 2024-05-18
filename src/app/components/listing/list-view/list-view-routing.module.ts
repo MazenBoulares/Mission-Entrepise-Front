@@ -8,7 +8,6 @@ import { ListViewLeafletMapComponent } from './map/list-view-leaflet-map/list-vi
 import { ListViewSliderComponent } from './list-view-slider/list-view-slider.component';
 import { ListViewThumbnailImageComponent } from './list-view-thumbnail-image/list-view-thumbnail-image.component';
 import { ListViewVideoComponent } from './list-view-video/list-view-video.component';
-
 const routes: Routes = [
   {
     path: 'listing/left-sidebar',

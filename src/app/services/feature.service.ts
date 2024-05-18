@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Feature } from '../classes/features';
 import {ACCESS_TOKEN} from "./constante";
+import { Environment } from '../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,6 +17,6 @@ export class FeatureService {
 
   // Home Slider Data
   getAllFeatures(): Observable<Feature[]> {
-    return this.http.get<Feature[]>('http://localhost:8082/feature/getAll');
+    return this.http.get<Feature[]>(Environment.api+'feature/getAll');
   }
 }

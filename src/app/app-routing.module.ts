@@ -6,7 +6,7 @@ import { content } from './shared/routes/routes';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'theme/slider-filter-search',
+    redirectTo: 'theme/modern',
     pathMatch: 'full',
   },
   {
