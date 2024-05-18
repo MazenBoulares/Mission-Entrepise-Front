@@ -57,6 +57,8 @@ export class PropertyImageSliderComponent {
     this.listingService.getListingById(this.propertyId).subscribe({
       next: (response)=>{
         this.propertyDetails = this.mapToListing(response)
+        // this.propertyDetailsData = this.mapToListingDetails(response);
+
         this.propertyDetails.img = response.property.propertyImagesUrl.map((image: { imageUrl: any; }) => ({
           url: image.imageUrl,
           fileType: 'image' // Assuming fileType is always 'image'
@@ -67,15 +69,13 @@ export class PropertyImageSliderComponent {
 
     this.propertyService.propertyDetailsData().subscribe((response) => {
       this.propertyData = response;
-
+      console.log( this.propertyData)
       if (Array.isArray(this.dataArray)) {
         if (Array.isArray(response.data)) {
           this.propertyDetailsData = response.data.filter(
             (tabData: { value: string }) =>
               this.dataArray?.includes(tabData.value)
           );
-          console.log(this.propertyData)
-          console.log(this.propertyDetailsData)
         }
       }
     });
@@ -86,6 +86,11 @@ export class PropertyImageSliderComponent {
     document.documentElement.style.removeProperty('--theme-default3');
     document.documentElement.style.removeProperty('--theme-default4');
   }
+  private mapToListingDetails(item: any): any {
+
+    return {}
+  }
+  ;
   private mapToListing(item: any): latestForRent {
     // Perform mapping of backend data to front-end model latestForRent
     // Example:

@@ -8,11 +8,11 @@
         <app-common-filter-listing [style]="'horizontal'" ></app-common-filter-listing>
       </div>
       <div class="col-xl-7">
-        <app-common-filter-property-box [type]="'list'" [filter]="true" [gridImages]="true" [filterValue]="filterValue"  (paginationData)="getPaginationData($event)"></app-common-filter-property-box>
+        <app-common-filter-property-box-range [type]="'list'" [filter]="true" [gridImages]="true" [filterValue]="filterValue"  (paginationData)="getPaginationData($event)"></app-common-filter-property-box-range>
       </div>
       <div class="col-xl-5  map-section">
         <div class="map" id="mapleaf">
-          <app-common-leaflet-map></app-common-leaflet-map>
+          <app-common-leaflet-map-range></app-common-leaflet-map-range>
         </div>
       </div>
     </div>

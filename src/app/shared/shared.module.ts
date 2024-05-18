@@ -135,6 +135,7 @@ import { CommonFilterListingComponent } from './components/common/widgets/common
 import { CurrencySymbolPipe } from './pipe/currency-symbol.pipe';
 import { CommonPropertyFilterListingComponent } from './components/common/widgets/common-property-filter-listing/common-property-filter-listing.component';
 import { CommonLeafletMapComponent } from './components/common/widgets/common-leaflet-map/common-leaflet-map.component';
+import { CommonLeafletMapRangeComponent } from './components/common/widgets/common-leaflet-map-range/common-leaflet-map-range.component';
 import { ClickOutsideDirective } from './directive/outside.directive';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { LogInModalComponent } from './components/common/modal/log-in-modal/log-in-modal.component';
@@ -142,6 +143,7 @@ import { ModalLoginFormComponent } from './components/common/modal/widgets/modal
 import { ModalRegisterFormComponent } from './components/common/modal/widgets/modal-register-form/modal-register-form.component';
 import { LayoutComponent } from './components/layouts/layout/layout.component';
 import { LatestBlogHorizontalComponent } from './components/footer/widgets/latest-blog-horizontal/latest-blog-horizontal.component';
+import { CommonFilterPropertyBoxRangeComponent } from './components/common/widgets/common-filter-property-box-range/common-filter-property-box-range.component';
 
 
 @NgModule({
@@ -242,6 +244,7 @@ import { LatestBlogHorizontalComponent } from './components/footer/widgets/lates
     AdvanceFilterBoxHorizontialComponent,
     HeaderFourComponent,
     CommonFilterPropertyBoxComponent,
+    CommonFilterPropertyBoxRangeComponent,
     GridPanelComponent,
     MapModalComponent,
     PaginationComponent,
@@ -273,7 +276,7 @@ import { LatestBlogHorizontalComponent } from './components/footer/widgets/lates
     LogInModalComponent,
     ModalLoginFormComponent,
     ModalRegisterFormComponent,
-
+    CommonLeafletMapRangeComponent,
     LayoutComponent
   ],
 
@@ -312,6 +315,7 @@ import { LatestBlogHorizontalComponent } from './components/footer/widgets/lates
     FilterBoxComponent,
     PropertyBoxComponent,
     FeaturedPropertyComponent,
+    CommonFilterPropertyBoxRangeComponent,
     NewOfferComponent,
     PropertyInCitiesComponent,
     BannerComponent,
@@ -345,6 +349,7 @@ import { LatestBlogHorizontalComponent } from './components/footer/widgets/lates
     CurrencySymbolPipe,
     CommonPropertyFilterListingComponent,
     CommonLeafletMapComponent,
+    CommonLeafletMapRangeComponent,
     AnimationDotsComponent
   ],
 })

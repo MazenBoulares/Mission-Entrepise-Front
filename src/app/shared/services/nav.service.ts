@@ -36,70 +36,70 @@ export class NavService {
       active: false,
       level: 1,
       children: [
-        {
-          title: 'slider filter search',
-          path: '/theme/slider-filter-search',
-          type: 'link',
-        },
-        {
-          title: 'corporate',
-          path: '/theme/corporate',
-          type: 'link',
-        },
-        {
-          title: 'enterprise',
-          path: '/theme/enterprise',
-          type: 'link',
-        },
-        {
-          title: 'classic',
-          path: '/theme/classic',
-          type: 'link',
-          badge: true,
-          badgeText: 'New',
-        },
-        {
-          title: 'image with content',
-          path: '/theme/image-content',
-          type: 'link',
-        },
+        // {
+        //   title: 'slider filter search',
+        //   path: '/theme/slider-filter-search',
+        //   type: 'link',
+        // },
+        // {
+        //   title: 'corporate',
+        //   path: '/theme/corporate',
+        //   type: 'link',
+        // },
+        // {
+        //   title: 'enterprise',
+        //   path: '/theme/enterprise',
+        //   type: 'link',
+        // },
+        // {
+        //   title: 'classic',
+        //   path: '/theme/classic',
+        //   type: 'link',
+        //   badge: true,
+        //   badgeText: 'New',
+        // },
+        // {
+        //   title: 'image with content',
+        //   path: '/theme/image-content',
+        //   type: 'link',
+        // },
         {
           title: 'modern',
           path: '/theme/modern',
           type: 'link',
-          badge: true,
+          // badge: true, 
           badgeText: 'New',
         },
-        {
-          title: 'parallax image',
-          path: '/theme/parallax-image',
-          type: 'link',
-        },
-        {
-          title: 'search Tab',
-          path: '/theme/search-tab',
-          type: 'link',
-        },
-        {
-          title: 'typed image',
-          path: '/theme/typed-image',
-          type: 'link',
-        },
-        {
-          title: 'morden video',
-          path: '/theme/morden-video',
-          type: 'link',
-        },
-        {
-          title: 'map with v-search',
-          path: '/theme/map-v-search',
-          type: 'link',
-        },
-        {
-          title: 'map with h-search',
-          path: '/theme/map-h-search',
-          type: 'link',
-        },
+        // {
+        //   title: 'parallax image',
+        //   path: '/theme/parallax-image',
+        //   type: 'link',
+        // },
+        // {
+        //   title: 'search Tab',
+        //   path: '/theme/search-tab',
+        //   type: 'link',
+        // },
+        // {
+        //   title: 'typed image',
+        //   path: '/theme/typed-image',
+        //   type: 'link',
+        // },
+        // {
+        //   title: 'morden video',
+        //   path: '/theme/morden-video',
+        //   type: 'link',
+        // },
+        // {
+        //   title: 'map with v-search',
+        //   path: '/theme/map-v-search',
+        //   type: 'link',
+        // },
+        // {
+        //   title: 'map with h-search',
+        //   path: '/theme/map-h-search',
+        //   type: 'link',
+        // },
       ],
     },
     {
@@ -108,326 +108,356 @@ export class NavService {
       type: 'sub',
       level: 1,
       active: false,
-      children: [
+      children:[
         {
-          title: 'grid View',
-          type: 'sub',
-          active: false,
+          title: 'Property Listings',
           level: 2,
-          children: [
-            {
-              title: '2 grid',
-              type: 'sub',
-              active: false,
-              level: 3,
-              children: [
-                {
-                  title: 'left sidebar',
-                  path: '/listing/grid-view/2-grid/left-sidebar',
-                  type: 'link',
-                  level: 4,
-                },
-                {
-                  title: 'right sidebar',
-                  path: '/listing/grid-view/2-grid/right-sidebar',
-                  type: 'link',
-                  level: 4,
-                },
-                {
-                  title: 'no sidebar',
-                  path: '/listing/grid-view/2-grid/no-sidebar',
-                  type: 'link',
-                  level: 4,
-                },
-              ],
-            },
-            {
-              title: '3 Grid',
-              type: 'sub',
-              active: false,
-              level: 3,
-              children: [
-                {
-                  title: 'left sidebar',
-                  path: '/listing/grid-view/3-grid/left-sidebar',
-                  type: 'link',
-                  level: 4,
-                },
-                {
-                  title: 'right sidebar',
-                  path: '/listing/grid-view/3-grid/right-sidebar',
-                  type: 'link',
-                  level: 4,
-                },
-                {
-                  title: 'no sidebar',
-                  path: '/listing/grid-view/3-grid/no-sidebar',
-                  type: 'link',
-                  level: 4,
-                },
-              ],
-            },
-            {
-              title: 'slider',
-              path: '/listing/grid-view/slider',
-              type: 'link',
-              level: 4,
-            },
-            {
-              title: 'map',
-              type: 'sub',
-              active: false,
-              level: 3,
-              children: [
-                {
-                  title: 'google map',
-                  path: '/listing/grid-view/map/google-map',
-                  type: 'link',
-                  level: 4,
-                },
-                {
-                  title: 'leaflet map',
-                  path: '/listing/grid-view/map/leaflet-map',
-                  type: 'link',
-                  level: 4,
-                },
-              ],
-            },
-            {
-              title: 'map modal',
-              type: 'sub',
-              active: false,
-              level: 3,
-              children: [
-                {
-                  title: 'google map',
-                  path: '/listing/grid-view/map-modal/google-map',
-                  type: 'link',
-                  level: 4,
-                },
-                {
-                  title: 'leaflet map',
-                  path: '/listing/grid-view/map-modal/leaflet-map',
-                  type: 'link',
-                  level: 4,
-                },
-              ],
-            },
-            {
-              title: 'left side map',
-              type: 'sub',
-              active: false,
-              level: 3,
-              children: [
-                {
-                  title: 'google map',
-                  path: '/listing/grid-view/left-side-map/google-map',
-                  type: 'link',
-                  level: 4,
-                },
-                {
-                  title: 'leaflet map',
-                  path: '/listing/grid-view/left-side-map/leaflet-map',
-                  type: 'link',
-                  level: 4,
-                },
-              ],
-            },
-            {
-              title: 'on click map',
-              type: 'sub',
-              active: false,
-              level: 3,
-              children: [
-                {
-                  title: 'google map',
-                  path: '/listing/grid-view/on-click-map/google-map',
-                  type: 'link',
-                  level: 4,
-                },
-                {
-                  title: 'leaflet map',
-                  path: '/listing/grid-view/on-click-map/leaflet-map',
-                  type: 'link',
-                  level: 4,
-                },
-              ],
-            },
-            {
-              title: 'map header',
-              type: 'sub',
-              active: false,
-              level: 3,
-              children: [
-                {
-                  title: 'google map',
-                  path: '/listing/grid-view/map-header/google-map',
-                  type: 'link',
-                  level: 4,
-                },
-                {
-                  title: 'leaflet map',
-                  path: '/listing/grid-view/map-header/leaflet-map',
-                  type: 'link',
-                  level: 4,
-                },
-              ],
-            },
-          ],
+          path: '/listing/grid-view/2-grid/left-sidebar',
+          type: 'link',
         },
         {
-          title: 'list view',
-          type: 'sub',
-          active: false,
+          title: 'Map Listings',
           level: 2,
-          children: [
-            {
-              title: 'listing',
-              type: 'sub',
-              active: false,
-              level: 3,
-              children: [
-                {
-                  title: 'left sidebar',
-                  path: '/listing/list-view/listing/left-sidebar',
-                  type: 'link',
-                  level: 4,
-                },
-                {
-                  title: 'right sidebar',
-                  path: '/listing/list-view/listing/right-sidebar',
-                  type: 'link',
-                  level: 4,
-                },
-                {
-                  title: 'no sidebar',
-                  path: '/listing/list-view/listing/no-sidebar',
-                  type: 'link',
-                  level: 4,
-                },
-              ],
-            },
-            {
-              title: 'map',
-              type: 'sub',
-              active: false,
-              level: 3,
-              children: [
-                {
-                  title: 'google map',
-                  path: '/listing/list-view/map/google-map',
-                  type: 'link',
-                  level: 4,
-                },
-                {
-                  title: 'leaflet map',
-                  path: '/listing/list-view/map/leaflet-map',
-                  type: 'link',
-                  level: 4,
-                },
-              ],
-            },
-            {
-              title: 'slider',
-              path: '/listing/list-view/slider',
-              type: 'link',
-              level: 2,
-            },
-            {
-              title: 'thumbnail image',
-              path: '/listing/list-view/thumbnail-image',
-              type: 'link',
-              level: 2,
-            },
-            {
-              title: 'video',
-              path: '/listing/list-view/video',
-              type: 'link',
-              level: 2,
-            },
-          ],
-        },
-        {
-          title: 'tab layout',
-          type: 'sub',
-          active: false,
-          level: 2,
-          children: [
-            {
-              title: 'tab full width',
-              path: '/listing/tab-layout/tab-full-width',
-              type: 'link',
-              level: 3,
-            },
-            {
-              title: 'tab left sidebar',
-              path: '/listing/tab-layout/tab-left-sidebar',
-              type: 'link',
-              level: 3,
-            },
-            {
-              title: 'tab right sidebar',
-              path: '/listing/tab-layout/tab-right-sidebar',
-              type: 'link',
-              level: 3,
-            },
-          ],
-        },
-      ],
+          path: '/listing/list-view/map/leaflet-map',
+          type: 'link',
+        }
+      ]
+      // children: [
+      //   {
+      //     title: 'grid View',
+      //     type: 'sub',
+      //     active: false,
+      //     level: 2,
+      //     children: [
+      //       {
+      //         title: '2 grid',
+      //         type: 'sub',
+      //         active: false,
+      //         level: 3,
+      //         children: [
+      //           {
+      //             title: 'left sidebar',
+      //             path: '/listing/grid-view/2-grid/left-sidebar',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //           {
+      //             title: 'right sidebar',
+      //             path: '/listing/grid-view/2-grid/right-sidebar',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //           {
+      //             title: 'no sidebar',
+      //             path: '/listing/grid-view/2-grid/no-sidebar',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //         ],
+      //       },
+      //       {
+      //         title: '3 Grid',
+      //         type: 'sub',
+      //         active: false,
+      //         level: 3,
+      //         children: [
+      //           {
+      //             title: 'left sidebar',
+      //             path: '/listing/grid-view/3-grid/left-sidebar',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //           {
+      //             title: 'right sidebar',
+      //             path: '/listing/grid-view/3-grid/right-sidebar',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //           {
+      //             title: 'no sidebar',
+      //             path: '/listing/grid-view/3-grid/no-sidebar',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //         ],
+      //       },
+      //       {
+      //         title: 'slider',
+      //         path: '/listing/grid-view/slider',
+      //         type: 'link',
+      //         level: 4,
+      //       },
+      //       {
+      //         title: 'map',
+      //         type: 'sub',
+      //         active: false,
+      //         level: 3,
+      //         children: [
+      //           {
+      //             title: 'google map',
+      //             path: '/listing/grid-view/map/google-map',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //           {
+      //             title: 'leaflet map',
+      //             path: '/listing/grid-view/map/leaflet-map',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //         ],
+      //       },
+      //       {
+      //         title: 'map modal',
+      //         type: 'sub',
+      //         active: false,
+      //         level: 3,
+      //         children: [
+      //           {
+      //             title: 'google map',
+      //             path: '/listing/grid-view/map-modal/google-map',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //           {
+      //             title: 'leaflet map',
+      //             path: '/listing/grid-view/map-modal/leaflet-map',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //         ],
+      //       },
+      //       {
+      //         title: 'left side map',
+      //         type: 'sub',
+      //         active: false,
+      //         level: 3,
+      //         children: [
+      //           {
+      //             title: 'google map',
+      //             path: '/listing/grid-view/left-side-map/google-map',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //           {
+      //             title: 'leaflet map',
+      //             path: '/listing/grid-view/left-side-map/leaflet-map',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //         ],
+      //       },
+      //       {
+      //         title: 'on click map',
+      //         type: 'sub',
+      //         active: false,
+      //         level: 3,
+      //         children: [
+      //           {
+      //             title: 'google map',
+      //             path: '/listing/grid-view/on-click-map/google-map',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //           {
+      //             title: 'leaflet map',
+      //             path: '/listing/grid-view/on-click-map/leaflet-map',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //         ],
+      //       },
+      //       {
+      //         title: 'map header',
+      //         type: 'sub',
+      //         active: false,
+      //         level: 3,
+      //         children: [
+      //           {
+      //             title: 'google map',
+      //             path: '/listing/grid-view/map-header/google-map',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //           {
+      //             title: 'leaflet map',
+      //             path: '/listing/grid-view/map-header/leaflet-map',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //         ],
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     title: 'list view',
+      //     type: 'sub',
+      //     active: false,
+      //     level: 2,
+      //     children: [
+      //       {
+      //         title: 'listing',
+      //         type: 'sub',
+      //         active: false,
+      //         level: 3,
+      //         children: [
+      //           {
+      //             title: 'left sidebar',
+      //             path: '/listing/list-view/listing/left-sidebar',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //           {
+      //             title: 'right sidebar',
+      //             path: '/listing/list-view/listing/right-sidebar',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //           {
+      //             title: 'no sidebar',
+      //             path: '/listing/list-view/listing/no-sidebar',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //         ],
+      //       },
+      //       {
+      //         title: 'map',
+      //         type: 'sub',
+      //         active: false,
+      //         level: 3,
+      //         children: [
+      //           {
+      //             title: 'google map',
+      //             path: '/listing/list-view/map/google-map',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //           {
+      //             title: 'leaflet map',
+      //             path: '/listing/list-view/map/leaflet-map',
+      //             type: 'link',
+      //             level: 4,
+      //           },
+      //         ],
+      //       },
+      //       {
+      //         title: 'slider',
+      //         path: '/listing/list-view/slider',
+      //         type: 'link',
+      //         level: 2,
+      //       },
+      //       {
+      //         title: 'thumbnail image',
+      //         path: '/listing/list-view/thumbnail-image',
+      //         type: 'link',
+      //         level: 2,
+      //       },
+      //       {
+      //         title: 'video',
+      //         path: '/listing/list-view/video',
+      //         type: 'link',
+      //         level: 2,
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     title: 'tab layout',
+      //     type: 'sub',
+      //     active: false,
+      //     level: 2,
+      //     children: [
+      //       {
+      //         title: 'tab full width',
+      //         path: '/listing/tab-layout/tab-full-width',
+      //         type: 'link',
+      //         level: 3,
+      //       },
+      //       {
+      //         title: 'tab left sidebar',
+      //         path: '/listing/tab-layout/tab-left-sidebar',
+      //         type: 'link',
+      //         level: 3,
+      //       },
+      //       {
+      //         title: 'tab right sidebar',
+      //         path: '/listing/tab-layout/tab-right-sidebar',
+      //         type: 'link',
+      //         level: 3,
+      //       },
+      //     ],
+      //   },
+      // ],
     },
     {
       title: 'property',
       icon: 'link',
       type: 'sub',
       active: false,
-      children: [
+      children:[
         {
-          title: 'sticky tab or classic',
-          path: '/property/sticky-tab',
+          title: 'Submit property',
+          path: '/agent/submit-property',
           type: 'link',
+          // badge: true,
+          // badgeText: 'New',
         },
         {
-          title: 'Without top',
-          path: '/property/without-top',
+          title: 'Manage Property',
+          path: '/agent/manage-properties',
           type: 'link',
+          // badge: true,
+          // badgeText: 'New',
         },
-        {
-          title: 'Left sidebar',
-          path: '/property/left-sidebar',
-          type: 'link',
-        },
-        {
-          title: 'Info tab',
-          path: '/property/info-tab',
-          type: 'link',
-        },
-        {
-          title: 'Image slider',
-          path: '/property/image-slider',
-          type: 'link',
-        },
-        {
-          title: 'thumbnail image',
-          path: '/property/thumbnail-image',
-          type: 'link',
-        },
-        {
-          title: 'image box',
-          path: '/property/image-box',
-          type: 'link',
-        },
-        {
-          title: 'Template breadcrumb',
-          path: '/property/template-breadcrumb',
-          type: 'link',
-        },
-        {
-          title: 'modal details',
-          path: '/property/modal-details',
-          type: 'link',
-          badgeIcon: true,
-        },
-      ],
+      ]
+      // children: [
+      //   {
+      //     title: 'sticky tab or classic',
+      //     path: '/property/sticky-tab',
+      //     type: 'link',
+      //   },
+      //   {
+      //     title: 'Without top',
+      //     path: '/property/without-top',
+      //     type: 'link',
+      //   },
+      //   {
+      //     title: 'Left sidebar',
+      //     path: '/property/left-sidebar',
+      //     type: 'link',
+      //   },
+      //   {
+      //     title: 'Info tab',
+      //     path: '/property/info-tab',
+      //     type: 'link',
+      //   },
+      //   {
+      //     title: 'Image slider',
+      //     path: '/property/image-slider',
+      //     type: 'link',
+      //   },
+      //   {
+      //     title: 'thumbnail image',
+      //     path: '/property/thumbnail-image',
+      //     type: 'link',
+      //   },
+      //   {
+      //     title: 'image box',
+      //     path: '/property/image-box',
+      //     type: 'link',
+      //   },
+      //   {
+      //     title: 'Template breadcrumb',
+      //     path: '/property/template-breadcrumb',
+      //     type: 'link',
+      //   },
+      //   {
+      //     title: 'modal details',
+      //     path: '/property/modal-details',
+      //     type: 'link',
+      //     badgeIcon: true,
+      //   },
+      // ],
     },
     {
       title: 'pages',
@@ -855,144 +885,144 @@ export class NavService {
         },
       ],
     },
-    {
-      title: 'modules',
-      icon: 'zap',
-      active: false,
-      type: 'sub',
-      level: 1,
-      right: true,
-      children: [
-        {
-          title: 'Button',
-          path: '/modules/button',
-          type: 'link',
-        },
-        {
-          title: 'Label',
-          path: '/modules/label',
-          type: 'link',
-        },
-        {
-          title: 'Title',
-          path: '/modules/title',
-          type: 'link',
-        },
-        {
-          title: 'Image ratio',
-          path: '/modules/image-ratio',
-          type: 'link',
-          badgeIcon: true,
-        },
-        {
-          title: 'footer',
-          path: '/modules/footer',
-          type: 'link',
-        },
-        {
-          title: 'blog',
-          path: '/modules/blog',
-          type: 'link',
-        },
-        {
-          title: 'brand',
-          path: '/modules/brand',
-          type: 'link',
-        },
-        {
-          title: 'testimonial',
-          path: '/modules/testimonial',
-          type: 'link',
-        },
-        {
-          title: 'full banner',
-          path: '/modules/full-banner',
-          type: 'link',
-        },
-        {
-          title: 'about',
-          path: '/modules/about',
-          type: 'link',
-        },
-        {
-          title: 'service',
-          path: '/modules/service',
-          type: 'link',
-        },
-        {
-          title: 'property',
-          path: '/modules/property',
-          type: 'link',
-        },
-        {
-          title: 'feature',
-          path: '/modules/feature',
-          type: 'link',
-        },
-        {
-          title: 'others',
-          path: '/modules/others',
-          type: 'link',
-        },
-      ],
-    },
-    {
-      title: 'agent',
-      icon: 'user',
-      active: false,
-      right: true,
-      level: 1,
-      type: 'sub',
-      children: [
-        {
-          title: 'Agent Profile',
-          path: '/agent/agent-profile',
-          type: 'link',
-        },
-        {
-          title: 'Agent Grid',
-          path: '/agent/agent-grid',
-          type: 'link',
-        },
-        {
-          title: 'Agent List',
-          path: '/agent/agent-list',
-          type: 'link',
-        },
-        {
-          title: 'Submit property',
-          path: '/agent/submit-property',
-          type: 'link',
-          badge: true,
-          badgeText: 'New',
-        },
-      ],
-    },
-    {
-      title: 'contact',
-      icon: 'map-pin',
-      active: false,
-      right: true,
-      type: 'sub',
-      level: 1,
-      children: [
-        {
-          title: 'Contact us 1',
-          path: '/contact/contact-1',
-          type: 'link',
-        },
-        {
-          title: 'Contact us 2',
-          path: '/contact/contact-2',
-          type: 'link',
-        },
-        {
-          title: 'Contact us 3',
-          path: '/contact/contact-3',
-          type: 'link',
-        },
-      ],
-    },
+    // {
+    //   title: 'modules',
+    //   icon: 'zap',
+    //   active: false,
+    //   type: 'sub',
+    //   level: 1,
+    //   right: true,
+    //   children: [
+    //     {
+    //       title: 'Button',
+    //       path: '/modules/button',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'Label',
+    //       path: '/modules/label',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'Title',
+    //       path: '/modules/title',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'Image ratio',
+    //       path: '/modules/image-ratio',
+    //       type: 'link',
+    //       badgeIcon: true,
+    //     },
+    //     {
+    //       title: 'footer',
+    //       path: '/modules/footer',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'blog',
+    //       path: '/modules/blog',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'brand',
+    //       path: '/modules/brand',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'testimonial',
+    //       path: '/modules/testimonial',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'full banner',
+    //       path: '/modules/full-banner',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'about',
+    //       path: '/modules/about',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'service',
+    //       path: '/modules/service',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'property',
+    //       path: '/modules/property',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'feature',
+    //       path: '/modules/feature',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'others',
+    //       path: '/modules/others',
+    //       type: 'link',
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: 'agent',
+    //   icon: 'user',
+    //   active: false,
+    //   right: true,
+    //   level: 1,
+    //   type: 'sub',
+    //   children: [
+    //     {
+    //       title: 'Agent Profile',
+    //       path: '/agent/agent-profile',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'Agent Grid',
+    //       path: '/agent/agent-grid',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'Agent List',
+    //       path: '/agent/agent-list',
+    //       type: 'link',
+    //     },
+    //     // {
+    //     //   title: 'Submit property',
+    //     //   path: '/agent/submit-property',
+    //     //   type: 'link',
+    //     //   // badge: true,
+    //     //   // badgeText: 'New',
+    //     // },
+    //   ],
+    // },
+    // {
+    //   title: 'contact',
+    //   icon: 'map-pin',
+    //   active: false,
+    //   right: true,
+    //   type: 'sub',
+    //   level: 1,
+    //   children: [
+    //     {
+    //       title: 'Contact us 1',
+    //       path: '/contact/contact-1',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'Contact us 2',
+    //       path: '/contact/contact-2',
+    //       type: 'link',
+    //     },
+    //     {
+    //       title: 'Contact us 3',
+    //       path: '/contact/contact-3',
+    //       type: 'link',
+    //     },
+    //   ],
+    // },
   ];
 
   items = new BehaviorSubject<Menu[]>(this.MENUITEMS);

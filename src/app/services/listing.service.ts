@@ -1,9 +1,10 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
 import { Feature } from '../classes/features';
 import { ACCESS_TOKEN } from "./constante";
 import '@angular/compiler';
+import { Environment } from '../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +16,20 @@ export class ListingService {
   });
   getListingById(id: any): Observable<any> {
     console.log("get listing By Id")
-    return this.http.get<any>('http://localhost:8082/listing/get/' + id).pipe(
+    return this.http.get<any>(Environment.api+'listing/get/' + id).pipe(
+      catchError((error) => {
+        console.error('Error occurred while adding property:', error);
+        return throwError(() => error);  // or return a default value
+      }))
+  }
+  getListingWithRange(latitude: any,longitude:any,radius:any): Observable<any> {
+    const params = new HttpParams()
+    .set('latitude', latitude.toString())
+    .set('longitude', longitude.toString())
+    .set('radius', radius.toString());
+
+    console.log("get listing By Range")
+    return this.http.get<any>(Environment.api+'listing/within-range',{params}).pipe(
       catchError((error) => {
         console.error('Error occurred while adding property:', error);
         return throwError(() => error);  // or return a default value
