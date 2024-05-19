@@ -1,0 +1,35 @@
+<div class="property-box">
+  <div class="image-box">
+    <img class="responsive-image" src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?cs=srgb&dl=pexels-binyaminmellish-106399.jpg&fm=jpg" alt="Description of the image">
+  </div>
+<div class="property-details">
+  <span class="font-roboto">{{ propertyData?.propertyType }}</span>
+  <a href="javascript:void(0)" (click)="getDetails(propertyData.propertyId)">
+    <h3>{{ propertyData?.adress }}</h3>
+  </a>
+  <h6 [class]="tagClass">{{ propertyData?.price   }}</h6>
+  <p class="font-roboto">{{ propertyData?.propertyDescription }}</p>
+  <ul>
+    <li>
+      <img src="assets/images/svg/icon/double-bed.svg" class="img-fluid" alt="bed-icon" />Bed : {{ propertyData?.propertyBedrooms }}
+    </li>
+    <li>
+      <img src="assets/images/svg/icon/bathroom.svg" class="img-fluid" alt="bathroom-icon" />Baths : {{ propertyData?.propertyBathrooms }}
+    </li>
+    <li>
+      <img src="assets/images/svg/icon/square-ruler-tool.svg" class="img-fluid ruler-tool" alt="ruler-icon" />Sq Ft : {{ propertyData?.propertySurface }}
+    </li>
+  </ul>
+  <div class="property-btn d-flex">
+    <span>{{ propertyData?.yearOfConstruction }}</span>
+    <div class="button-container">
+      <button style="background-color: red;" type="button" class="btn btn-dashed btn-pill 2" [class]="tagClass" (click)="Delete(propertyData.propertyId)">
+        &nbsp;Delete&nbsp; 
+      </button>
+      <button type="button" class="btn btn-dashed btn-pill" [class]="tagClass" (click)="getDetails(propertyData.propertyId)">
+        Details
+      </button>
+    </div>
+  </div>
+</div>
+</div>

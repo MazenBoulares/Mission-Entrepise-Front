@@ -1,0 +1,23 @@
+.slider-nav-item--active {
+  border: solid 1px #459AD4 !important;
+}
+
+owl-carousel-o::ng-deep{
+    img{
+      border-radius: 8px;
+    }
+}
+.responsive-image {
+  width: 100%;
+  height: auto;
+}
+.property-box {
+  display: flex;
+}
+.image-box {
+  width: 35%;
+}
+
+.property-details {
+  width: 65%;
+}

@@ -1,0 +1,28 @@
+<div class="filter-panel">
+  <div class="top-panel tab-icon">
+    <div class="filters respon-filter-content filter-button-group">
+      <ul>
+        <li (click)="getTab('all')" [ngClass]="{ 'active' : activeTab == 'all' }">
+          <lord-icon [src]="'assets/icon-json/home.json'" colors="primary:#121331,secondary:#121331">
+          </lord-icon>
+          <span>All Property</span>
+        </li>
+        <li (click)="getTab('sale')" [ngClass]="{ 'active' : activeTab == 'sale' }">
+          <lord-icon [src]="'assets/icon-json/sale.json'" colors="primary:#121331,secondary:#121331">
+          </lord-icon>
+          <span>For Sale</span>
+        </li>
+        <li (click)="getTab('rent')" [ngClass]="{ 'active' : activeTab == 'rent' }">
+          <lord-icon [src]="'assets/icon-json/map.json'" colors="primary:#121331,secondary:#121331">
+          </lord-icon>
+          <span>For rent</span>
+        </li>
+        <li (click)="getTab('trend')" [ngClass]="{ 'active' : activeTab == 'trend' }">
+          <lord-icon [src]="'assets/icon-json/file.json'" colors="primary:#121331,secondary:#121331">
+          </lord-icon>
+          <span>trend</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
