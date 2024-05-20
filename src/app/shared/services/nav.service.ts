@@ -768,6 +768,11 @@ export class NavService {
                   type: 'link',
                 },
                 {
+                  title: 'my properties',
+                  path: '/page/user/my-properties',
+                  type: 'link',
+                },
+                {
                   title: 'create property',
                   path: '/page/user/create-property',
                   type: 'link',

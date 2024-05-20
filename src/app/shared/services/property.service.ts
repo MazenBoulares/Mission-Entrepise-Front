@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { agencyData, agentsData, agentsDetails, bannerData, blogDetailsData, brandData, currency, faqData, featuredPropertyData, happyClientsData, homeSectionData, latestBlogData, latestForRent, latestForRentData, latestForSale, latestForSaleData, newOfferData, peopleSayData, pricingPlanData, privacyData, propertyCityData, propertyOfDayData, providedServicesData, sliderData, termsData } from '../interface/property';
+import {Environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +21,10 @@ export class PropertyService {
   // Home Slider Data
   homeSliderData(): Observable<homeSectionData> {
     return this.http.get<homeSectionData>('assets/data/home-section-slider.json');
+  }
+
+  getPropertyByIdUser(userId: any){
+    return this.http.get(Environment.api+`property/getByLandlordId/${userId}`);
   }
 
   // Latest For Sale
