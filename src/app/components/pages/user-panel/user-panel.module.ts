@@ -11,6 +11,7 @@ import { BasicInformationComponent } from './create-property/basic-information/b
 import { CreatePropertyComponent } from './create-property/create-property.component';
 import { PropertyGalleryComponent } from './create-property/property-gallery/property-gallery.component';
 import { MyListingComponent } from './my-listing/my-listing.component';
+import { MyPropertiesComponent} from "./my-properties/my-properties.component";
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { UserDetailsComponent } from './my-profile/user-details/user-details.component';
 import { AvailablePropertyComponent } from './user-dashboard/available-property/available-property.component';
@@ -27,6 +28,8 @@ import { CardsDetailsComponent } from './cards-payment/cards-details/cards-detai
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ComparePropertyComponent } from './compare-property/compare-property.component';
 import { ComparePropertyDataComponent } from './compare-property/compare-property-data/compare-property-data.component';
+import {FormsModule} from "@angular/forms";
+import {NgxPaginationModule} from "ngx-pagination";
 
 
 @NgModule({
@@ -35,6 +38,7 @@ import { ComparePropertyDataComponent } from './compare-property/compare-propert
     UserInfoComponent,
     UserPanelSideMenuComponent,
     MyListingComponent,
+    MyPropertiesComponent,
     TopCommonChartsComponent,
     SalesOverviewComponent,
     SalesByAgentsComponent,
@@ -54,12 +58,14 @@ import { ComparePropertyDataComponent } from './compare-property/compare-propert
     ComparePropertyDataComponent
   ],
   imports: [
+    NgxPaginationModule,
     CommonModule,
     UserPanelRoutingModule,
     SharedModule,
     ChartistModule,
     NgApexchartsModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    FormsModule
   ]
 })
 export class UserPanelModule { }

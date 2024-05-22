@@ -8,6 +8,7 @@ import { FavouritesComponent } from './favourites/favourites.component';
 import { CardsPaymentComponent } from './cards-payment/cards-payment.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ComparePropertyComponent } from './compare-property/compare-property.component';
+import {MyPropertiesComponent} from "./my-properties/my-properties.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'my-listing',
     component: MyListingComponent,
+  },
+  {
+    path: 'my-properties',
+    component: MyPropertiesComponent,
   },
   {
     path: 'create-property',

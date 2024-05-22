@@ -47,6 +47,7 @@ import { PropertyBoxFourComponent } from './components/common/property-box/prope
 import { PropertyBoxOneComponent } from './components/common/property-box/property-box-one/property-box-one.component';
 import { PropertyBoxThreeComponent } from './components/common/property-box/property-box-three/property-box-three.component';
 import { PropertyBoxTwoComponent } from './components/common/property-box/property-box-two/property-box-two.component';
+import { PropertyBoxFiveComponent} from "./components/common/property-box/property-box-five/property-box-five.component";
 import { PropertyBoxComponent } from './components/common/property-box/property-box.component';
 import { PropertyCityOneComponent } from './components/common/property-in-cities/property-city-one/property-city-one.component';
 import { PropertyCityTwoComponent } from './components/common/property-in-cities/property-city-two/property-city-two.component';
@@ -159,6 +160,7 @@ import { CommonFilterPropertyBoxRangeComponent } from './components/common/widge
     FooterTwoComponent,
     FooterThreeComponent,
     ContactOneComponent,
+    PropertyBoxFiveComponent,
     AboutComponent,
     TagComponent,
     MapComponent,
@@ -350,7 +352,8 @@ import { CommonFilterPropertyBoxRangeComponent } from './components/common/widge
     CommonPropertyFilterListingComponent,
     CommonLeafletMapComponent,
     CommonLeafletMapRangeComponent,
-    AnimationDotsComponent
+    AnimationDotsComponent,
+    PropertyBoxFiveComponent
   ],
 })
 export class SharedModule {}

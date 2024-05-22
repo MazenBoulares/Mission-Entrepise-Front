@@ -28,6 +28,12 @@ export const userPanelSideMenu : sideMenu[] = [
     path: '/page/user/my-listing',
   },
   {
+    id: 9,
+    title: 'my properties',
+    value: 'properties',
+    path: '/page/user/my-properties',
+  },
+  {
     id: 3,
     title: 'create property',
     value: 'create-property',

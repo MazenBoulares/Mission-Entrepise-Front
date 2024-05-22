@@ -1,0 +1,40 @@
+<app-breadcrumb [bgImage]="bgImage" [title]="title" [parent]="parent" [child]="child"></app-breadcrumb>
+<section class="user-dashboard small-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="sidebar-user sticky-cls">
+                    <div class="user-profile">
+                        <app-user-info></app-user-info>
+                    </div>
+                    <div class="dashboard-list">
+                        <app-user-panel-side-menu [activeTab]="'properties'"></app-user-panel-side-menu>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="filter-section">
+                    <label for="propertyTypeFilter" class="filter-label">Filter by Property Type:</label>
+                    <select id="propertyTypeFilter" [(ngModel)]="propertyTypeFilter" (change)="onFilterChange()" class="custom-select">
+                        <option value="">All</option>
+                        <option value="HOUSE">House</option>
+                        <option value="APARTMENT">Apartment</option>
+                        <option value="LAND">Land</option>
+                        <option value="COMMERCIAL">Commercial</option>
+                        <option value="OFFICE">Office</option>
+                        <option value="WAREHOUSE">Warehouse</option>
+                        <option value="GARAGE">Garage</option>
+                        <option value="OTHER">Other</option>
+                    </select>
+                </div>
+                <div class="property-section">
+                    <h3>My Properties</h3>
+                    <div class="property-list" *ngFor="let property of filteredProperties | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+                        <app-property-box-five [propertyData]="property"></app-property-box-five>
+                    </div>
+                    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
