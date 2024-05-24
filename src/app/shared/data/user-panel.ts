@@ -15,18 +15,18 @@ export interface cards{
   cardImage: string;
 }
 export const userPanelSideMenu : sideMenu[] = [
-  {
-    id: 1,
-    title: 'dashboard',
-    value: 'dashboard',
-    path: '/page/user/user-dashboard',
-  },
-  {
-    id: 2,
-    title: 'my listing',
-    value: 'listing',
-    path: '/page/user/my-listing',
-  },
+  // {
+  //   id: 1,
+  //   title: 'dashboard',
+  //   value: 'dashboard',
+  //   path: '/page/user/user-dashboard',
+  // },
+  // {
+  //   id: 2,
+  //   title: 'my listing',
+  //   value: 'listing',
+  //   path: '/page/user/my-listing',
+  // },
   {
     id: 9,
     title: 'my properties',
@@ -51,24 +51,24 @@ export const userPanelSideMenu : sideMenu[] = [
     value: 'favourite',
     path: '/page/user/favourite',
   },
-  {
-    id: 6,
-    title: 'cards & payment',
-    value: 'card-payment',
-    path: '/page/user/cards-payment',
-  },
-  {
-    id: 7,
-    title: 'privacy',
-    value: 'privacy',
-    path: '/page/user/privacy',
-  },
-  {
-    id: 8,
-    title: 'log out',
-    value: 'logout',
-    path: '/theme/corporate',
-  },
+  // {
+  //   id: 6,
+  //   title: 'cards & payment',
+  //   value: 'card-payment',
+  //   path: '/page/user/cards-payment',
+  // },
+  // {
+  //   id: 7,
+  //   title: 'privacy',
+  //   value: 'privacy',
+  //   path: '/page/user/privacy',
+  // },
+  // {
+  //   id: 8,
+  //   title: 'log out',
+  //   value: 'logout',
+  //   path: '/theme/corporate',
+  // },
 ];
 
 

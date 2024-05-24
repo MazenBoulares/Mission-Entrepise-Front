@@ -11,9 +11,9 @@ export class UserDashboardComponent {
   public themeLogo = 'assets/images/logo/logo.png';
   public footerLogo = 'assets/images/logo/footer-logo.png';
   public bgImage = 'assets/images/inner-background.jpg';
-  public title = 'Dashboard';
+  public title = 'Search Rommmate';
   public parent = 'Home';
-  public child = 'Dashboard';
+  public child = 'Roommate';
 
   public totalAgents = totalAgents;
   public totalSales = totalSales;
