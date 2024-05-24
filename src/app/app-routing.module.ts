@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './shared/components/layouts/layout/layout.component';
 import { content } from './shared/routes/routes';
+import {AuthGuardService} from "./services/auth-guard.service";
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    children: content
+    children: content,
+    // canActivate: [AuthGuardService]
   },
   {
     path: '**',

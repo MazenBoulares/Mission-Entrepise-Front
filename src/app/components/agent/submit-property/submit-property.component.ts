@@ -4,6 +4,7 @@ import { PropertyGeneralDetailsComponent } from '../widgets/property-general-det
 
 import { LocalStorageService } from 'src/app/services/localStorageService/local-storage.service';
 import { UserService } from 'src/app/services/userService';
+import {User} from "../../../classes/user";
 
 
 
@@ -15,7 +16,7 @@ import { UserService } from 'src/app/services/userService';
 export class SubmitPropertyComponent {
 
 
-
+  private userData : User | null;
   constructor(private userService: UserService, private localStorageService:LocalStorageService) {
   }
 
@@ -48,9 +49,9 @@ export class SubmitPropertyComponent {
 
 
   // ***** auth (will be trasnfered to HOME later) *****
-    const userData = this.localStorageService.getUserDataFromLocalStorage();
-    if (userData) {
-      this.userService.currentUser = JSON.parse(userData);
+     this.userData = this.localStorageService.getUserDataFromLocalStorage();
+    if (this.userData) {
+      this.userService.currentUser = this.userData;
     } else {
       console.error('User data not found in local storage');
     }

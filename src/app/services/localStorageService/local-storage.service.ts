@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {User} from "../../classes/user";
 
 @Injectable({
     providedIn: 'root'
@@ -36,10 +37,10 @@ export class LocalStorageService {
       }
 
 
-      getUserDataFromLocalStorage(): string | null {
-        return localStorage.getItem('userData');
-      }
-    
+    getUserDataFromLocalStorage(): User | null {
+        const userData = localStorage.getItem('userData');
+        return userData ? JSON.parse(userData) as User : null;
+    }
 
 
 
@@ -54,5 +55,12 @@ export class LocalStorageService {
         }
         return null;
     }
+
+    clearStorage(): void {
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
+    }
+
+
 }
 
