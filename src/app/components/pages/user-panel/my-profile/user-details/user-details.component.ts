@@ -3,6 +3,11 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EditUserDetailsModalComponent } from '../../../../../shared/components/common/modal/edit-user-details-modal/edit-user-details-modal.component';
 import { EditUserEmailModalComponent } from '../../../../../shared/components/common/modal/edit-user-email-modal/edit-user-email-modal.component';
 import { EditUserPasswordModalComponent } from '../../../../../shared/components/common/modal/edit-user-password-modal/edit-user-password-modal.component';
+import {CreateRoommatePreferencesModalComponent} from  '../../../../../shared/components/common/modal/CreateRoommatePreferencesModalComponent/CreateRoommatePreferencesModalComponent';
+
+import {EditRoommatePreferencesModalComponent} from  '../../../../../shared/components/common/modal/EditRoommatePreferencesModalComponent/EditRoommatePreferencesModalComponent';
+import { RoommatePreferencesService } from 'src/app/services/RoommatePreferencesService.service';
+
 
 @Component({
   selector: 'app-user-details',
@@ -11,21 +16,42 @@ import { EditUserPasswordModalComponent } from '../../../../../shared/components
 })
 export class UserDetailsComponent {
 
+
+  roommatePreferences: any; // Variable to hold roommate preferences
+
   constructor(private modal: NgbModal) {}
+
+
+
+  // ngOnInit(): void {
+  //   // Fetch roommate preferences from the backend API
+  //   this.roommatePreferencesService.getRoommatePreferences().subscribe(
+  //     (data) => {
+  //       this.roommatePreferences = data;
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching roommate preferences:', error);
+  //     }
+  //   );
+  // }
+
 
   editDetails() {
     this.modal.open(EditUserDetailsModalComponent, { size: 'lg', centered: true})
   }
   
-  editEmail() {
-    this.modal.open(EditUserEmailModalComponent, {
-      centered: true,
-    });
-  }
+  
 
-  editPassword() {
-    this.modal.open(EditUserPasswordModalComponent, {
-      centered: true,
-    });
-  }
+
+  // editPreferences() {
+  //   // Open modal to edit existing preferences
+  //   // Pass existing preferences data to modal if needed
+  //   this.modal.open(EditRoommatePreferencesModalComponent, { size: 'lg', centered: true });
+  // }
+
+  // createPreferences() {
+  //   // Open modal to create new preferences
+  //   this.modal.open(CreateRoommatePreferencesModalComponent, { size: 'lg', centered: true });
+  // }
+
 }

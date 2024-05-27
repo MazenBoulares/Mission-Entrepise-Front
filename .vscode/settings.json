@@ -1,0 +1,41 @@
+{
+    "folder-color.pathColors": [
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\components\\pages\\user-panel\\",
+            "badge": "😍",
+            "color": "foldercolorizer.Copper"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\components\\pages\\user-panel\\cards-payment\\"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\components\\pages\\user-panel\\compare-property\\"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\components\\pages\\user-panel\\create-property\\"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\components\\pages\\user-panel\\favourites\\"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\components\\pages\\user-panel\\my-listing\\"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\components\\pages\\user-panel\\my-profile\\"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\components\\pages\\user-panel\\my-properties\\"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\components\\pages\\user-panel\\privacy\\"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\shared\\components\\common\\modal\\edit-user-details-modal\\",
+            "badge": "🤢"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\services\\RoommatePreferencesService.service.ts\\",
+            "badge": "🥶"
+        }
+    ]
+}

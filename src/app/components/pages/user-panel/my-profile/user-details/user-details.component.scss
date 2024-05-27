@@ -1,0 +1,34 @@
+ .preferences-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .preferences-list li span {
+    width: 150px;
+    font-weight: bold;
+  }
+  .preferences-list li p {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+  .preference-yes {
+    color: green;
+  }
+  .preference-no {
+    color: red;
+  }
+  .preference-yes i, .preference-no i {
+    margin-right: 5px;
+  }
+
+  .about-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .about-img img {
+    max-width: 100%;
+    height: auto;
+  }
