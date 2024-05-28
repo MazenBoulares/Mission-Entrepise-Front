@@ -1,147 +1,147 @@
 <div class="card">
-<div class="dashboard-content">
-  <div class="my-profile" id="profile">
-    <div class="profile-info">
-      <div class="common-card">
-        <div class="user-name media">
-          <div class="media-body">
-            <h5>Zack Lee <span class="label label-success">property Seeker</span></h5>
-            <div class="rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
-          <span class="label label-light label-flat color-4" (click)="createPreferences()">Add</span>
-
-          <span class="label label-light label-flat color-4" (click)="editPreferences()" >Edit</span>
-       
-       
-        </div>
-        <ul class="user-detail">
-          <li>
-            <app-feather-icons [icon]="'map-pin'"></app-feather-icons>
-            <span>Hammam Chatt, BA</span>
-          </li>
-          <li>
-            <app-feather-icons [icon]="'mail'"></app-feather-icons>
-            <span>zackle&#64;gmail.com</span>
-          </li>
-          <li>
-            <app-feather-icons [icon]="'check-square'"></app-feather-icons>
-            <span>Licensed for 2 years</span>
-          </li>
-        </ul>Use this form to find a compatible roommate by considering multiple criteria, including culinary skills, work experience, and more.
-        <p class="font-roboto"> 
-          
-         
-      </div>
-      <div class="common-card">
-        <div class="row">
-          <div class="col-xxl-6 col-xl-7">
-            <div class="information-detail">
-              <div class="common-header">
-                <h5>Personal Detail</h5>
-              </div>
-              <div class="information">
-                <ul>
-                  <li>
-                    <span>Gender :</span>
-                    <p>Female</p>
-                  </li>
-                  <li>
-                    <span>Current City :</span>
-                    <p>Hammam Chatt</p>
-                  </li>
-                  <li>
-                    <span>Work experience :</span>
-                    <a href="javascript:void(0)">3 years</a>
-                  </li>
-                  <li>
-                    <span>Address :</span>
-                    <p>549 Sulphur Springs Road, Downers, IL</p>
-                  </li>
-
-
-                  <li>
-                    <span>rent budget :</span>
-                    <p>800 DT</p>
-                  </li>
-
-
-                  <li>
-                    <span>Alcohol Consumption :</span>
-                    <p class="preference-no"><i class="fas fa-times-circle"></i> No</p>
-                  </li>
-
-                  <li>
-                    <span>Loves Cooking :</span>
-                    <p class="preference-no"><i class="fas fa-times-circle"></i> No</p>
-                  </li>
-
-
-                  <li>
-                    <span>Smoking :</span>
-                    <p class="preference-yes"><i class="fas fa-check-circle"></i> Yes</p>
-                  </li>
-                 
-                  <li>
-                    <span>looking for roomate :</span>
-                    <p class="preference-yes"><i class="fas fa-check-circle"></i> Yes</p>
-                  </li>
-
-
-
-
-
-
-                </ul>
-               
-
-
-                  
-
-                  
-         
+  <div class="dashboard-content">
+    <div class="my-profile" id="profile">
+      <div class="profile-info">
+        <div class="common-card">
+          <div class="user-name media">
+            <div class="media-body">
+              <h5>Zack Lee <span class="label label-success">property Seeker</span></h5>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
               </div>
             </div>
-            <div class="information-detail">
-              <div class="common-header">
-                <h5>House Preferences</h5>
-              </div>
-              <div class="information">
-                <ul>
-                  <li>
-                    <span>Has a Hall :</span>
-                    <a>  <p class="preference-yes"><i class="fas fa-check-circle"></i> Yes</p></a>
-                    
-                  </li>
-                  <li>
-                    <span>Max people per house :</span>
-                    <a>3</a>
-                    
-                  </li>
-
-                  <li>
-                    <span>Number of Rooms :</span>
-                    <a>2</a>
-                    
-                  </li>
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-xxl-5 offset-xxl-1 col-xl-5 offset-xl-0">
             <div class="about-img-container">
-              <img src="assets/images/inner-pages/2.PNG" class="img-fluid" alt="ok-image">
+            <!-- Animated search for roommate button -->
+            <button class="search-button" (click)="suggestRoommate()" >
+              <span >Search for Roommate</span>
+              <div class="glow"></div>
+            </button>
+          </div>
+            <span class="label label-light label-flat color-4" (click)="createPreferences()">Add</span>
+            <span class="label label-light label-flat color-4" (click)="editPreferences()">Edit</span>
+          </div>
+          <ul class="user-detail">
+            <li>
+              <app-feather-icons [icon]="'map-pin'"></app-feather-icons>
+              <span>Hammam Chatt, BA</span>
+            </li>
+            <li>
+              <app-feather-icons [icon]="'mail'"></app-feather-icons>
+              <span>zackle&#64;gmail.com</span>
+            </li>
+            <li>
+              <app-feather-icons [icon]="'check-square'"></app-feather-icons>
+              <span>Licensed for 2 years</span>
+            </li>
+          </ul>
+          Use this form to find a compatible roommate by considering multiple criteria, including culinary skills, work experience, and more.
+          <p class="font-roboto"></p>
+        </div>
+        <div *ngIf="roommatePreferences; else noPreferences" class="common-card">
+          <div class="row">
+            <div class="col-xxl-6 col-xl-7">
+              <div class="information-detail">
+                <div class="common-header">
+                  <h5>Personal Detail</h5>
+                </div>
+                <div class="information">
+                  <ul>
+                    <li>
+                      <span>Gender :</span>
+                      <p>{{ roommatePreferences.gender === '0' ? 'Male' : 'Female' }}</p>
+                    </li>
+                    <li>
+                      <span>Current City :</span>
+                      <p>{{ roommatePreferences.city }}</p>
+                    </li>
+                    <li>
+                      <span>Work experience :</span>
+                      <a href="javascript:void(0)">{{ roommatePreferences.workExperience }} years</a>
+                    </li>
+                    <li>
+                      <span>Address :</span>
+                      <p>{{ roommatePreferences.address }}</p>
+                    </li>
+                    <li>
+                      <span>Rent budget :</span>
+                      <p>{{ roommatePreferences.rentBudget }} DT</p>
+                    </li>
+                    <li>
+                      <span>Alcohol Consumption :</span>
+                      <p [ngClass]="{'preference-no': !roommatePreferences.alcoholConsumption, 'preference-yes': roommatePreferences.alcoholConsumption}">
+                        <i [class]="roommatePreferences.alcoholConsumption ? 'fas fa-check-circle' : 'fas fa-times-circle'"></i>
+                        {{ roommatePreferences.alcoholConsumption ? 'Yes' : 'No' }}
+                      </p>
+                    </li>
+                    <li>
+                      <span>Loves Cooking :</span>
+                      <p [ngClass]="{'preference-no': !roommatePreferences.lovesCooking, 'preference-yes': roommatePreferences.lovesCooking}">
+                        <i [class]="roommatePreferences.lovesCooking ? 'fas fa-check-circle' : 'fas fa-times-circle'"></i>
+                        {{ roommatePreferences.lovesCooking ? 'Yes' : 'No' }}
+                      </p>
+                    </li>
+                    <li>
+                      <span>Smoking :</span>
+                      <p [ngClass]="{'preference-no': !roommatePreferences.smoking, 'preference-yes': roommatePreferences.smoking}">
+                        <i [class]="roommatePreferences.smoking ? 'fas fa-check-circle' : 'fas fa-times-circle'"></i>
+                        {{ roommatePreferences.smoking ? 'Yes' : 'No' }}
+                      </p>
+                    </li>
+                    <li>
+                      <span>Looking for roommate :</span>
+                      <p [ngClass]="{'preference-no': !roommatePreferences.lookingForRoommate, 'preference-yes': roommatePreferences.lookingForRoommate}">
+                        <i [class]="roommatePreferences.lookingForRoommate ? 'fas fa-check-circle' : 'fas fa-times-circle'"></i>
+                        {{ roommatePreferences.lookingForRoommate ? 'Yes' : 'No' }}
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="information-detail">
+                <div class="common-header">
+                  <h5>House Preferences</h5>
+                </div>
+                <div class="information">
+                  <ul>
+                    <li>
+                      <span>Has a Hall :</span>
+                      <p [ngClass]="{'preference-no': !roommatePreferences.hasHall, 'preference-yes': roommatePreferences.hasHall}">
+                        <i [class]="roommatePreferences.hasHall ? 'fas fa-check-circle' : 'fas fa-times-circle'"></i>
+                        {{ roommatePreferences.hasHall ? 'Yes' : 'No' }}
+                      </p>
+                    </li>
+                    <li>
+                      <span>Max people per house :</span>
+                      <p>{{ roommatePreferences.maxPeople }}</p>
+                    </li>
+                    <li>
+                      <span>Number of Rooms :</span>
+                      <p>{{ roommatePreferences.numRooms }}</p>
+                      <small class="besides-kitchen">(besides kitchen)</small>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxl-5 offset-xxl-1 col-xl-5 offset-xl-0">
+              <div class="about-img-container">
+                <!-- Animated search for roommate button -->
+                <img src="../../../../../../assets/images/inner-pages/2.png" class="img-fluid" alt="ok-image">
+              </div>
             </div>
           </div>
         </div>
+        <ng-template #noPreferences>
+          <div class="common-card no-preferences">
+            <i class="fas fa-exclamation-circle fa-5x"></i>
+            <p>No preferences set yet. Click "Add" to create your preferences.</p>
+          </div>
+        </ng-template>
       </div>
     </div>
   </div>
-</div>
 </div>

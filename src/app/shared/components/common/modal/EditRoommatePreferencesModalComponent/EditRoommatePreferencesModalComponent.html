@@ -1,3 +1,4 @@
+<!-- EditRoommatePreferencesModalComponent.html -->
 <div class="modal-content">
   <div class="modal-header">
     <h5 class="modal-title">Edit Roommate Preferences</h5>
@@ -51,44 +52,44 @@
         <div class="form-group col-md-6">
           <label>Alcohol Consumption</label>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="alcoholConsumption" id="alcoholYes" value="yes" [(ngModel)]="preferenceData.alcoholConsumption">
+            <input class="form-check-input" type="radio" name="alcoholConsumption" id="alcoholYes" [value]="true" [(ngModel)]="preferenceData.alcoholConsumption">
             <label class="form-check-label" for="alcoholYes">Yes</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="alcoholConsumption" id="alcoholNo" value="no" [(ngModel)]="preferenceData.alcoholConsumption">
+            <input class="form-check-input" type="radio" name="alcoholConsumption" id="alcoholNo" [value]="false" [(ngModel)]="preferenceData.alcoholConsumption">
             <label class="form-check-label" for="alcoholNo">No</label>
           </div>
         </div>
         <div class="form-group col-md-6">
           <label>Loves Cooking</label>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="lovesCooking" id="cookingYes" value="yes" [(ngModel)]="preferenceData.lovesCooking">
+            <input class="form-check-input" type="radio" name="lovesCooking" id="cookingYes" [value]="true" [(ngModel)]="preferenceData.lovesCooking">
             <label class="form-check-label" for="cookingYes">Yes</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="lovesCooking" id="cookingNo" value="no" [(ngModel)]="preferenceData.lovesCooking">
+            <input class="form-check-input" type="radio" name="lovesCooking" id="cookingNo" [value]="false" [(ngModel)]="preferenceData.lovesCooking">
             <label class="form-check-label" for="cookingNo">No</label>
           </div>
         </div>
         <div class="form-group col-md-6">
           <label>Smoking</label>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="smoking" id="smokingYes" value="yes" [(ngModel)]="preferenceData.smoking">
+            <input class="form-check-input" type="radio" name="smoking" id="smokingYes" [value]="true" [(ngModel)]="preferenceData.smoking">
             <label class="form-check-label" for="smokingYes">Yes</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="smoking" id="smokingNo" value="no" [(ngModel)]="preferenceData.smoking">
+            <input class="form-check-input" type="radio" name="smoking" id="smokingNo" [value]="false" [(ngModel)]="preferenceData.smoking">
             <label class="form-check-label" for="smokingNo">No</label>
           </div>
         </div>
         <div class="form-group col-md-6">
           <label>Looking for Roommate</label>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="lookingForRoommate" id="roommateYes" value="yes" [(ngModel)]="preferenceData.lookingForRoommate">
+            <input class="form-check-input" type="radio" name="lookingForRoommate" id="roommateYes" [value]="true" [(ngModel)]="preferenceData.lookingForRoommate">
             <label class="form-check-label" for="roommateYes">Yes</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="lookingForRoommate" id="roommateNo" value="no" [(ngModel)]="preferenceData.lookingForRoommate">
+            <input class="form-check-input" type="radio" name="lookingForRoommate" id="roommateNo" [value]="false" [(ngModel)]="preferenceData.lookingForRoommate">
             <label class="form-check-label" for="roommateNo">No</label>
           </div>
         </div>
@@ -97,11 +98,11 @@
         <div class="form-group col-md-6">
           <label>Has a Hall</label>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="hasHall" id="hallYes" value="yes" [(ngModel)]="preferenceData.hasHall">
+            <input class="form-check-input" type="radio" name="hasHall" id="hallYes" [value]="true" [(ngModel)]="preferenceData.hasHall">
             <label class="form-check-label" for="hallYes">Yes</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="hasHall" id="hallNo" value="no" [(ngModel)]="preferenceData.hasHall">
+            <input class="form-check-input" type="radio" name="hasHall" id="hallNo" [value]="false" [(ngModel)]="preferenceData.hasHall">
             <label class="form-check-label" for="hallNo">No</label>
           </div>
         </div>

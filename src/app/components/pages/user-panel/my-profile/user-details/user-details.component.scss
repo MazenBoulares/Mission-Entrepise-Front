@@ -32,3 +32,97 @@
     max-width: 100%;
     height: auto;
   }
+  .no-preferences {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .no-preferences i {
+    color: #d9534f;
+  }
+  
+  .no-preferences p {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+
+  .common-card {
+    padding: 20px;
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  
+    .no-preferences {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 50px 20px;
+      border: 1px solid #e3e3e3;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+  
+      i {
+        color: #ccc;
+        margin-bottom: 10px;
+      }
+  
+      p {
+        margin: 0;
+        font-size: 18px;
+        color: #666;
+      }
+    }
+  }
+  
+  .besides-kitchen {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 10px;
+    color: #3974ac; /* Light orange */
+    background-color: #c2e4f8; /* Very light orange background */
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+  .search-button {
+    position: relative;
+    display: inline-block;
+    background-color: #bdddff;
+    color: #25599c;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    margin-right: 30px;
+  }
+  
+  .search-button .glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 80%);
+    animation: glow-animation 2s infinite;
+    opacity: 0;
+  }
+  
+  @keyframes glow-animation {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+  }
+  
