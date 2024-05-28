@@ -18,10 +18,15 @@ export class RoommatePreferencesService {
     return this.http.post<any>(this.apiUrl, preferences);
   }
 
-  updateRoommatePreferences(id: number, preferences: any): Observable<any> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.put<any>(url, preferences);
+  updateRoommatePreference(id: number, data: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, data);
   }
+
+
+  getRoommatePreferenceById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+
 
   // Implement other CRUD operations as needed
 }

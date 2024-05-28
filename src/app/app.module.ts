@@ -17,7 +17,12 @@ import { compareState } from './shared/store/states/compare.state';
 import { propertyState } from './shared/store/states/property-detail.state';
 import { imageState } from './shared/store/states/property-images.state';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';  // Import FormsModule
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { CreateRoommatePreferencesModalComponent } from './shared/components/common/modal/CreateRoommatePreferencesModalComponent/CreateRoommatePreferencesModalComponent';
+import { RoommatePreferencesService } from './services/RoommatePreferencesService.service';  // Update path as necessary
+import { EditRoommatePreferencesModalComponent } from './shared/components/common/modal/EditRoommatePreferencesModalComponent/EditRoommatePreferencesModalComponent';
 
 export function HttpLoaderFactory(http: HttpClient) {
    return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -25,14 +30,21 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,
+    CreateRoommatePreferencesModalComponent,
+    EditRoommatePreferencesModalComponent,
+  ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     ToastrModule.forRoot(),
     CarouselModule,
+    BrowserModule,
+    FormsModule,  // Add FormsModule here
+    NgbModule,
 
     // Ngxs
     NgxsModule.forRoot([wishlistState, categoryState, compareState, imageState, propertyState]),
@@ -49,6 +61,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
   ],
   providers: [
+    RoommatePreferencesService
   ],
   exports: [HttpClientModule],
   bootstrap: [AppComponent],

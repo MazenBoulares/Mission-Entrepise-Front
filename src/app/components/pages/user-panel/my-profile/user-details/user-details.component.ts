@@ -43,15 +43,17 @@ export class UserDetailsComponent {
   
 
 
-  // editPreferences() {
-  //   // Open modal to edit existing preferences
-  //   // Pass existing preferences data to modal if needed
-  //   this.modal.open(EditRoommatePreferencesModalComponent, { size: 'lg', centered: true });
-  // }
+  editPreferences() {
+    const modalRef = this.modal.open(EditRoommatePreferencesModalComponent, { size: 'lg', centered: true });
+    modalRef.componentInstance.preferenceId = "5";
+  }
 
-  // createPreferences() {
-  //   // Open modal to create new preferences
-  //   this.modal.open(CreateRoommatePreferencesModalComponent, { size: 'lg', centered: true });
-  // }
+  createPreferences() {
+    // Open modal to create new preferences
+    this.modal.open(CreateRoommatePreferencesModalComponent, { size: 'lg', centered: true });
+  }
+
+
+  
 
 }

@@ -1,6 +1,6 @@
 <div class="modal-content">
   <div class="modal-header">
-    <h5 class="modal-title">Roommate Preferances</h5>
+    <h5 class="modal-title">Edit Roommate Preferences</h5>
     <button type="button" class="btn-close" (click)="modal.dismissAll()">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -11,7 +11,7 @@
         <!-- Profile Info -->
         <div class="form-group col-md-6">
           <label for="gender">Gender</label>
-          <select id="gender" class="form-control">
+          <select id="gender" class="form-control" [(ngModel)]="preferenceData.gender" name="gender">
             <option selected>Choose...</option>
             <option value="female">Female</option>
             <option value="male">Male</option>
@@ -19,74 +19,76 @@
         </div>
         <div class="form-group col-md-6">
           <label for="birthday">Birthday</label>
-          <input type="date" class="form-control" id="birthday">
+          <input type="date" class="form-control" id="birthday" [(ngModel)]="preferenceData.birthday" name="birthday">
         </div>
         <div class="form-group col-12">
           <label for="address">Address</label>
-          <input type="text" class="form-control" id="address" placeholder="1234 Main St">
+          <input type="text" class="form-control" id="address" placeholder="1234 Main St" [(ngModel)]="preferenceData.address" name="address">
         </div>
         <div class="form-group col-md-6">
           <label for="city">City</label>
-          <input type="text" class="form-control" id="city">
+          <input type="text" class="form-control" id="city" [(ngModel)]="preferenceData.city" name="city">
         </div>
         <div class="form-group col-md-6">
           <label for="state">State</label>
-          <select id="state" class="form-control">
+          <select id="state" class="form-control" [(ngModel)]="preferenceData.state" name="state">
             <option selected>Choose...</option>
-            <option>...</option>
+            <option value="state1">State 1</option>
+            <option value="state2">State 2</option>
+            <!-- Add more states as needed -->
           </select>
         </div>
         <div class="form-group col-md-6">
           <label for="workExperience">Work Experience (years)</label>
-          <input type="number" class="form-control" id="workExperience" placeholder="3">
+          <input type="number" class="form-control" id="workExperience" placeholder="3" [(ngModel)]="preferenceData.workExperience" name="workExperience">
         </div>
         <div class="form-group col-md-6">
           <label for="rentBudget">Rent Budget (DT)</label>
-          <input type="number" class="form-control" id="rentBudget" placeholder="800">
+          <input type="number" class="form-control" id="rentBudget" placeholder="800" [(ngModel)]="preferenceData.rentBudget" name="rentBudget">
         </div>
-        
+
         <!-- Preferences -->
         <div class="form-group col-md-6">
           <label>Alcohol Consumption</label>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="alcoholConsumption" id="alcoholYes" value="yes">
+            <input class="form-check-input" type="radio" name="alcoholConsumption" id="alcoholYes" value="yes" [(ngModel)]="preferenceData.alcoholConsumption">
             <label class="form-check-label" for="alcoholYes">Yes</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="alcoholConsumption" id="alcoholNo" value="no" checked>
+            <input class="form-check-input" type="radio" name="alcoholConsumption" id="alcoholNo" value="no" [(ngModel)]="preferenceData.alcoholConsumption">
             <label class="form-check-label" for="alcoholNo">No</label>
           </div>
         </div>
         <div class="form-group col-md-6">
           <label>Loves Cooking</label>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="lovesCooking" id="cookingYes" value="yes">
+            <input class="form-check-input" type="radio" name="lovesCooking" id="cookingYes" value="yes" [(ngModel)]="preferenceData.lovesCooking">
             <label class="form-check-label" for="cookingYes">Yes</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="lovesCooking" id="cookingNo" value="no" checked>
+            <input class="form-check-input" type="radio" name="lovesCooking" id="cookingNo" value="no" [(ngModel)]="preferenceData.lovesCooking">
             <label class="form-check-label" for="cookingNo">No</label>
           </div>
         </div>
         <div class="form-group col-md-6">
           <label>Smoking</label>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="smoking" id="smokingYes" value="yes" checked>
+            <input class="form-check-input" type="radio" name="smoking" id="smokingYes" value="yes" [(ngModel)]="preferenceData.smoking">
             <label class="form-check-label" for="smokingYes">Yes</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="smoking" id="smokingNo" value="no">
+            <input class="form-check-input" type="radio" name="smoking" id="smokingNo" value="no" [(ngModel)]="preferenceData.smoking">
             <label class="form-check-label" for="smokingNo">No</label>
           </div>
         </div>
         <div class="form-group col-md-6">
           <label>Looking for Roommate</label>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="lookingForRoommate" id="roommateYes" value="yes" checked>
+            <input class="form-check-input" type="radio" name="lookingForRoommate" id="roommateYes" value="yes" [(ngModel)]="preferenceData.lookingForRoommate">
             <label class="form-check-label" for="roommateYes">Yes</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="lookingForRoommate" id="roommateNo" value="no">
+            <input class="form-check-input" type="radio" name="lookingForRoommate" id="roommateNo" value="no" [(ngModel)]="preferenceData.lookingForRoommate">
             <label class="form-check-label" for="roommateNo">No</label>
           </div>
         </div>
@@ -95,27 +97,27 @@
         <div class="form-group col-md-6">
           <label>Has a Hall</label>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="hasHall" id="hallYes" value="yes" checked>
+            <input class="form-check-input" type="radio" name="hasHall" id="hallYes" value="yes" [(ngModel)]="preferenceData.hasHall">
             <label class="form-check-label" for="hallYes">Yes</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="hasHall" id="hallNo" value="no">
+            <input class="form-check-input" type="radio" name="hasHall" id="hallNo" value="no" [(ngModel)]="preferenceData.hasHall">
             <label class="form-check-label" for="hallNo">No</label>
           </div>
         </div>
         <div class="form-group col-md-6">
           <label for="maxPeople">Max People per House</label>
-          <input type="number" class="form-control" id="maxPeople" placeholder="3">
+          <input type="number" class="form-control" id="maxPeople" placeholder="3" [(ngModel)]="preferenceData.maxPeople" name="maxPeople">
         </div>
         <div class="form-group col-md-6">
           <label for="numRooms">Number of Rooms</label>
-          <input type="number" class="form-control" id="numRooms" placeholder="2">
+          <input type="number" class="form-control" id="numRooms" placeholder="2" [(ngModel)]="preferenceData.numRooms" name="numRooms">
         </div>
       </div>
     </form>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-dashed color-2 btn-pill" (click)="modal.dismissAll()">Cancel</button>
-    <button type="button" class="btn btn-gradient color-2 btn-pill" (click)="modal.dismissAll()">Save changes</button>
+    <button type="button" class="btn btn-gradient color-2 btn-pill" (click)="saveChanges()">Save changes</button>
   </div>
 </div>
