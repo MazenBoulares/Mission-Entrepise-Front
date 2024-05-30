@@ -5,6 +5,7 @@ import { AgentGridComponent } from './agent-grid/agent-grid.component';
 import { AgentListComponent } from './agent-list/agent-list.component';
 import { SubmitPropertyComponent } from './submit-property/submit-property.component';
 import { ManagePropertiesComponent } from './manage-properties/manage-properties.component';
+import { AuthGuard } from 'src/app/services/authGurad/AuthGuard';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
   },
   {
     path: 'submit-property',
-    component: SubmitPropertyComponent
+    component: SubmitPropertyComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'manage-properties',

@@ -27,6 +27,8 @@ import { CardsDetailsComponent } from './cards-payment/cards-details/cards-detai
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ComparePropertyComponent } from './compare-property/compare-property.component';
 import { ComparePropertyDataComponent } from './compare-property/compare-property-data/compare-property-data.component';
+import { AvailablePropertyComponent2 } from './user-dashboard/available-property copy 2/available-property.component';
+import { AvailablePropertyComponent1 } from './user-dashboard/available-property copy/available-property.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { ComparePropertyDataComponent } from './compare-property/compare-propert
     SalesOverviewComponent,
     SalesByAgentsComponent,
     AvailablePropertyComponent,
+    AvailablePropertyComponent1,
+    AvailablePropertyComponent2,
     PropertyOverviewComponent,
     CreatePropertyComponent,
     BasicInformationComponent,
@@ -58,6 +62,7 @@ import { ComparePropertyDataComponent } from './compare-property/compare-propert
     UserPanelRoutingModule,
     SharedModule,
     ChartistModule,
+    ChartistModule, 
     NgApexchartsModule,
     NgxDropzoneModule
   ]

@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { LayoutService } from '../../../../shared/services/layout.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { PredictionService } from 'src/app/services/prediction.service';
 
 @Component({
   selector: 'app-customizer',
@@ -22,8 +24,14 @@ export class CustomizerComponent {
 
   public layout_version: string | null;
   public layout_type: string | null;
-
-  constructor(public layout:LayoutService){
+  predictForm: FormGroup;
+  numRooms: number;
+  numBathrooms: number;
+  squareMeterage: number;
+  conditionCategory: number;
+  location: string;
+  predictedPrice :number
+  constructor(public layout:LayoutService,private fb: FormBuilder,private predictionService :PredictionService){
     this.layout_version = localStorage.getItem('layout_version');
     this.layout_type = localStorage.getItem('layout_type');
 
@@ -38,8 +46,30 @@ export class CustomizerComponent {
       document.body.classList.add('rtl');
       this.layout.config.settings.layout_type = 'rtl';
     }
+    this.predictForm = new FormGroup({
+      numRooms: new FormControl(null, [Validators.required, Validators.min(0)]),
+      numBathrooms: new FormControl(null, [Validators.required, Validators.min(0)]),
+      propertyType: new FormControl(null, [Validators.required]),
+      squareMeterage: new FormControl(null, [Validators.required, Validators.min(0)]),
+      conditionCategory: new FormControl(null, Validators.required),
+      location: new FormControl(null, Validators.required)
+    });
   }
-
+  submitForm() {
+    if (this.predictForm.valid) {
+      // Call your backend service to send data
+      const formData = this.predictForm.value;
+      this.predictionService.predictPrice(formData).subscribe({
+        next:(data)=>
+          {
+            this.predictedPrice=data.prediction;
+          }
+      })
+      console.log(formData); // Log the data for now, replace it with backend call
+    } else {
+      console.log('Form is invalid');
+    }
+  }
   openCustomizer() {
     this.isOpen = true;
   }

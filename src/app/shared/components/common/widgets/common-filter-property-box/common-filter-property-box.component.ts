@@ -76,29 +76,29 @@ export class CommonFilterPropertyBoxComponent {
     private store: Store,
     private listingService:ListingService
   ) {
-    // this.route.queryParams.subscribe((params) => {
-    //   this.category = params['category'] ? params['category'].split(',') : [];
-    //   this.status = params['status'] ? params['status'].split(',') : [];
-    //   this.rooms = params['room'] ? params['room'].split(',') : [];
-    //   this.beds = params['bed'] ? params['bed'].split(',') : [];
-    //   this.bath = params['bath'] ? params['bath'].split(',') : [];
-    //   this.agency = params['agency'] ? params['agency'].split(',') : [];
-    //   this.minPrice = params['minPrice'] ? params['minPrice'] : [];
-    //   this.maxPrice = params['maxPrice'] ? params['maxPrice'] : [];
-    //   this.minArea = params['minArea'] ? params['minArea'] : [];
-    //   this.maxArea = params['maxArea'] ? params['maxArea'] : [];
-    //   this.pageNo = params['page'] ? params['page'] : this.pageNo;
-    //   this.sortBy = params['sortBy'] ? params['sortBy'] : []
+    this.route.queryParams.subscribe((params) => {
+      this.category = params['category'] ? params['category'].split(',') : [];
+      this.status = params['status'] ? params['status'].split(',') : [];
+      this.rooms = params['room'] ? params['room'].split(',') : [];
+      this.beds = params['bed'] ? params['bed'].split(',') : [];
+      this.bath = params['bath'] ? params['bath'].split(',') : [];
+      this.agency = params['agency'] ? params['agency'].split(',') : [];
+      this.minPrice = params['minPrice'] ? params['minPrice'] : [];
+      this.maxPrice = params['maxPrice'] ? params['maxPrice'] : [];
+      this.minArea = params['minArea'] ? params['minArea'] : [];
+      this.maxArea = params['maxArea'] ? params['maxArea'] : [];
+      this.pageNo = params['page'] ? params['page'] : this.pageNo;
+      this.sortBy = params['sortBy'] ? params['sortBy'] : []
 
 
-    //   this.price = { minPrice: this.minPrice, maxPrice: this.maxPrice };
-    //   this.area = { minArea: this.minArea, maxArea: this.maxArea };
+      this.price = { minPrice: this.minPrice, maxPrice: this.maxPrice };
+      this.area = { minArea: this.minArea, maxArea: this.maxArea };
+ this.fetchListings();
+      this.paramsTag = [...this.category, ...this.status, ...this.rooms, ...this.beds, ...this.bath, ...this.agency];
+      this.paramsTagData.emit(this.paramsTag);
 
-    //   this.paramsTag = [...this.category, ...this.status, ...this.rooms, ...this.beds, ...this.bath, ...this.agency];
-    //   this.paramsTagData.emit(this.paramsTag);
-
-    //   this.store.dispatch(new getCategory(this.paramsTag, this.price, this.area, this.category, this.sortBy));
-    // });
+      this.store.dispatch(new getCategory(this.paramsTag, this.price, this.area, this.category, this.sortBy));
+    });
   }
 
   async ngOnInit() {
@@ -124,7 +124,7 @@ export class CommonFilterPropertyBoxComponent {
         this.propertyBoxGridService.col_md_6 = false;
       }
     }
-           this.fetchListings();
+          
 
   }
 

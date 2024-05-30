@@ -15,7 +15,8 @@ export class AuthenticationService {
     constructor(private http: HttpClient, private localStorageService: LocalStorageService) {
     }
 
-
+    isLoggedIn():boolean{
+        return !!localStorage.getItem('userData');    }
     login(username: string, password: string): Observable<HttpResponse<any>> {
 
 

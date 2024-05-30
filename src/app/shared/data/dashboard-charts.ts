@@ -94,6 +94,43 @@ export const totalSales: any = {
   },
   title: 'Total Sales',
   number: '$54871.12',
+  widgetClass: 'widgets widget-2',
+  chartClass: 'small-chart1',
+};
+export const totalListing: any = {
+  type: 'Bar',
+  data: {
+    labels: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7'],
+    series: [
+      [400, 900, 800, 1000, 700, 1200, 300],
+      [1000, 500, 600, 400, 700, 200, 1100],
+    ],
+  },
+  options: {
+    stackBars: true,
+    chartPadding: {
+      top: -30,
+      right: 0,
+      left: 0,
+      bottom: 0,
+    },
+    axisX: {
+      showGrid: false,
+      showLabel: false,
+      offset: 0,
+    },
+    axisY: {
+      low: 0,
+      showGrid: false,
+      showLabel: false,
+      offset: 0,
+      labelInterpolationFnc: function (value: number) {
+        return value / 1000 + 'k';
+      },
+    },
+  },
+  title: 'Total Listing',
+  number: '$54871.12',
   widgetClass: 'widgets widget-1',
   chartClass: 'small-chart1',
 };
@@ -368,6 +405,96 @@ export const salesByAgent: ChartOptions | any = {
 };
 
 export const availablePropertyData: ChartOptions | any = {
+  chart: {
+    height: 330,
+    type: 'radialBar',
+  },
+  plotOptions: {
+    radialBar: {
+      hollow: {
+        size: '70%',
+      },
+      track: {
+        show: true,
+        background: '#f2f2f2',
+        strokeWidth: '20%',
+        opacity: 1,
+        margin: 5,
+        dropShadow: {
+          enabled: false,
+          top: 0,
+          left: 0,
+          blur: 3,
+          opacity: 0.5,
+        },
+      },
+      dataLabels: {
+        name: {
+          fontSize: '40px',
+        },
+        value: {
+          show: false,
+        },
+        total: {
+          show: true,
+          label: '80',
+        },
+      },
+    },
+  },
+  series: [80],
+  labels: ['property for Rent'],
+  colors: ['#63ad24'],
+  stroke: {
+    lineCap: 'round',
+  },
+};
+export const availablePropertyData1: ChartOptions | any = {
+  chart: {
+    height: 330,
+    type: 'radialBar',
+  },
+  plotOptions: {
+    radialBar: {
+      hollow: {
+        size: '70%',
+      },
+      track: {
+        show: true,
+        background: '#f2f2f2',
+        strokeWidth: '20%',
+        opacity: 1,
+        margin: 5,
+        dropShadow: {
+          enabled: false,
+          top: 0,
+          left: 0,
+          blur: 3,
+          opacity: 0.5,
+        },
+      },
+      dataLabels: {
+        name: {
+          fontSize: '40px',
+        },
+        value: {
+          show: false,
+        },
+        total: {
+          show: true,
+          label: '80',
+        },
+      },
+    },
+  },
+  series: [80],
+  labels: ['property for rent'],
+  colors: ['#63ad24'],
+  stroke: {
+    lineCap: 'round',
+  },
+};
+export const availablePropertyData2: ChartOptions | any = {
   chart: {
     height: 330,
     type: 'radialBar',

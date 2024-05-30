@@ -8,38 +8,63 @@
     </div>
     <div class="layouts-settings">
       <div class="customizer-title">
-        <h6 [class]="divClass">Layout type</h6>
+        <h6 [class]="divClass">Predict Price</h6>
       </div>
-      <div class="option-setting" >
-        <span>Light</span>
-        <label class="switch">
-          <input type="checkbox" name="chk1" value="selected" class="setting-check" (change)="changeThemeColor(themeColor)" [(ngModel)]="themeColor"/><span class="switch-state"></span>
-        </label>
-        <span>Dark</span>
+      <form [formGroup]="predictForm" (ngSubmit)="submitForm()">
+      <div class="layouts-settings">
+        <label for="rooms">Number of rooms</label>
+        <input
+        type="number" class="form-control" id="numRooms" formControlName="numRooms"
+        />
       </div>
-    </div>
-    <div class="layouts-settings">
-      <div class="customizer-title">
-        <h6 [class]="divClass">Layout Direction</h6>
+      <div class="layouts-settings">
+        <label for="rooms">Number of bathrooms</label>
+        <input
+        type="number" class="form-control" id="numBathrooms" formControlName="numBathrooms"
+        />
       </div>
-      <div class="option-setting">
-        <span>LTR</span>
-        <label class="switch">
-          <input type="checkbox" name="chk2" value="option" class="setting-check1" (change)="changedDirection(themeDirection)" [(ngModel)]="themeDirection"/><span class="switch-state"></span>
-        </label>
-        <span>RTL</span>
+      <div class="layouts-settings">
+        <label for="rooms">Square meterage</label>
+        <input
+        type="number" class="form-control" id="squareMeterage" formControlName="squareMeterage"
+        />
       </div>
-    </div>
-    <div class="layouts-settings">
-      <div class="customizer-title">
-        <h6 [class]="divClass">Unlimited Color</h6>
+      <div class="layouts-settings">
+        <label for="conditionCategory">Condition category</label>
+        <select class="form-control" id="conditionCategory"formControlName="propertyType">
+          <option value="1">Appartment</option>
+          <option value="2">House</option>
+        </select>
       </div>
-      <div class="option-setting unlimited-color-layout">
-        <input id="ColorPicker" type="color" name="Default"  (change)="changedColor1(themeColor1)" [(ngModel)]="themeColor1"/>
-        @if(themeColor2){
-          <input id="ColorPicker" type="color" name="Default" (change)="changedColor2(themeColor2)" [(ngModel)]="themeColor2"/>
-        }
+      <div class="layouts-settings">
+        <label for="conditionCategory">Condition category</label>
+        <select class="form-control" id="conditionCategory"formControlName="conditionCategory">
+          <option value="1">New</option>
+          <option value="2">Good</option>
+          <option value="3">Poor</option>
+        </select>
       </div>
-    </div>
+      <div class="layouts-settings">
+        <label for="location">Location</label>
+        <select class="form-control" id="location" formControlName="location">
+          <option value="La Marsa">La Marsa</option>
+          <option value="La Soukra">La Soukra</option>
+          <option value="El Menzah">El Menzah</option>
+          <option value="Le Kram">Le Kram</option>
+          <option value="Carthage">Carthage</option>
+          <option value="La Goulette">La Goulette</option>
+          <option value="Sidi Bou Said">Sidi Bou Said</option>
+          <!-- Add more options as needed -->
+        </select>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-gradient color-2 btn-pill">Predict price</button>
+        <br>
+        <div class="customizer-title">
+          <h6 [class]="divClass"[hidden]="!predictedPrice">Predicted Selling Price </h6>
+            <span> {{predictedPrice}}</span>
+        </div>
+      
+  </form>
   </div>
 </div>

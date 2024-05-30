@@ -18,14 +18,20 @@
           <div id="dashboard">
             <div class="user-wrapper">
               <div class="row">
-                <div class="col-md-4">
-                  <app-top-common-charts [chartData]="totalAgents"></app-top-common-charts>
-                </div>
-                <div class="col-md-4">
-                  <app-top-common-charts [chartData]="totalSales"></app-top-common-charts>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <app-top-common-charts [chartData]="totalProperty"></app-top-common-charts>
+                </div>
+                <div class="col-md-6">
+                  <app-top-common-charts [chartData]="totalListing"></app-top-common-charts>
+                </div>
+                <div class="col-xl-4 xl-40 col-md-4">
+                  <app-available-property></app-available-property>
+                </div>
+                <div class="col-xl-4 xl-40 col-md-4">
+                  <app-available-property-1></app-available-property-1>
+                </div>
+                <div class="col-xl-4 xl-40 col-md-4">
+                  <app-available-property-2></app-available-property-2>
                 </div>
                 <div class="col-xl-7 col-md-12">
                   <app-sales-overview></app-sales-overview>
@@ -33,12 +39,9 @@
                 <div class="col-xl-5 col-md-6">
                   <app-sales-by-agents></app-sales-by-agents>
                 </div>
-                <div class="col-xl-4 xl-40 col-md-6">
-                  <app-available-property></app-available-property>
-                </div>
-                <div class="col-xl-8 xl-60 col-md-12">
+                <!-- <div class="col-xl-8 xl-60 col-md-12">
                   <app-property-overview></app-property-overview>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
