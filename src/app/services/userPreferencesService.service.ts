@@ -50,4 +50,16 @@ export class userPreferencesService {
     return this.http.delete<void>(`http://localhost:8082/users/${userId}`);
   }
 
+
+  public getUserById(userId: number): Observable<User> {
+    return this.http.get<User>(`http://localhost:8082/users/${userId}`);
+  }
+  
+
+  public updateUser(userId: number, user: User): Observable<User> {
+    return this.http.put<User>(`http://localhost:8082/users/${userId}`, user);
+  }
+
+
+
 }

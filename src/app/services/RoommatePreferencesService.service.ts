@@ -35,5 +35,14 @@ export class RoommatePreferencesService {
   }
   
 
+  getLatestPreferenceId(): Observable<number> {
+    return this.http.get<number>('http://localhost:8082/roommate-preferences/getLatestPreference');
+  }
+
+   // New method to get preference by user ID
+   getRoommatePreferenceByUserId(userId: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/user/${userId}`);
+  }
+
   // Implement other CRUD operations as needed
 }

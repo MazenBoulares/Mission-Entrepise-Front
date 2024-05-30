@@ -52,6 +52,10 @@
         {
             "folderPath": "Mission-Entrepise-Front\\src\\app\\components\\pages\\other-pages\\log-in\\",
             "badge": "🥰"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\shared\\components\\common\\modal\\",
+            "badge": "🤢"
         }
     ]
 }

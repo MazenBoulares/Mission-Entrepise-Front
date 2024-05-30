@@ -1,7 +1,7 @@
 <div class="modal-content">
   <div class="modal-header">
     <h5 class="modal-title">Roommate Preferences</h5>
-    <button type="button" class="btn-close" (click)="modal.dismissAll()">
+    <button type="button" class="btn-close" (click)="activeModal.dismiss('cancel')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -116,7 +116,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-dashed color-2 btn-pill" (click)="modal.dismissAll()">Cancel</button>
+    <button type="button" class="btn btn-dashed color-2 btn-pill" (click)="activeModal.dismiss('cancel')">Cancel</button>
     <button type="submit" class="btn btn-gradient color-2 btn-pill" [disabled]="!preferencesForm.form.valid" (click)="onSubmit()">Save changes</button>
   </div>
 </div>
