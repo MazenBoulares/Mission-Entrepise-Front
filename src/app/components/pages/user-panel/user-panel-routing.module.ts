@@ -9,7 +9,7 @@ import { CardsPaymentComponent } from './cards-payment/cards-payment.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ComparePropertyComponent } from './compare-property/compare-property.component';
 import {MyPropertiesComponent} from "./my-properties/my-properties.component";
-
+import { AllUserComponent } from './all-user/all-user.component';
 const routes: Routes = [
   {
     path: 'user-dashboard',
@@ -47,6 +47,14 @@ const routes: Routes = [
     path: 'privacy',
     component: PrivacyComponent
   },
+  {
+    path: 'all-user',
+    component: AllUserComponent,
+    data: {
+      title: "All Users",
+      breadcrumb: "All Users"
+    }
+  }
 ];
 
 @NgModule({

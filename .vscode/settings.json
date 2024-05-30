@@ -36,6 +36,22 @@
         {
             "folderPath": "Mission-Entrepise-Front\\src\\app\\services\\RoommatePreferencesService.service.ts\\",
             "badge": "🥶"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\components\\pages\\user-panel\\my-properties\\my-properties.component.ts\\",
+            "color": "foldercolorizer.Coral"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\components\\pages\\user-panel\\my-properties\\my-properties.component.html\\",
+            "badge": "🤙"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\components\\pages\\user-panel\\all-user\\common-user-details\\",
+            "badge": "💚"
+        },
+        {
+            "folderPath": "Mission-Entrepise-Front\\src\\app\\components\\pages\\other-pages\\log-in\\",
+            "badge": "🥰"
         }
     ]
 }

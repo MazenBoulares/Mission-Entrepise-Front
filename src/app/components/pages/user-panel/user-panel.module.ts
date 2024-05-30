@@ -30,6 +30,8 @@ import { ComparePropertyComponent } from './compare-property/compare-property.co
 import { ComparePropertyDataComponent } from './compare-property/compare-property-data/compare-property-data.component';
 import {FormsModule} from "@angular/forms";
 import {NgxPaginationModule} from "ngx-pagination";
+import { CommonUserDetailsComponent } from './all-user/common-user-details/common-user-details.component';
+import { AllUserComponent } from './all-user/all-user.component';
 
 
 @NgModule({
@@ -55,7 +57,10 @@ import {NgxPaginationModule} from "ngx-pagination";
     CardsDetailsComponent,
     PrivacyComponent,
     ComparePropertyComponent,
-    ComparePropertyDataComponent
+    ComparePropertyDataComponent,
+    CommonUserDetailsComponent,
+    AllUserComponent
+    
   ],
   imports: [
     NgxPaginationModule,
@@ -65,7 +70,7 @@ import {NgxPaginationModule} from "ngx-pagination";
     ChartistModule,
     NgApexchartsModule,
     NgxDropzoneModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class UserPanelModule { }

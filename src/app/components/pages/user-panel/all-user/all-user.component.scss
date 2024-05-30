@@ -1,0 +1,50 @@
+.property-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .property-list .col-md-6 {
+    margin-bottom: 20px;
+  }
+  
+  .property-box {
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .property-box:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .agent-image {
+    position: relative;
+  }
+  
+  .agent-image .bg-size {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+  }
+  
+  .agent-content {
+    padding: 15px 0;
+  }
+  
+  .agent-contact li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .agent-contact li i {
+    margin-right: 10px;
+  }
+  
+  .agent-contact .phone-number {
+    font-weight: bold;
+  }
+  

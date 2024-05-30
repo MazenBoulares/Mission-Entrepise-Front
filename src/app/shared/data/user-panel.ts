@@ -15,30 +15,30 @@ export interface cards{
   cardImage: string;
 }
 export const userPanelSideMenu : sideMenu[] = [
-  // {
-  //   id: 1,
-  //   title: 'dashboard',
-  //   value: 'dashboard',
-  //   path: '/page/user/user-dashboard',
-  // },
+  {
+    id: 1,
+    title: 'dashboard',
+    value: 'dashboard',
+    path: '/page/user/user-dashboard',
+  },
   // {
   //   id: 2,
   //   title: 'my listing',
   //   value: 'listing',
   //   path: '/page/user/my-listing',
   // },
-  {
-    id: 9,
-    title: 'my properties',
-    value: 'properties',
-    path: '/page/user/my-properties',
-  },
-  {
-    id: 3,
-    title: 'create property',
-    value: 'create-property',
-    path: '/page/user/create-property',
-  },
+  // {
+  //   id: 9,
+  //   title: 'my properties',
+  //   value: 'properties',
+  //   path: '/page/user/my-properties',
+  // },
+  // {
+  //   id: 3,
+  //   title: 'create property',
+  //   value: 'create-property',
+  //   path: '/page/user/create-property',
+  // },
   {
     id: 4,
     title: 'my profile',
@@ -51,6 +51,14 @@ export const userPanelSideMenu : sideMenu[] = [
     value: 'favourite',
     path: '/page/user/favourite',
   },
+
+  {
+    id: 6,
+    title: 'roommates',
+    value: 'rommates',
+    path: '/page/user/all-user',
+  },
+  
   // {
   //   id: 6,
   //   title: 'cards & payment',

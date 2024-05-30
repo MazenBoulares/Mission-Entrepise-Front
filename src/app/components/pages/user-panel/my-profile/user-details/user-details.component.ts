@@ -3,7 +3,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RoommatePreferencesService } from 'src/app/services/RoommatePreferencesService.service';
 import { EditRoommatePreferencesModalComponent } from 'src/app/shared/components/common/modal/EditRoommatePreferencesModalComponent/EditRoommatePreferencesModalComponent';
 import { CreateRoommatePreferencesModalComponent } from 'src/app/shared/components/common/modal/CreateRoommatePreferencesModalComponent/CreateRoommatePreferencesModalComponent';
-
+import { Router } from '@angular/router';  // Import Router
+import { UserService } from 'src/app/services/userService';
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
@@ -28,7 +29,7 @@ export class UserDetailsComponent implements OnInit {
 
   closestRoommates: number[] = [];
 
-  constructor(private modal: NgbModal, private roommatePreferencesService: RoommatePreferencesService) { }
+  constructor(private userService:UserService, private router: Router, private modal: NgbModal, private roommatePreferencesService: RoommatePreferencesService) { }
 
   ngOnInit(): void {
     this.fetchPreferences(this.preferenceId);
@@ -86,7 +87,16 @@ console.log(this.userPreferencesModel);
           console.error('Error:', error);
         }
       );
-  }
+
+
+
+
+      // this.router.navigate(['/favourite'], {
+      //   queryParams: this.userPreferencesModel
+      // });
+
+
+   }
 
 
 }
