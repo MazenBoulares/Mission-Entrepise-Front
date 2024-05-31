@@ -1,0 +1,18 @@
+<h6>Request exploration</h6>
+<div class="category-property">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input type="text" class="form-control" formControlName="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" formControlName="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+            <input type="tel" class="form-control" formControlName="phoneNumber" placeholder="Phone Number" maxlength="9" required>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" formControlName="message" placeholder="Message" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-gradient color-2 btn-block btn-pill">Submit Request</button>
+    </form>
+</div>

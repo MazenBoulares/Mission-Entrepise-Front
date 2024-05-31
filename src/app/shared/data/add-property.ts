@@ -1,0 +1,53 @@
+export interface propertySteps{
+  id: number;
+  title: string;
+  subTitle: string;
+  stepNumber: number;
+  disabled: boolean;
+}
+
+export const addPropertyStepsData: propertySteps[] = [
+  {
+    id: 1,
+    title: 'General',
+    subTitle: 'Basic Information',
+    stepNumber: 1,
+    disabled: false,
+  },
+  {
+    id: 2,
+    title: 'Address',
+    subTitle: 'Add your place',
+    stepNumber: 2,
+    disabled: false,
+  },
+  {
+    id: 3,
+    title: 'Gallery',
+    subTitle: 'Add your media',
+    stepNumber: 3,
+    disabled: false,
+  },
+  {
+    id: 4,
+    title: 'Confirmation',
+    subTitle: 'Complete details',
+    stepNumber: 4,
+    disabled: false,
+  },
+  {
+    id: 5,
+    title: 'Listing',
+    subTitle: 'List Your Property',
+    stepNumber: 5,
+    disabled: false,
+  },
+  {
+    id: 6,
+    title: 'Listing Confirmation ',
+    subTitle: 'Complete details',
+    stepNumber: 6,
+    disabled: false,
+  },
+  
+];

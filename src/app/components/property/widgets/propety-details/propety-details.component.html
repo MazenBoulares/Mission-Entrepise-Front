@@ -1,0 +1,29 @@
+<div class="page-section" id="details">
+    <h4 class="content-title">Property Details
+        <a href="https://www.google.com/maps/@{{ propertyDetails?.address?.latitude }},{{ propertyDetails?.address?.longitude }},15z" target="_blank">
+            <i class="fa fa-map-marker-alt"></i> view on map
+        </a>
+    </h4>
+    <div class="property-details-container">
+        <div class="property-details">
+            <div class="property-detail-item">
+                <p class="property-detail"><strong>City</strong>: <span>{{ propertyDetails?.address?.addressCity }}</span></p>
+            </div>
+            <div class="property-detail-item">
+                <p class="property-detail"><strong>Street</strong>: <span>{{ propertyDetails?.address?.addressStreet }}</span></p>
+            </div>
+            <div class="property-detail-item">
+                <p class="property-detail"><strong>Country</strong>: <span>{{ propertyDetails?.address?.addressCountry }}</span></p>
+            </div>
+            <div class="property-detail-item">
+                <p class="property-detail"><strong>State</strong>: <span>{{ propertyDetails?.address?.addressState }}</span></p>
+            </div>
+        </div>
+        <p class="property-description"><strong>Description</strong>: <span>{{ propertyDetails?.propertyDescription }}</span></p>
+    </div>
+    <div class="row">
+
+    </div>
+    <h4 class="content-title mt-4">Attachments</h4>
+    <a href="javascript:void(0)" class="attach-file"><i class="far fa-file-pdf"></i>Demo Property Document </a>
+</div>

@@ -1,0 +1,130 @@
+<div class="contract-slider-container">
+    <h1>Contracts</h1>
+    <h4>write the name of the buyer here </h4>
+    <input type="text" id="buyer-firstname" name="buyer-firstname" placeholder="Buyer FullName" [(ngModel)]="buyerFirstName">
+    <div class="slider-nav">
+        <button id="sell-contract-btn" class="active">Selling Contract</button>
+        <button id="rent-contract-btn">Renting Contract</button>
+    </div>
+    <button id="print-btn" (click)="printActiveContract()">
+        Print Contract
+    </button>
+    <input type="file" (change)="onFileSelected($event)" />
+    <button (click)="sendForSignature()">Send for Signature</button>
+
+    <div class="slider-content">
+        <div id="sell-contract" class="contract active">
+            <h2>Selling Contract</h2>
+            <h3>PURCHASE AGREEMENT</h3>
+            <p>
+                Parties:
+                This Purchase Agreement ("Agreement") is made between <strong>{{landlord.firstName}} {{landlord.lastName}}</strong> ("Seller") and <strong>{{buyerFirstName}}</strong> ("Buyer").
+            </p>
+            <p> Property Description:
+                The property located at <strong>{{propertyDetails?.address?.addressCity}}</strong> at <strong>{{propertyDetails?.address?.addressStreet}}</strong>.
+            </p>
+            <p> Purchase Price:
+                The purchase price for the property is <strong>{{ propertyDetails?.price | currencySymbol: propertyService.Currency }}</strong>. The Buyer shall pay an earnest money deposit of <strong>5% of the price</strong> upon signing this Agreement. The resting balance shall be paid at closing.
+            </p>
+            <p>  Contingencies:
+                This Agreement is contingent upon:
+            </p>
+            <p>  Satisfactory inspection of the property within <strong>10 days</strong>.
+                Buyer securing financing within <strong>30 days</strong>.
+                Property appraising at or above the purchase price.
+            </p>
+            <p>  Title and Deed:
+                The Seller warrants they hold clear title to the property and agrees to convey the property to the Buyer via a General Warranty Deed.
+            </p>
+            <p>   Prorations and Adjustments:
+                Property taxes, utilities, and other expenses will be prorated as of the closing date.
+            </p>
+            <p>  Representations and Warranties:
+                The Seller represents that the property is free from any known defects and complies with all local zoning laws.
+            </p>
+            <p>  Disclosures:
+                The Seller has provided the Buyer with all required state and federal disclosures, including those pertaining to lead-based paint and any known environmental hazards.
+            </p>
+            <p> Default and Termination:
+                If the Buyer fails to perform, the earnest money deposit shall be forfeited to the Seller. If the Seller fails to perform, the Buyer may seek specific performance or terminate this Agreement and receive a refund of the earnest money deposit.
+            </p>
+            <p>Miscellaneous Provisions:
+                This Agreement shall be governed by the laws of the State of Illinois. Any amendments must be in writing and signed by both parties.
+            </p>
+            <p>Signatures:</p>
+            <div class="signatures">
+                <p><strong>{{landlord.firstName}} {{landlord.lastName}}, Seller</strong>
+                    Date: <strong>{{ currentDate }}</strong></p>
+                <p><strong>{{buyerFirstName}}, Buyer</strong>
+                    Date: <strong>{{ currentDate }}</strong></p>
+                <p></p>
+            </div>
+        </div>
+
+        <div id="rent-contract" class="contract">
+            <h2>Renting Contract</h2>
+            <p>Details about the renting contract...</p>
+                <p>
+                    Parties:
+                    This Lease Agreement ("Lease") is made on <strong>May 29, 2024</strong>, by and between <strong>{{landlord.firstName}} {{landlord.lastName}}</strong> ("Landlord") and <strong>{{buyerFirstName}}</strong> ("Tenant").
+                </p>
+                <p> Property Description:
+                    The residential property located at <strong>456 Elm Street, Apt 2B, Springfield, IL 62704</strong>.
+                </p>
+                <p> Term of Lease:
+                    The term of this Lease shall commence on <strong>June 1, 2024</strong>, and end on <strong>May 31, 2025</strong>.
+                </p>
+                <p> Rent Payment:
+                    The monthly rent shall be <strong>$1,200</strong>, payable on the first day of each month. Late fees of <strong>$50</strong> apply if rent is not received by the 5th day of the month.
+                </p>
+                <p> Security Deposit:
+                    The Tenant shall pay a security deposit of <strong>$1,200</strong> upon signing this Lease. The deposit will be returned within 30 days of Lease termination, less any deductions for damages or unpaid rent.
+                </p>
+                <p> Utilities and Services:
+                    The rent includes water and trash removal. The Tenant is responsible for electricity, gas, and internet services.
+                </p>
+                <p> Maintenance and Repairs:
+                    The Tenant is responsible for maintaining the property in good condition and must report any needed repairs to the Landlord promptly. The Landlord is responsible for major repairs and maintenance.
+                </p>
+                <p> Use of Premises:
+                    The property shall be used for residential purposes only. The Tenant shall not engage in any illegal activities or sublet the property without written consent from the Landlord.
+                </p>
+                <p> Occupancy Limits:
+                    The property shall be occupied by no more than <strong>2 adults and 1 child</strong>.
+                </p>
+                <p> Pets:
+                    No pets are allowed without prior written consent from the Landlord. If permitted, a pet deposit of <strong>$300</strong> is required.
+                </p>
+                <p> Rules and Regulations:
+                    The Tenant agrees to abide by all house rules and regulations, which are attached to this Lease.
+                </p>
+                <p> Alterations and Improvements:
+                    The Tenant may not make any alterations or improvements without the Landlord's written consent.
+                </p>
+                <p> Access to Premises:
+                    The Landlord may enter the property with 24-hour notice for inspections, repairs, or emergencies.
+                </p>
+                <p> Insurance:
+                    The Tenant is required to maintain renters insurance for personal property and liability coverage.
+                </p>
+                <p> Termination of Lease:
+                    The Tenant may terminate this Lease with <strong>30 days' written notice</strong>. The Landlord may terminate this Lease for cause with <strong>30 days' written notice</strong> or immediately for non-payment of rent or other serious violations.
+                </p>
+                <p> Default and Remedies:
+                    Failure to pay rent or comply with Lease terms constitutes default. The Landlord may seek legal remedies, including eviction and collection of unpaid rent.
+                </p>
+                <p> Miscellaneous Provisions:
+                    This Lease shall be governed by the laws of the State of Illinois. Any amendments must be in writing and signed by both parties.
+                </p>
+                <p> Signatures:</p>
+                <div class="signatures">
+                    <p><strong>{{landlord.firstName}} {{landlord.lastName}}, Landlord</strong>
+                        Date: <strong>May 29, 2024</strong></p>
+                    <p><strong>{{buyerFirstName}}, Tenant</strong>
+                        Date: <strong>May 29, 2024</strong></p>
+                    <p></p>
+                </div>
+            </div>
+
+        </div>
+</div>

@@ -1,0 +1,117 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.contract-slider-container {
+  width: 80%;
+  margin-bottom: 50px;
+  margin-left: 200px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+}
+
+.slider-nav button {
+  flex: 1;
+  padding: 15px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.slider-nav button.active {
+  background-color: #008cba;
+}
+
+.slider-content {
+  padding: 20px;
+}
+
+.contract {
+  display: none;
+}
+
+.contract.active {
+  display: block;
+}
+
+.signatures {
+  display: flex;
+  justify-content: space-between;
+}
+
+h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+#buyer-firstname {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+#buyer-firstname:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+::placeholder {
+  color: #999;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+@media print {
+  #print-btn {
+    display: none;
+  }
+  #send-btn {
+    display: none;
+  }
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#print-btn, #send-btn {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Increase font size */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+#print-btn {
+  margin-right: 20px; /* Add space between the buttons */
+}
+
+#print-btn:hover, #send-btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

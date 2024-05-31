@@ -1,0 +1,17 @@
+<section class="ratio_40 breadcrumb-section p-0 single-property-images">
+  <app-home-details></app-home-details>
+</section>
+
+<section class="single-property">
+  <div class="container">
+    <div class="row ratio_65">
+      <div class="col-xl-9 col-lg-8">
+        <app-property [propertyData]="propertyData" [type]="'simple'"></app-property>
+      </div>
+      @if(propertyData){
+        <div class="col-xl-3 col-lg-4">
+        </div>
+      }
+    </div>
+  </div>
+</section>

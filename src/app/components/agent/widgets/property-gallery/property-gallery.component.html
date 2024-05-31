@@ -1,0 +1,68 @@
+<h2>Gallery</h2>
+<p class="font-roboto">Add your property Media</p>
+<label>Media</label>
+<form class="dropzone" id="multiFileUpload">
+  <ngx-dropzone (change)="onSelect($event)" [ngClass]="{ 'is-invalid' : files.length < 1 && validation, 'is-valid' : files.length >= 1}">
+    <ngx-dropzone-label>
+      <div class="dz-message needsclick">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <h6>Drop files here or click to upload.</h6>
+        <!-- <span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span> -->
+      </div>
+    </ngx-dropzone-label>
+    @for(f of files; track f){
+      <ngx-dropzone-preview [removable]="true" (removed)="onRemove(f)">
+        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+      </ngx-dropzone-preview>
+    }
+  </ngx-dropzone>
+</form>
+<form class="row gx-3">
+  <div class="form-group col-sm-12">
+    <label>Additional features</label>
+    <div class="feature-checkbox">
+      <ng-container *ngFor="let feature of additionalFeatures">
+        <label [for]="'chk-' + feature.featureTitle">
+          <input class="checkbox_animated color-2" [id]="'chk-' + feature.featureTitle" type="checkbox"> {{ feature.featureTitle }}
+        </label>
+      </ng-container>
+    </div>
+  </div>
+</form>
+<div class="next-btn d-flex">
+  <button type="button" class="btn btn-dashed color-2 prev2 btn-pill" (click)="previous()"><i class="fas fa-arrow-left me-2"></i> Previous</button>
+  <button type="button" class="btn btn-gradient color-2 next3 btn-pill" (click)="openModalFunction(myModalContent)">Next <i class="fas fa-arrow-right ms-2"></i></button>
+  <ng-template #myModalContent let-modal>
+    <div class="modal-header">
+      <button type="button" class="btn btn-gradient btn-pill color-4" (click)="modal.dismiss()">
+        <span>&times;</span>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <h3>Are you sure you want to save this property?</h3>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-gradient btn-pill color-4" (click)="closeModalFunction()">No</button>
+      <button type="button" class="btn btn-gradient color-2 btn-pill" (click)="next()" [disabled]="isLoading">
+        <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+        Yes
+      </button>
+    </div>
+<!--    <div class="modal-header">-->
+<!--        <button type="button" class="btn btn-dashed"  class="close" (click)="modal.dismiss()">-->
+<!--            <span>&times;</span>-->
+<!--        </button>-->
+<!--    </div>-->
+
+<!--    <div class="modal-body">-->
+<!--      <h3>Are you sure you want to save this property?</h3>-->
+<!--    </div>-->
+<!--    <div class="modal-footer">-->
+<!--      <button type="button" class="btn btn-gradient color-2 next3 btn-pill" (click)="closeModalFunction()">No <i class="fas fa-arrow-right ms-2"></i></button>-->
+<!--      <button type="button" class="btn btn-gradient color-2 next3 btn-pill" (click)="next()">Yes <i class="fas fa-arrow-right ms-2"></i></button>-->
+<!--    </div>-->
+
+</ng-template>
+</div>

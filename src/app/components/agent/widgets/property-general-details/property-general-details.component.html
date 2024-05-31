@@ -1,0 +1,80 @@
+<h2>General</h2>
+<p class="font-roboto">Basic information about property</p>
+<form class="row gx-3" novalidate [formGroup]="myForm" >
+  <div class="form-group col-sm-12">
+    <label>Description</label>
+    <textarea class="form-control" rows="4" formControlName="propertyDescription" [ngClass]="{ 'is-invalid' : (propertyDescription?.touched || validate) && propertyDescription?.errors , 'is-valid' : !propertyDescription?.errors}"></textarea>
+  </div>
+  <div class="form-group col-sm-4">
+    <label>Property Type</label>
+    <select  class="form-control" formControlName="propertyType"  [ngClass]="{ 'is-invalid' : (propertyType?.touched || validate) && propertyType?.errors , 'is-valid' : !propertyType?.errors}">
+      @for(type of property_type; track type){
+      <option value="{{ type.value }}">{{ type.title }}</option>
+    }
+  </select>
+  </div>
+  <!-- <div class="form-group col-sm-4">
+    <label>Property Status</label>
+    <select class="form-control" formControlName="property_status" [ngClass]="{ 'is-invalid' : (property_status?.touched || validate) && property_status?.errors , 'is-valid' : !property_status?.errors}">
+    <option value="">Property Status</option>
+    @for(status of propertyStatus; track status){
+      <option value="{{ status.value }}">{{ status.title }}</option>
+    }
+    </select>
+  </div> -->
+  <div class="form-group col-sm-4">
+    <label>Balcony</label>
+    <input type="number" class="form-control" placeholder="Balcony" formControlName="propertyBalcony" [ngClass]="{ 'is-invalid' : (propertyBalcony?.touched || validate) && propertyBalcony?.errors , 'is-valid' : !propertyBalcony?.errors}">
+  </div>
+  <div class="form-group col-sm-4">
+    <label>Garage</label>
+    <input type="number" class="form-control" placeholder="Garage" formControlName="propertyGarage" [ngClass]="{ 'is-invalid' : (propertyGarage?.touched || validate) && propertyGarage?.errors , 'is-valid' : !propertyGarage?.errors}">
+  </div>
+  <div class="form-group col-sm-4">
+    <label>Beds</label>
+    <input type="number" class="form-control" placeholder="Beds" formControlName="propertyBedrooms" [ngClass]="{ 'is-invalid' : (propertyBedrooms?.touched || validate) && propertyBedrooms?.errors , 'is-valid' : !propertyBedrooms?.errors}">
+  </div>
+  <div class="form-group col-sm-4">
+    <label>Baths</label>
+    <input type="number" class="form-control" placeholder="Baths" formControlName="propertyBathrooms" [ngClass]="{ 'is-invalid' : (propertyBathrooms?.touched || validate) && propertyBathrooms?.errors , 'is-valid' : !propertyBathrooms?.errors}">
+  </div>
+  <!-- <div class="form-group col-sm-4">
+    <label>Beds</label>
+    <select class="form-control" formControlName="propertyBedrooms" [ngClass]="{ 'is-invalid' : (propertyBedrooms?.touched || validate) && propertyBedrooms?.errors , 'is-valid' : !propertyBedrooms?.errors}">
+      <option value="">Bed</option>
+      @for(bed of beds; track bed){
+        <option [ngValue]="bed.value">{{ bed.title }}</option>
+      }
+    </select>
+  </div> -->
+  <!-- <div class="form-group col-sm-4">
+    <label>Baths</label>
+    <select class="form-control" formControlName="propertyBathrooms" [ngClass]="{ 'is-invalid' : (propertyBathrooms?.touched || validate) && propertyBathrooms?.errors , 'is-valid' : !propertyBathrooms?.errors}">
+      <option value="">Bath</option>
+      @for(bath of baths; track bath){
+        <option [ngValue]="bath.value">{{ bath.title }}</option>
+      }
+    </select>
+  </div> -->
+  <div class="form-group col-sm-4">
+    <label>Area</label>
+    <input type="number" class="form-control" placeholder="85 sq ft" formControlName="propertySurface" [ngClass]="{ 'is-invalid' : (propertySurface?.touched || validate) && propertySurface?.errors , 'is-valid' : !propertySurface?.errors}">
+  </div>
+  <div class="form-group col-sm-4">
+    <label>yearOfConstruction</label>
+    <input type="date" class="form-control" formControlName="yearOfConstruction" [ngClass]="{ 'is-invalid' : (yearOfConstruction?.touched || validate) && yearOfConstruction?.errors , 'is-valid' : !yearOfConstruction?.errors}">
+  </div>
+  <!-- <div class="form-group col-sm-4">
+    <label>Agencies</label>
+    <select class="form-control" formControlName="agency" [ngClass]="{ 'is-invalid' : (agency?.touched || validate) && agency?.errors , 'is-valid' : !agency?.errors}">
+      <option value="">Agencies</option>
+      @for(agency of agencys; track agency){
+        <option value="{{ agency.value }}">{{ agency.title }}</option>
+      }
+    </select>
+  </div> -->
+
+</form>
+<div class="next-btn text-end">
+  <button type="button" class="btn btn-gradient color-2 next1 btn-pill" (click)="next(myForm)">Next <i class="fas fa-arrow-right ms-2"></i></button>
+</div>
