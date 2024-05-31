@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { agencyData, agentsData, agentsDetails, bannerData, blogDetailsData, brandData, currency, faqData, featuredPropertyData, happyClientsData, homeSectionData, latestBlogData, latestForRent, latestForRentData, latestForSale, latestForSaleData, newOfferData, peopleSayData, pricingPlanData, privacyData, propertyCityData, propertyOfDayData, providedServicesData, sliderData, termsData } from '../interface/property';
@@ -40,10 +40,19 @@ export class PropertyService {
     return this.http.get(Environment.api+'sendEnvelope');
   }
 
-  sendDocumentForSignature(file: File,name:String,email:String) {
+  sendDocumentForSignature(file: File, signerName: string, signerEmail: string): Observable<any> {
     const formData: FormData = new FormData();
     formData.append('file', file, file.name);
-    return this.http.post(Environment.api+'send', formData, {responseType: 'text'});
+
+    let params = new HttpParams();
+    params = params.append('signerName', signerName);
+    params = params.append('signerEmail', signerEmail);
+
+    const headers = new HttpHeaders({
+      'Accept': 'application/json'
+    });
+
+    return this.http.post<any>(Environment.api+"sendDocument", formData, { headers, params });
   }
   // Latest For Sale
   propertyData(): Observable<latestForSaleData> {
