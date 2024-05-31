@@ -1,8 +1,8 @@
-import { Component, AfterViewInit, Input } from '@angular/core';
-import { ActivatedRoute, Router } from "@angular/router";
-import { PropertyService } from "../../../shared/services/property.service";
-import { SharedModule } from "../../../shared/shared.module";
-import { FormsModule } from "@angular/forms";
+import {AfterViewInit, Component, Input} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {PropertyService} from "../../../shared/services/property.service";
+import {SharedModule} from "../../../shared/shared.module";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-contract',
