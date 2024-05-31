@@ -5,7 +5,7 @@
         <div class="common-card">
           <div class="user-name media">
             <div class="media-body">
-              <h5>Zack Lee <span class="label label-success">property Seeker</span></h5>
+              <h5>{{ fullCurrentUser?.firstName }} {{ fullCurrentUser?.lastName }} <span class="label label-success">property Seeker</span></h5>
               <div class="rating">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -31,7 +31,7 @@
             </li>
             <li>
               <app-feather-icons [icon]="'mail'"></app-feather-icons>
-              <span>zackle&#64;gmail.com</span>
+              <span>{{ fullCurrentUser?.firstName }}&#64;gmail.com</span>
             </li>
             <li>
               <app-feather-icons [icon]="'check-square'"></app-feather-icons>

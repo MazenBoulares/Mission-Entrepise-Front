@@ -141,4 +141,5 @@ export interface User {
   rating?: number| null; // This property is specific to Landlord users
   userType?: String| null;
   userImageUrl?:String|null;
+  roommate?:any|null;
 }

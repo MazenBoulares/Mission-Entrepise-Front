@@ -15,12 +15,12 @@ export interface cards{
   cardImage: string;
 }
 export const userPanelSideMenu : sideMenu[] = [
-  {
-    id: 1,
-    title: 'dashboard',
-    value: 'dashboard',
-    path: '/page/user/user-dashboard',
-  },
+  // {
+  //   id: 1,
+  //   title: 'dashboard',
+  //   value: 'dashboard',
+  //   path: '/page/user/user-dashboard',
+  // },
   // {
   //   id: 2,
   //   title: 'my listing',
@@ -40,20 +40,20 @@ export const userPanelSideMenu : sideMenu[] = [
   //   path: '/page/user/create-property',
   // },
   {
-    id: 4,
-    title: 'my profile',
+    id: 1,
+    title: 'My Preferences',
     value: 'profile',
     path: '/page/user/my-profile',
   },
-  {
-    id: 5,
-    title: 'favourites',
-    value: 'favourite',
-    path: '/page/user/favourite',
-  },
+  // {
+  //   id: 5,
+  //   title: 'favourites',
+  //   value: 'favourite',
+  //   path: '/page/user/favourite',
+  // },
 
   {
-    id: 6,
+    id: 2,
     title: 'roommates',
     value: 'rommates',
     path: '/page/user/all-user',

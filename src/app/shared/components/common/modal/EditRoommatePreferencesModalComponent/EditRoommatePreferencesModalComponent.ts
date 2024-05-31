@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RoommatePreferencesService } from 'src/app/services/RoommatePreferencesService.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'EditRoommatePreferencesModalComponent',
   templateUrl: './EditRoommatePreferencesModalComponent.html',
@@ -11,7 +11,9 @@ export class EditRoommatePreferencesModalComponent implements OnInit {
   @Input() preferenceId: number;
   preferenceData: any = {};
 
-  constructor(public modal: NgbModal, private roommatePreferencesService: RoommatePreferencesService) {}
+  constructor(
+    private router: Router,
+    public modal: NgbModal, private roommatePreferencesService: RoommatePreferencesService) {}
 
   ngOnInit() {
     if (this.preferenceId) {
@@ -32,10 +34,19 @@ export class EditRoommatePreferencesModalComponent implements OnInit {
       (response) => {
         console.log('Preferences updated successfully:', response);
         this.modal.dismissAll();
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000); // 1000 milliseconds = 1 second
+
       },
       (error) => {
         console.error('Error updating preferences:', error);
       }
     );
+
+
+ 
   }
+  
 }

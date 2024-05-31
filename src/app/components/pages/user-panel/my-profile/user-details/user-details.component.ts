@@ -7,6 +7,9 @@ import { CreateRoommatePreferencesModalComponent } from 'src/app/shared/componen
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/userService';
 import { userPreferencesService } from 'src/app/services/userPreferencesService.service';
+import { LocalStorageService } from 'src/app/services/localStorageService/local-storage.service';
+import { ClosestRoommatesService } from 'src/app/services/closestRommatesService.service';
+
 
 @Component({
   selector: 'app-user-details',
@@ -32,17 +35,31 @@ export class UserDetailsComponent implements OnInit {
 
   currentUser: any;
   fullCurrentUser: any;
-  closestRoommates: number[] = [];
+  closestRoommates: any;
+  userData: any;
 
   constructor(
     private userPreferencesService: userPreferencesService,
     private userService: UserService,
     private router: Router,
     private modal: NgbModal,
-    private roommatePreferencesService: RoommatePreferencesService
+    private roommatePreferencesService: RoommatePreferencesService,
+    private localStorageService: LocalStorageService,
+    private closestRoomatesService : ClosestRoommatesService
   ) { }
 
   ngOnInit(): void {
+
+
+  // ***** auth (will be trasnfered to HOME later) *****
+  this.userData = this.localStorageService.getUserDataFromLocalStorage();
+  if (this.userData) {
+    this.userService.currentUser = this.userData;
+  } else {
+    console.error('User data not found in local storage');
+  }
+// ***** /auth (will be trasnfered to HOME later) *****
+
     this.currentUser = this.userService.currentUser;
 
     if (this.currentUser && this.currentUser.userId) {
@@ -50,6 +67,7 @@ export class UserDetailsComponent implements OnInit {
       this.userPreferencesService.getUserById(this.currentUser.userId).subscribe(
         (data: any) => {
           this.fullCurrentUser = data;
+          console.log("full current user", this.fullCurrentUser)
           this.preferenceId = this.fullCurrentUser.preferenceId;
 
           // Fetch preferences using the new method
@@ -117,6 +135,8 @@ export class UserDetailsComponent implements OnInit {
   }
 
   suggestRoommate() {
+    // this.router.navigate(['/user-panel/all-user']);
+
     this.userPreferencesModel.gender = this.roommatePreferences.gender === 'female' ? '1' : '0';
     this.userPreferencesModel.rent_budget = this.roommatePreferences.rentBudget;
     this.userPreferencesModel.alcohol = this.roommatePreferences.alcoholConsumption ? 1 : 0;
@@ -128,8 +148,16 @@ export class UserDetailsComponent implements OnInit {
     this.userPreferencesModel.numRooms = this.roommatePreferences.numRooms;
 
     this.roommatePreferencesService.suggestPreferences(this.userPreferencesModel).subscribe(
-      (closestRoommates: number[]) => {
+      (closestRoommates) => {
         this.closestRoommates = closestRoommates;
+        this.closestRoomatesService.setClosestRoommates(this.closestRoommates); // Set closest roommates data
+        this.router.navigate(['/page/user/all-user']);
+
+      
+      // this.router.navigate(['/page/user/all-user'], {
+      //   state: { closestRoommates: this.closestRoommates }
+      // });
+
       },
       (error) => {
         console.error('Error:', error);

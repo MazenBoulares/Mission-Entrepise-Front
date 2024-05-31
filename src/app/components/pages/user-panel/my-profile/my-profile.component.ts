@@ -10,9 +10,9 @@ export class MyProfileComponent {
   public themeLogo = 'assets/images/logo/logo.png';
   public footerLogo = 'assets/images/logo/footer-logo.png';
   public bgImage = 'assets/images/inner-background.jpg';
-  public title = 'Dashboard';
-  public parent = 'Home';
-  public child = 'My Profile';
+  public title = 'Rooommate';
+  public parent = 'Recommendation';
+  public child = 'My Preferences';
 
   public theme_default3 = '#63ad24';
   public theme_default4 = '#6bc115';

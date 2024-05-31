@@ -30,8 +30,8 @@ export class RoommatePreferencesService {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
-  suggestPreferences(userPreferences: any): Observable<number[]> {
-    return this.http.post<number[]>(`${this.flaskApiUrl}/find_closest_roommates`, userPreferences);
+  suggestPreferences(userPreferences: any): Observable<any> {
+    return this.http.post<any>(`${this.flaskApiUrl}/find_closest_roommates`, userPreferences);
   }
   
 

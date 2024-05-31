@@ -1,25 +1,13 @@
 <div class="property-box">
 
   
-  <button class="delete-button" (click)="deleteUser(userDetails)">
-    <i class="fas fa-trash-alt"></i>
-  </button>
 
-   <!-- Add the edit button here -->
-   <button class="edit-button" (click)="editUser()">
-    <i class="fas fa-pencil-alt"></i>
-  </button>
  
   <div class="agent-image">
       <div [style.background-image]="'url('+userDetails.userImageUrl+')'" class="bg-size">  
         <img [src]="userDetails.userImageUrl" class="bg-img" alt="">  
-        <span class="label label-shadow">New user</span>
-      <!-- @if(userDetails.newUser){
-        <span class="label label-shadow">New user</span>
-      } -->
-      <!-- @if(property){
-        <span class="label label-shadow">{{ userDetails.property }} properties</span>
-      } -->
+        <span class="label label-shadow">Best Match</span>
+
       <div class="agent-overlay"></div>
     
       <div class="overlay-content">
@@ -36,6 +24,8 @@
     </div> 
   </div>
   <div class="agent-content">
+    <div class="custom-tooltip">
+      <div class="tooltip-content">
     
     <h5>{{ userDetails.firstName +" "+ userDetails.lastName  }}</h5>
      <!-- <h5>{{ userDetails.firstName}}</h5> -->
@@ -50,8 +40,10 @@
       <li><i class="fas fa-fax"></i> {{ userDetails.address }}</li>
     </ul> 
     
-    <a href="javascript:void(0)" [routerLink]="[type == 'agent' ? '/agents/agent-profile' : '/manage-user/user-profile']">View profile <i class="fas fa-arrow-right"></i></a>
+    <a href="javascript:void(0)" (click)="showPreferencesModal()">View Preferences <i class="fas fa-arrow-right"></i></a>
 
-    
+
+      </div>
+</div>
   </div>
 </div>
