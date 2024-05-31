@@ -117,8 +117,8 @@ export class ContractComponent implements AfterViewInit {
       console.error('Form is invalid or file is not selected');
     }
   }
-  onFileSelected($event: Event) {
-
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0];
   }
 
 
