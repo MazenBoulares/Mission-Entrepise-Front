@@ -9,9 +9,25 @@
     <button id="print-btn" (click)="printActiveContract()">
         Print Contract
     </button>
-    <input type="file" (change)="onFileSelected($event)" />
-    <button (click)="sendForSignature()">Send for Signature</button>
+    <div class="category-property">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <input type="text" class="form-control" formControlName="name" placeholder="Signer Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" formControlName="email" placeholder="Signer Email Address" required>
+            </div>
+            <button type="submit" class="btn btn-gradient color-2 btn-block btn-pill">Submit Request</button>
+        </form>
+    </div>
+<!--    <input type="file" (change)="onFileSelected($event)" />-->
 
+<!--    <button (click)="sendForSignature()">Send for Signature</button>-->
+    <!-- New file input for PDF upload -->
+    <input type="file" accept="application/pdf" (change)="onFileSelected($event)" />
+
+    <!-- Button to send the file for signature -->
+    <button (click)="sendForSignature()">Send for Signature</button>
     <div class="slider-content">
         <div id="sell-contract" class="contract active">
             <h2>Selling Contract</h2>

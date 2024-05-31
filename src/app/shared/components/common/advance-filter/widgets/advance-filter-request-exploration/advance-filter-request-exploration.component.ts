@@ -14,6 +14,7 @@ export class AdvanceFilterRequestExplorationComponent implements OnInit {
   contactForm: FormGroup;
   contact: Contact;
   constructor(private router: Router, private route: ActivatedRoute, public propertyService: PropertyService) {}
+
   ngOnInit() {
     this.contactForm = new FormGroup({
       'name': new FormControl(null),

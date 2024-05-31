@@ -41,4 +41,16 @@ export class PropertyService {
       })
     );;
   }
+    sendDocumentForInPersonSigning(file: File, signerName: string, signerEmail: string): Observable<any> {
+        const formData: FormData = new FormData();
+        formData.append('file', file, file.name);
+        formData.append('signerName', signerName);
+        formData.append('signerEmail', signerEmail);
+
+        const headers = new HttpHeaders({
+            'Accept': 'application/json'
+        });
+
+        return this.http.post<any>(Environment.api+'sendDocument', formData, { headers });
+    }
 }

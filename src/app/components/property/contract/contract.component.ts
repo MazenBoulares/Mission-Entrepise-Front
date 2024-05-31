@@ -2,7 +2,7 @@ import {AfterViewInit, Component, Input} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {PropertyService} from "../../../shared/services/property.service";
 import {SharedModule} from "../../../shared/shared.module";
-import {FormsModule} from "@angular/forms";
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-contract',
@@ -10,7 +10,8 @@ import {FormsModule} from "@angular/forms";
   standalone: true,
   imports: [
     SharedModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   styleUrls: ['./contract.component.scss']
 })
@@ -19,6 +20,8 @@ export class ContractComponent implements AfterViewInit {
   landlord: any;
   currentDate: string;
   buyerFirstName: string;
+  contactForm: FormGroup;
+  selectedFile: File | null = null;
 
   constructor(private router: Router, private route: ActivatedRoute, public propertyService: PropertyService) {
     this.currentDate = this.getCurrentDate();
@@ -47,26 +50,27 @@ export class ContractComponent implements AfterViewInit {
     }
   }
 
-  ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      console.log('queryParams', params['id']);
-      const id = params['id'];
-      console.log(id);
-      this.propertyService.getPropertyById(id).subscribe(property => {
-        this.propertyDetails = property;
-      });
 
-      this.propertyService.getLandlordByPropertyId(id).subscribe(
-          data => {
-            this.landlord = data;
-            console.log("gooooooog", id)
-          },
-          error => {
-            console.error('Error:', error);
-          }
-      );
-    });
-  }
+  // ngOnInit(): void {
+  //   this.route.queryParams.subscribe(params => {
+  //     console.log('queryParams', params['id']);
+  //     const id = params['id'];
+  //     console.log(id);
+  //     this.propertyService.getPropertyById(id).subscribe(property => {
+  //       this.propertyDetails = property;
+  //     });
+  //
+  //     this.propertyService.getLandlordByPropertyId(id).subscribe(
+  //         data => {
+  //           this.landlord = data;
+  //           console.log("gooooooog", id)
+  //         },
+  //         error => {
+  //           console.error('Error:', error);
+  //         }
+  //     );
+  //   });
+  // }
 
   getCurrentDate(): string {
     const today = new Date();
@@ -85,12 +89,37 @@ export class ContractComponent implements AfterViewInit {
       window.location.reload(); // Reload to reset the view after printing
     }
   }
+  ngOnInit() {
+    this.contactForm = new FormGroup({
+      'name': new FormControl(null),
+      'email': new FormControl(null),
+      'phoneNumber': new FormControl(null),
+      'message': new FormControl(null)
+    });
+  }
 
+  onSubmit() {
+    if (this.contactForm.valid) {
+      console.log('Form Submitted', this.contactForm.value);
+    }
+  }
+
+  sendForSignature() {
+    if (this.selectedFile && this.contactForm.valid) {
+      const formValues = this.contactForm.value;
+      this.propertyService.sendDocumentForSignature(this.selectedFile, formValues.name, formValues.email)
+          .subscribe(response => {
+            console.log('Document sent for signing:', response);
+          }, error => {
+            console.error('Error sending document for signing:', error);
+          });
+    } else {
+      console.error('Form is invalid or file is not selected');
+    }
+  }
   onFileSelected($event: Event) {
 
   }
 
-  sendForSignature() {
 
-  }
 }

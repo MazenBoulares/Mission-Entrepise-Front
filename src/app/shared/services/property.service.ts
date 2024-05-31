@@ -40,7 +40,7 @@ export class PropertyService {
     return this.http.get(Environment.api+'sendEnvelope');
   }
 
-  sendDocumentForSignature(file: File) {
+  sendDocumentForSignature(file: File,name:String,email:String) {
     const formData: FormData = new FormData();
     formData.append('file', file, file.name);
     return this.http.post(Environment.api+'send', formData, {responseType: 'text'});
